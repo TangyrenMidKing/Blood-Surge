@@ -1,6 +1,7 @@
-# Group 7  
+## Group 7  
 
-# MCWD_21
+# Group Name
+MCWD_21
 
 # Memeber
 Markus Menner
