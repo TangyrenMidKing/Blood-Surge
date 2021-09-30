@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Zombie
   - HealthBoost
+  - SpeedBoost
   layers:
   - Default
   - TransparentFX
