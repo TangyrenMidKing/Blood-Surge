@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         // Applies appropiate speed to movement depending if character is holding left shift and if character has the boost perk
         if (Input.GetKey(KeyCode.LeftShift))
@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
     // If player runs into the speed boost perk then destroy the speed boost object and start coroutine for countdown
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("SpeedBoost"))
+        if (other.CompareTag("SpeedBoost") && hasBoostSpeed != true)
         {
             hasBoostSpeed = true;
             Destroy(other.gameObject);
