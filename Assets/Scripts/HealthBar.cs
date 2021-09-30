@@ -17,6 +17,11 @@ public class HealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        DisplayPlayerHealth();
+    }
+
+    void DisplayPlayerHealth()
+    {
         // Access players current health from PlayerHealth class, then converts it to a string in order to display on UI
         healthBar.text = "Health: " + playerHealth.GetComponent<PlayerHealth>().getHealth().ToString();
     }

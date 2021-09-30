@@ -2,14 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
 public class PlayerHealth : MonoBehaviour
 {
-   
+ 
     int baseHealth = 100;
-    int basicZombieDamageTaken = 10;
-    int eliteZombieDamageTaken = 15;
 
     [SerializeField]
     int currentHealth;
@@ -26,19 +22,6 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         
-    }
-
-    // if player runs into a zombie then they lose 10 hp
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Zombie"))
-        {
-            currentHealth -= basicZombieDamageTaken;
-        }
-        else if (collision.gameObject.CompareTag("EliteZombie"))
-        {
-            currentHealth -= eliteZombieDamageTaken;
-        }
     }
 
     // If player runs into healthboost this changes player's current health to be twice their base health, then destroys healthboost
@@ -61,9 +44,15 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
-    // Allows other classes to access the players current health
+    // (Getter) Allows other classes to access the players current health
     public int getHealth()
     {
         return currentHealth;
+    }
+
+    // (Setter) Allows other classes to change players current health
+    public void setHealth(int health)
+    {
+        currentHealth = health;
     }
 }

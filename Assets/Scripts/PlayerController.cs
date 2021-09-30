@@ -26,17 +26,17 @@ public class PlayerController : MonoBehaviour
         // Applies appropiate speed to movement depending if character is holding left shift and if character has the boost perk
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            moveCharacter(hasBoostSpeed ? boostRunSpeed : runSpeed);
+            MoveCharacter(hasBoostSpeed ? boostRunSpeed : runSpeed);
         }
         else
         {
-            moveCharacter(hasBoostSpeed ? boostWalkSpeed : walkSpeed);
+            MoveCharacter(hasBoostSpeed ? boostWalkSpeed : walkSpeed);
         }
     }
 
 
     // moves character base on input, takes in speed as param
-    void moveCharacter(float currentSpeed)
+    void MoveCharacter(float currentSpeed)
     {
         // Lets the character body move left and right
         horizontalInput = Input.GetAxis("Horizontal");

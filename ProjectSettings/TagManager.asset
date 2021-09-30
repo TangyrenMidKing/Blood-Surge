@@ -4,11 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Zombie
   - HealthBoost
   - SpeedBoost
   - EliteZombie
   - HealthHeal
+  - BasicZombie
   layers:
   - Default
   - TransparentFX
