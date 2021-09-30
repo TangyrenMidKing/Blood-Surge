@@ -21,10 +21,11 @@ public class PlayerHealth : MonoBehaviour
        
     }
 
+
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     // if player runs into a zombie then they lose 10 hp
@@ -57,5 +58,12 @@ public class PlayerHealth : MonoBehaviour
             currentHealth -= currentHealth % 100; // this line caps the health gained at 100
             Destroy(other.gameObject);
         }
+    }
+
+
+    // Allows other classes to access the players current health
+    public int getHealth()
+    {
+        return currentHealth;
     }
 }
