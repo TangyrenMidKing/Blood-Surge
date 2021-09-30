@@ -36,6 +36,8 @@ public class ZombieAttack : MonoBehaviour
     }
 
     // checks the tag of the game object this script is attached to
+    // This may only trigger one type of zombie at a time. 
+    // May need to change if we want the player to be damaged by multiple zombies at once
     void CheckZombieType()
     {
         switch (zombie.gameObject.tag)
