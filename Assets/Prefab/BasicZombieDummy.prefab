@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 192557264617414622}
   - component: {fileID: 192557264617414621}
   - component: {fileID: 548440836867359235}
+  - component: {fileID: 687959335}
   m_Layer: 0
   m_Name: BasicZombieDummy
   m_TagString: BasicZombie
@@ -110,4 +111,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 0}
+  zombie: {fileID: 192557264617414619}
+--- !u!114 &687959335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192557264617414619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0d82ecd755024f99ddad19d587817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  perks:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   zombie: {fileID: 192557264617414619}

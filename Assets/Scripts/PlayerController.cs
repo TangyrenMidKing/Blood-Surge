@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         // Applies appropiate speed to movement depending if character is holding left shift and if character has the boost perk
         if (Input.GetKey(KeyCode.LeftShift))
