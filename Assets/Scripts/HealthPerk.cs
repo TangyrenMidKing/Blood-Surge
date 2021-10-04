@@ -19,6 +19,7 @@ public class HealthPerk : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         playersCurrentHealth = playerHealth.GetComponent<PlayerHealth>().getHealth();
 
     }

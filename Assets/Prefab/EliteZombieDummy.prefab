@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2062240969327256599}
   - component: {fileID: 2062240969327256596}
   - component: {fileID: 7289443894908164526}
+  - component: {fileID: 663032875}
   m_Layer: 0
   m_Name: EliteZombieDummy
   m_TagString: EliteZombie
@@ -110,4 +111,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 0}
+  zombie: {fileID: 2062240969327256594}
+--- !u!114 &663032875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062240969327256594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0d82ecd755024f99ddad19d587817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  perks:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   zombie: {fileID: 2062240969327256594}
