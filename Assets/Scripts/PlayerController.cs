@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     float runSpeed = 4f;
     float boostWalkSpeed = 4f;
     float boostRunSpeed = 6f;
-    bool hasBoostSpeed;
+    public bool hasBoostSpeed;
 
 
 
