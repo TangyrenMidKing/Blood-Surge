@@ -249,6 +249,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b449224af70cffb40b79772de78b14b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 0}
-  playerBaseHealth: {fileID: 0}
+  playerHealth: {fileID: 203685862, guid: 721105026b78a60459da0374e761aa9f, type: 3}
+  playerBaseHealth: {fileID: 203685862, guid: 721105026b78a60459da0374e761aa9f, type: 3}
   healthPickup: {fileID: 8728884884210288229}
