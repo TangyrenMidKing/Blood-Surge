@@ -10,14 +10,21 @@ public class PlayerController : MonoBehaviour
     float runSpeed = 4f;
     float boostWalkSpeed = 4f;
     float boostRunSpeed = 6f;
-    bool hasBoostSpeed;
+    public bool hasBoostSpeed;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+        
         hasBoostSpeed = false;
+    }
+
+    private void Update()
+    {
+        
+        
     }
 
     // Update is called once per frame

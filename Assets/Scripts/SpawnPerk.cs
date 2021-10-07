@@ -8,11 +8,14 @@ public class SpawnPerk : MonoBehaviour
     public GameObject[] perks = new GameObject[3];
     public GameObject zombie;
     int choosePerk;
+    bool spawn;
 
     // Start is called before the first frame update
     void Start()
     {
+        spawn = false;
         RandomlyChoosePerk();
+        DiceRoll();
     }
 
     // Update is called once per frame
@@ -26,8 +29,12 @@ public class SpawnPerk : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            // Spawns a random perk at the position of the zombie, then destroys the zombie
-            Instantiate(perks[choosePerk], transform.position, perks[choosePerk].transform.rotation); // this line can be copy/paste into whatever function destroys the zombie
+            // if dice roll was successful then a random perk will spawn
+            if (spawn)
+            {
+                // Spawns a random perk at the position of the zombie, then destroys the zombie
+                Instantiate(perks[choosePerk], transform.position, perks[choosePerk].transform.rotation); // this line can be copy/paste into whatever function destroys the zombie
+            }
             Destroy(zombie.gameObject);
         }
     }
@@ -36,5 +43,20 @@ public class SpawnPerk : MonoBehaviour
     void RandomlyChoosePerk()
     {
         choosePerk = Random.Range(0, 3);
+    }
+
+    // "rolls" a dice between 0 and 6 and if the roll was 3 then it will spawn a perk
+    // So there is a 1/6 chance of a perk spawning per zombie
+    void DiceRoll()
+    {
+        if(Random.Range(0, 7) == 3)
+        {
+            spawn = true;
+        }
+        else
+        {
+            spawn = false;
+        }
+
     }
 }

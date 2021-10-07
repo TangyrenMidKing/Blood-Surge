@@ -9,6 +9,10 @@ TagManager:
   - EliteZombie
   - HealthHeal
   - BasicZombie
+  - WeaponWall
+  - Skorpion
+  - M4
+  - Ump
   layers:
   - Default
   - TransparentFX
