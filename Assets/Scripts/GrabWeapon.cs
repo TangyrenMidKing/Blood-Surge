@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GrabWeapon : MonoBehaviour
 {
     public WeaponList weaponList;
+    public Text instructions;
     bool inRangeOfWeapon = false;
     int mainWeapon = 0;
     static int currentWeapon;
@@ -18,22 +20,22 @@ public class GrabWeapon : MonoBehaviour
             weaponList.weaponArray[i].SetActive(false);
         }
         currentWeapon = mainWeapon;
+        stopDisplayingInstructionsUI();
 
     }
 
     // Update is called once per frame
     void Update()
-    {
-        
+    {       
         if (Input.GetKeyDown(KeyCode.E) && inRangeOfWeapon)
         {
-            switchWeapon();
+            changeWeapon();
         }
     }
 
     // NOTE: The weapons are based on the position in the WeaponsList Array. So becareful changing them here and there. 
     // Gets the tag of the weapon and sets that weapon to be active. Sets the previous weapon the player was holding to be inactive
-    void switchWeapon()
+    void changeWeapon()
     {
         switch (gameObject.tag)
         {
@@ -59,10 +61,23 @@ public class GrabWeapon : MonoBehaviour
         weaponList.weaponArray[currentWeapon].SetActive(true);
     }
 
+    // displays "press e to grab weapon"
+    void displayingInstructionsUI()
+    {
+        instructions.GetComponent<Text>().enabled = true;
+    }
+
+    // stops displaying "press e to grab weapon"
+    void stopDisplayingInstructionsUI()
+    {
+        instructions.GetComponent<Text>().enabled = false;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
+            displayingInstructionsUI();
             inRangeOfWeapon = true;
         }
 
@@ -72,6 +87,7 @@ public class GrabWeapon : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            stopDisplayingInstructionsUI();
             inRangeOfWeapon = false;
         }
     }
