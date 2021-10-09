@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - HealthBoost
+  - SpeedBoost
+  - EliteZombie
+  - HealthHeal
+  - BasicZombie
+  - WeaponWall
+  - Skorpion
+  - M4
+  - Ump
   layers:
   - Default
   - TransparentFX
