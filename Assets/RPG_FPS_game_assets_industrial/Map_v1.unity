@@ -10050,6 +10050,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000011940550886, guid: 31fee1c2b8079524babddad687e95210, type: 3}
   m_PrefabInstance: {fileID: 1777295814}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &867875048 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 203685862, guid: 721105026b78a60459da0374e761aa9f, type: 3}
+  m_PrefabInstance: {fileID: 460970532}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07ad48685e4a06a489ec4d693ea3baff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &867875054 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9036204326960492368, guid: 721105026b78a60459da0374e761aa9f, type: 3}
+  m_PrefabInstance: {fileID: 460970532}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &871110459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15875,8 +15891,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdacf0016b1d6854bb1a10e28cf4bf23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 0}
-  player: {fileID: 0}
+  agent: {fileID: 1376942563}
+  player: {fileID: 867875054}
 --- !u!54 &1376942560
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15982,6 +15998,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc9e322da34e76f45aa954b3eec94b31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1376942566 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 578376449398627443, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+  m_PrefabInstance: {fileID: 5583472457079078995}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1376942567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376942558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88580835e5c622c408e0bcf9b34209a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 867875048}
+  player: {fileID: 867875054}
+  zombie: {fileID: 1376942566}
+  playersCurrentHealth: 100
+  zombieDamage: 10
+  attackRange: 2
 --- !u!1001 &1390640263
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25900,7 +25939,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
       propertyPath: m_Name
-      value: Zombie
+      value: ZombieObj
       objectReference: {fileID: 0}
     - target: {fileID: 7389507112651452681, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
       propertyPath: m_Enabled

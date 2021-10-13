@@ -2822,6 +2822,7 @@ GameObject:
   - component: {fileID: 832958179044390866}
   - component: {fileID: 832958179044390894}
   - component: {fileID: 832958179044390889}
+  - component: {fileID: 5377726690500511729}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -2836,8 +2837,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8696079360254140478}
-  m_LocalRotation: {x: -0, y: 0.5336565, z: -0, w: -0.8457014}
-  m_LocalPosition: {x: 24.483185, y: 0.5146203, z: -26.166666}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.46, y: 0, z: 0.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7784372522143312534}
@@ -2996,6 +2997,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc9e322da34e76f45aa954b3eec94b31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5377726690500511729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8696079360254140478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88580835e5c622c408e0bcf9b34209a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 0}
+  player: {fileID: 0}
+  zombie: {fileID: 5689726118343152173}
+  playersCurrentHealth: 100
+  zombieDamage: 10
+  attackRange: 2
 --- !u!1 &8832308365550923052
 GameObject:
   m_ObjectHideFlags: 0

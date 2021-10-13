@@ -5,63 +5,35 @@ using UnityEngine;
 public class ZombieAttack : MonoBehaviour
 {
     public PlayerHealth playerHealth;
-    public GameObject zombie;
-    int playersCurrentHealth;
-    int eliteZombieDamage;
-    int basicZombieDamage;
+    public Transform player;
+    public Transform zombie;
+    public int playersCurrentHealth;
+    public int zombieDamage;
+    public float attackRange;
 
     // Start is called before the first frame update
     void Start()
     {
-        basicZombieDamage = 10;
-        eliteZombieDamage = 15;
+        player = GameObject.Find("PlayerCharacter").transform;
+        zombie = GameObject.Find("ZombieObj").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        GetPlayersCurrentHealth();
-    }
+        if (player)
+        {
+            playersCurrentHealth = playerHealth.GetComponent<PlayerHealth>().getHealth();
 
-    void GetPlayersCurrentHealth()
-    {
-        playersCurrentHealth = playerHealth.GetComponent<PlayerHealth>().getHealth();
+            if (Vector3.Distance(player.position, zombie.position) <= attackRange)
+                attacks(zombieDamage);
+        }
     }
 
     // updates player health depending on what kind of zombie attacks
-    void ZombieAttacks(int damage)
+    private void attacks(int damage)
     {
-        playersCurrentHealth -= damage;
+        playersCurrentHealth -= zombieDamage;
         playerHealth.GetComponent<PlayerHealth>().setHealth(playersCurrentHealth);
     }
-
-    // checks the tag of the game object this script is attached to
-    // This may only trigger one type of zombie at a time. 
-    // May need to change if we want the player to be damaged by multiple zombies at once
-    void CheckZombieType()
-    {
-        switch (zombie.gameObject.tag)
-        {
-            case "BasicZombie":
-                ZombieAttacks(basicZombieDamage);
-                break;
-
-            case "EliteZombie":
-                ZombieAttacks(eliteZombieDamage);
-                break;
-
-            default:
-                break;
-        }
-    }
-
-    // check if zombie collides into player
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            CheckZombieType();
-        }
-    }
-
 }
