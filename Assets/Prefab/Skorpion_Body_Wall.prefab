@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponList: {fileID: 0}
+  instructions: {fileID: 0}
 --- !u!1 &696248779565078711
 GameObject:
   m_ObjectHideFlags: 0
