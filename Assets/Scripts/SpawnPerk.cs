@@ -5,10 +5,12 @@ using UnityEngine;
 public class SpawnPerk : MonoBehaviour
 {
     // an array of perk prefabs
+    public ZombieHealth zombieHealth;
     public GameObject[] perks = new GameObject[3];
     public GameObject zombie;
     int choosePerk;
     bool spawn;
+    int health;
 
     // Start is called before the first frame update
     void Start()
@@ -21,22 +23,32 @@ public class SpawnPerk : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        health = zombieHealth.GetComponent<ZombieHealth>().getHealth();
+        if (health <= 0)
+        {
+            // if dice roll was successful then a random perk will spawn
+            if (true)
+            {
+                // Spawns a random perk at the position of the zombie, then destroys the zombie
+                Instantiate(perks[choosePerk], transform.position + Vector3.up, perks[choosePerk].transform.rotation); // this line can be copy/paste into whatever function destroys the zombie
+            }
+            Destroy(zombie.gameObject);
+        }
     }
 
     // check if zombie collides into player then spawn a perk and destroy the zombie
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            // if dice roll was successful then a random perk will spawn
-            if (spawn)
-            {
-                // Spawns a random perk at the position of the zombie, then destroys the zombie
-                Instantiate(perks[choosePerk], transform.position + Vector3.up, perks[choosePerk].transform.rotation); // this line can be copy/paste into whatever function destroys the zombie
-            }
-            //Destroy(zombie.gameObject);
-        }
+        // if (health <= 0)
+        // {
+        //     // if dice roll was successful then a random perk will spawn
+        //     if (spawn)
+        //     {
+        //         // Spawns a random perk at the position of the zombie, then destroys the zombie
+        //         Instantiate(perks[choosePerk], transform.position + Vector3.up, perks[choosePerk].transform.rotation); // this line can be copy/paste into whatever function destroys the zombie
+        //     }
+        //     //Destroy(zombie.gameObject);
+        // }
     }
 
     // randomly choose a perk
