@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Damage : MonoBehaviour
 {
-    public float damage;
+    public int damage;
     // Start is called before the first frame update
     void OnCollisionEnter(Collision other){
         Target target = other.gameObject.GetComponent<Target>();

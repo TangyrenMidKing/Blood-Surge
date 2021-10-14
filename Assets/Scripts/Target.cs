@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    public float health;
+    public int health;
+    public ZombieHealth zombieHealth;
+    float currentHealth;
 
     void Update() {
-        if(health <= 0) {
-            Destroy(gameObject);
-        }
+        currentHealth = zombieHealth.GetComponent<ZombieHealth>().getHealth(); 
     }
 
     /// 'Hits' the target for a certain amount of damage
-    public void Hit(float damage) {
+    public void Hit(int damage) {
         health -= damage;
+        zombieHealth.GetComponent<ZombieHealth>().setHealth(health);
     }
 }
