@@ -7,6 +7,8 @@ public class SpawnPerk : MonoBehaviour
     // an array of perk prefabs
     public GameObject[] perks = new GameObject[3];
     public GameObject zombie;
+    public ZombieHealth zombieHealth;
+    int health;
     int choosePerk;
     bool spawn;
 
@@ -21,13 +23,8 @@ public class SpawnPerk : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-    }
-
-    // check if zombie collides into player then spawn a perk and destroy the zombie
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
+        health = zombieHealth.GetComponent<ZombieHealth>().getHealth();
+        if (health <= 0) // change to, if zombie health is below zero
         {
             // if dice roll was successful then a random perk will spawn
             if (spawn)
@@ -35,9 +32,10 @@ public class SpawnPerk : MonoBehaviour
                 // Spawns a random perk at the position of the zombie, then destroys the zombie
                 Instantiate(perks[choosePerk], transform.position + Vector3.up, perks[choosePerk].transform.rotation); // this line can be copy/paste into whatever function destroys the zombie
             }
-            //Destroy(zombie.gameObject);
+            Destroy(zombie.gameObject);
         }
     }
+
 
     // randomly choose a perk
     void RandomlyChoosePerk()
