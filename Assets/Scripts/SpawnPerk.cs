@@ -8,11 +8,10 @@ public class SpawnPerk : MonoBehaviour
     public ZombieHealth zombieHealth;
     public GameObject[] perks = new GameObject[3];
     public GameObject zombie;
-    public ZombieHealth zombieHealth;
     int health;
     int choosePerk;
     bool spawn;
-    int health;
+
 
     // Start is called before the first frame update
     void Start()
