@@ -60,7 +60,10 @@ public class HealthPerk : MonoBehaviour
     {
         int healthHeal = 50;
         playersCurrentHealth += healthHeal;
-        playersCurrentHealth -= playersCurrentHealth % baseHealth; // this line caps the health gained at base health (100)
+        if(playersCurrentHealth > 100)
+        {
+            playersCurrentHealth -= playersCurrentHealth % baseHealth; // this line caps the health gained at base health (100)
+        }
         playerHealth.GetComponent<PlayerHealth>().setHealth(playersCurrentHealth);
         Destroy(healthPickup.gameObject);
     }
