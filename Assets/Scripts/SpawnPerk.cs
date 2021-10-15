@@ -24,6 +24,8 @@ public class SpawnPerk : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        
         health = zombieHealth.GetComponent<ZombieHealth>().getHealth();
         if (health <= 0)
         {
@@ -33,6 +35,7 @@ public class SpawnPerk : MonoBehaviour
                 // Spawns a random perk at the position of the zombie, then destroys the zombie
                 Instantiate(perks[choosePerk], transform.position + Vector3.up, perks[choosePerk].transform.rotation); // this line can be copy/paste into whatever function destroys the zombie
             }
+         
             Destroy(zombie.gameObject);
         }
     }

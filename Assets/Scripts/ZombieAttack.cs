@@ -15,7 +15,7 @@ public class ZombieAttack : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("PlayerCharacter").transform;
-        zombie = GameObject.Find("ZombieObj").transform;
+        //zombie = GameObject.Find("ZombieObj").transform;
     }
 
     // Update is called once per frame
