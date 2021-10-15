@@ -1889,7 +1889,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  zombie: {fileID: 4493914613880827488}
 --- !u!114 &1376942567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1906,7 +1905,7 @@ MonoBehaviour:
   player: {fileID: 0}
   zombie: {fileID: 578376449398627443}
   playersCurrentHealth: 100
-  zombieDamage: 10
+  zombieDamage: 1
   attackRange: 2
 --- !u!114 &1426914913
 MonoBehaviour:

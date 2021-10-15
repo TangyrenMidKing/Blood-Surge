@@ -8,7 +8,7 @@ public class ZombieAttack : MonoBehaviour
     public Transform player;
     public Transform zombie;
     public int playersCurrentHealth;
-    public int zombieDamage;
+    public int zombieDamage = 1;
     public float attackRange;
 
     // Start is called before the first frame update
