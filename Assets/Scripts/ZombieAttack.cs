@@ -8,14 +8,14 @@ public class ZombieAttack : MonoBehaviour
     public Transform player;
     public Transform zombie;
     public int playersCurrentHealth;
-    public int zombieDamage;
+    public int zombieDamage = 1;
     public float attackRange;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("PlayerCharacter").transform;
-        zombie = GameObject.Find("ZombieObj").transform;
+        //zombie = GameObject.Find("ZombieObj").transform;
     }
 
     // Update is called once per frame

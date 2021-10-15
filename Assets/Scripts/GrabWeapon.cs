@@ -61,6 +61,12 @@ public class GrabWeapon : MonoBehaviour
         weaponList.weaponArray[currentWeapon].SetActive(true);
     }
 
+    // returns the index of the weapon in the weaponList array
+    public int getCurrentWeapon()
+    {
+        return currentWeapon;
+    }
+
     // displays "press e to grab weapon"
     void displayingInstructionsUI()
     {
