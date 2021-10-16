@@ -5292,10 +5292,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 375325952, guid: 721105026b78a60459da0374e761aa9f, type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 855223271, guid: 721105026b78a60459da0374e761aa9f, type: 3}
       propertyPath: grabWeapon
       value: 
@@ -13585,10 +13581,6 @@ PrefabInstance:
     - target: {fileID: 7667082060347620044, guid: 361f2bab36dfb8844b45018de6bd5c95, type: 3}
       propertyPath: m_Name
       value: GameOver
-      objectReference: {fileID: 0}
-    - target: {fileID: 7667082060347620044, guid: 361f2bab36dfb8844b45018de6bd5c95, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7667082060347620046, guid: 361f2bab36dfb8844b45018de6bd5c95, type: 3}
       propertyPath: m_RootOrder
@@ -25677,19 +25669,6 @@ Rigidbody:
   m_CorrespondingSourceObject: {fileID: 2052072047, guid: 14532574504a07b418541fadf3cedd62, type: 3}
   m_PrefabInstance: {fileID: 4902253039505569957}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2052072048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2052072046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 968fbe6d40772b24fb7d020166daaf6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 30
 --- !u!1001 &2061022140
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27138,18 +27117,6 @@ PrefabInstance:
     - target: {fileID: 3039799269767500714, guid: 14532574504a07b418541fadf3cedd62, type: 3}
       propertyPath: m_RootOrder
       value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039799269767500714, guid: 14532574504a07b418541fadf3cedd62, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039799269767500714, guid: 14532574504a07b418541fadf3cedd62, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039799269767500714, guid: 14532574504a07b418541fadf3cedd62, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 3039799269767500714, guid: 14532574504a07b418541fadf3cedd62, type: 3}
       propertyPath: m_LocalPosition.x
