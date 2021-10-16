@@ -28,6 +28,7 @@ public class ShootGun : MonoBehaviour
     void Start()
     {
         gunAudio = GetComponent<AudioSource>();
+        gunAudio.playOnAwake = false;
         audioClipLength = gunfire.length;
     }
 

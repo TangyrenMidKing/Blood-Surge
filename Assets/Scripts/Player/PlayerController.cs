@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         movementAudio = GetComponent<AudioSource>();
+        movementAudio.playOnAwake = false;
         hasBoostSpeed = false;
     }
 
