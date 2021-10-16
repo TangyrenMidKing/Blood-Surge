@@ -9,6 +9,8 @@ public class ZombieAttack : MonoBehaviour
     public Transform player;
     public Transform zombie;
     public NavMeshAgent agent;
+    public AudioClip attack;
+    AudioSource attackAudio;
     public int playersCurrentHealth;
     public int zombieDamage = 10;
     public float attackRange;
@@ -18,6 +20,8 @@ public class ZombieAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        attackAudio = GetComponent<AudioSource>();
+        attackAudio.playOnAwake = false;
         player = GameObject.Find("PlayerCharacter").transform;
         //zombie = GameObject.Find("ZombieObj").transform;
     }
@@ -50,6 +54,7 @@ public class ZombieAttack : MonoBehaviour
     // updates player health depending on what kind of zombie attacks
     private void attacks(int damage)
     {
+        attackAudio.PlayOneShot(attack, 1.0f);
         playersCurrentHealth -= damage;
         playerHealth.GetComponent<PlayerHealth>().setHealth(playersCurrentHealth);
     }
