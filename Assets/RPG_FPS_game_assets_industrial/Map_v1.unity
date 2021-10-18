@@ -5349,6 +5349,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100699139, guid: 721105026b78a60459da0374e761aa9f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.295
+      objectReference: {fileID: 0}
+    - target: {fileID: 750424312, guid: 721105026b78a60459da0374e761aa9f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 855223271, guid: 721105026b78a60459da0374e761aa9f, type: 3}
       propertyPath: grabWeapon
       value: 
@@ -5361,6 +5369,14 @@ PrefabInstance:
       propertyPath: projectilePrefab
       value: 
       objectReference: {fileID: 2052072047}
+    - target: {fileID: 1019901101, guid: 721105026b78a60459da0374e761aa9f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1093659962, guid: 721105026b78a60459da0374e761aa9f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.295
+      objectReference: {fileID: 0}
     - target: {fileID: 1961304430, guid: 721105026b78a60459da0374e761aa9f, type: 3}
       propertyPath: grabWeapon
       value: 
@@ -27319,6 +27335,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2052072047, guid: 14532574504a07b418541fadf3cedd62, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052072053, guid: 14532574504a07b418541fadf3cedd62, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 958124880997180886, guid: 14532574504a07b418541fadf3cedd62, type: 3}
       propertyPath: m_Name
       value: bullet
@@ -27329,15 +27353,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3039799269767500714, guid: 14532574504a07b418541fadf3cedd62, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28.36
+      value: 18.858
       objectReference: {fileID: 0}
     - target: {fileID: 3039799269767500714, guid: 14532574504a07b418541fadf3cedd62, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.21
+      value: 2.822
       objectReference: {fileID: 0}
     - target: {fileID: 3039799269767500714, guid: 14532574504a07b418541fadf3cedd62, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.06
+      value: -58.082
       objectReference: {fileID: 0}
     - target: {fileID: 3039799269767500714, guid: 14532574504a07b418541fadf3cedd62, type: 3}
       propertyPath: m_LocalRotation.w
@@ -27443,6 +27467,14 @@ PrefabInstance:
     - target: {fileID: 578376449398627443, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4180412386624491102, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+      propertyPath: m_Volume
+      value: 0.708
+      objectReference: {fileID: 0}
+    - target: {fileID: 4180412386624491102, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
       propertyPath: m_Name
