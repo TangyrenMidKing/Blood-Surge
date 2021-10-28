@@ -25,6 +25,8 @@ public class Damage : MonoBehaviour
             target.Hit(damage);
             playImpactAudio();
             DestroyBulletRoutine();
+            Destroy(this.gameObject);
+            
 
         }
     }
