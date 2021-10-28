@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ZombieSpawner : MonoBehaviour
 {
     public GameObject zombie;
+    public Text instructions;
     float randx, randz, elrandx, elrandz;
     int chooseSpawnPos;
     [SerializeField]
     public int enemyCount;
     int waveNumber;
     bool spawn;
+    bool inRangeOfButton;
 
 
 
@@ -21,8 +24,10 @@ public class ZombieSpawner : MonoBehaviour
         enemyCount = 0;
 
         chooseRandomSpawnPosition();
+
         // spawns 10 zombies at start of game
-        spawnZombies(10);
+        if (Input.GetKeyDown(KeyCode.E) && inRangeOfButton)
+            spawnZombies(10);
     }
 
     // Update is called once per frame
@@ -34,8 +39,17 @@ public class ZombieSpawner : MonoBehaviour
         // starts new wave when enemy count reaches 1 because this also counts the zombie in the "jail", who is unreachable
         if (enemyCount == 1) 
         {
-             waveNumber += 10;
-             spawnZombies(waveNumber);
+            instructions.GetComponent<Text>().enabled = true;
+            if (Input.GetKeyDown(KeyCode.E) && inRangeOfButton)
+            {
+                waveNumber += 10;
+                spawnZombies(waveNumber);
+            }
+
+        }
+        else
+        {
+            instructions.GetComponent<Text>().enabled = false;
         }
 
     }
@@ -72,5 +86,12 @@ public class ZombieSpawner : MonoBehaviour
         elrandz = Random.Range(-4f, 4f);
     }
 
-    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            inRangeOfButton = true;
+        }
+    }
+
 }
