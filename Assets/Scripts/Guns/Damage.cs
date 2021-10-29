@@ -24,10 +24,7 @@ public class Damage : MonoBehaviour
         {
             target.Hit(damage);
             playImpactAudio();
-            DestroyBulletRoutine();
-            Destroy(this.gameObject);
-            
-
+            StartCoroutine(DestroyBulletRoutine());
         }
     }
 
@@ -36,6 +33,7 @@ public class Damage : MonoBehaviour
     IEnumerator DestroyBulletRoutine()
     {
         yield return new WaitForSeconds(audioClipLength);
+
         Destroy(gameObject);
     }
 
@@ -49,4 +47,5 @@ public class Damage : MonoBehaviour
     {
         
     }
+
 }
