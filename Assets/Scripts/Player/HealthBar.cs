@@ -30,7 +30,7 @@ public class HealthBar : MonoBehaviour
         }
         else
         {
-            healthBar.color = Color.red;
+            healthBar.color = new Color(.41f,.04f,.96f);
         }
         // Access players current health from PlayerHealth class, then converts it to a string in order to display on UI
         healthBar.text = "Health: " + playerHealth.GetComponent<PlayerHealth>().getHealth().ToString();
