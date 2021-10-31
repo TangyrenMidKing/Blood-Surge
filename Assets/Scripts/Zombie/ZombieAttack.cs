@@ -7,13 +7,14 @@ public class ZombieAttack : MonoBehaviour
 {
     public PlayerHealth playerHealth;
     public Transform player;
-    public Transform zombie;
     public NavMeshAgent agent;
     public AudioClip attack;
-    AudioSource attackAudio;
-    public int playersCurrentHealth;
-    public int zombieDamage = 10;
+    public int zombieDamage;
     public float attackRange;
+    public float visualRange;
+    AudioSource attackAudio;
+    Animator animator;
+    int playersCurrentHealth;
     float attackCooldown = 3f;
     float lastAttack = 0f;
 
@@ -23,6 +24,8 @@ public class ZombieAttack : MonoBehaviour
         attackAudio = GetComponent<AudioSource>();
         attackAudio.playOnAwake = false;
         player = GameObject.Find("PlayerCharacter").transform;
+        animator = GetComponent<Animator>();
+        animator.SetBool("isWalking", true);
         //zombie = GameObject.Find("ZombieObj").transform;
     }
 
@@ -33,19 +36,30 @@ public class ZombieAttack : MonoBehaviour
         {
             playersCurrentHealth = playerHealth.GetComponent<PlayerHealth>().getHealth();
 
-            if (Vector3.Distance(player.position, zombie.position) <= attackRange)
+            if (Vector3.Distance(player.position, this.transform.position) > attackRange
+                && Vector3.Distance(player.position, this.transform.position) <= visualRange)
             {
+                // Running
+                animator.SetBool("isWalking", false);
+                animator.SetBool("isRunning", true);
+            }
+            else if (Vector3.Distance(player.position, this.transform.position) <= attackRange)
+            {
+                // Stop running and attacking
+                animator.SetBool("isRunning", false);
                 agent.isStopped = true;
-                
+
                 // if the time since the zombie last attacked is greater than the attack cooldown then it can attack again
-                if(Time.time - lastAttack > attackCooldown)
+                if (Time.time - lastAttack > attackCooldown)
                 {
-                    lastAttack = Time.time; 
+                    lastAttack = Time.time;
                     attacks(zombieDamage);
                 }
             }
             else
             {
+                animator.SetBool("isRunning", false);
+                animator.SetBool("isWalking", true);
                 agent.isStopped = false;
             }
         }
@@ -55,6 +69,7 @@ public class ZombieAttack : MonoBehaviour
     private void attacks(int damage)
     {
         attackAudio.PlayOneShot(attack, 1.0f);
+        animator.SetBool("isAttacking", true);
         playersCurrentHealth -= damage;
         playerHealth.GetComponent<PlayerHealth>().setHealth(playersCurrentHealth);
     }
