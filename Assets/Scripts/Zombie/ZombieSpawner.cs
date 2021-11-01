@@ -7,6 +7,7 @@ public class ZombieSpawner : MonoBehaviour
 {
     public GameObject zombie;
     public Text instructions;
+    public Text waveNumberUI;
     float randx, randz, elrandx, elrandz;
     int chooseSpawnPos;
     public int enemyCount;
@@ -21,7 +22,7 @@ public class ZombieSpawner : MonoBehaviour
     {
         waveNumber = 0;
         enemyCount = 0;
-
+        //waveNumberUI.text = "Wave: 1";
         chooseRandomSpawnPosition();
 
         // spawns 10 zombies at start of game
@@ -32,6 +33,7 @@ public class ZombieSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        waveNumberUI.text = "Wave: " + waveNumber;
         enemyCount = GameObject.FindGameObjectsWithTag("BasicZombie").Length;
         chooseRandomSpawnPosition();
 
