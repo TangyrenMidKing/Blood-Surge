@@ -9,9 +9,8 @@ public class ZombieSpawner : MonoBehaviour
     public Text instructions;
     float randx, randz, elrandx, elrandz;
     int chooseSpawnPos;
-    [SerializeField]
     public int enemyCount;
-    int waveNumber;
+    public int waveNumber;
     bool spawn;
     bool inRangeOfButton;
 
@@ -20,14 +19,14 @@ public class ZombieSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        waveNumber = 1;
+        waveNumber = 0;
         enemyCount = 0;
 
         chooseRandomSpawnPosition();
 
         // spawns 10 zombies at start of game
         if (Input.GetKeyDown(KeyCode.E) && inRangeOfButton)
-            spawnZombies(10);
+            spawnZombies(waveNumber);
     }
 
     // Update is called once per frame
@@ -42,7 +41,7 @@ public class ZombieSpawner : MonoBehaviour
             instructions.GetComponent<Text>().enabled = true;
             if (Input.GetKeyDown(KeyCode.E) && inRangeOfButton)
             {
-                waveNumber += 10;
+                waveNumber++;
                 spawnZombies(waveNumber);
             }
 
@@ -58,17 +57,19 @@ public class ZombieSpawner : MonoBehaviour
     // spawns half the zombies at a random position on one part of the map and the other half on another part of the map
     void spawnZombies(int numEnemies)
     {
-            for (int i = 0; i < numEnemies/2; i++)
-            {
-                Instantiate(zombie, new Vector3(randx, 0, randz), zombie.transform.rotation);
-                ++enemyCount;
-            }
 
-            for (int i = 0; i < numEnemies/2; i++)
-            {
-                Instantiate(zombie, new Vector3(elrandx, 2.08f, elrandz), zombie.transform.rotation);
-                ++enemyCount;
-            }
+        numEnemies *= 10;
+        for (int i = 0; i < numEnemies/2; i++)
+        {
+            Instantiate(zombie, new Vector3(randx, 0, randz), zombie.transform.rotation);
+            ++enemyCount;
+        }
+
+        for (int i = 0; i < numEnemies/2; i++)
+        {
+            Instantiate(zombie, new Vector3(elrandx, 2.08f, elrandz), zombie.transform.rotation);
+            ++enemyCount;
+        }
     }
 
 
