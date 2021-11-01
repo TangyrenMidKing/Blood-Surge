@@ -29478,7 +29478,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7054575068238890416, guid: 5fd036013ebd9144293f81d0dfc6e79e, type: 3}
       propertyPath: m_Name
-      value: ZombieButton
+      value: ZombieSpawnerButton
       objectReference: {fileID: 0}
     - target: {fileID: 7054575068238890420, guid: 5fd036013ebd9144293f81d0dfc6e79e, type: 3}
       propertyPath: m_RootOrder
