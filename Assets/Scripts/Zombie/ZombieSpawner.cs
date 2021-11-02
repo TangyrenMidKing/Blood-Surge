@@ -97,4 +97,12 @@ public class ZombieSpawner : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            inRangeOfButton = false;
+        }
+    }
+
 }

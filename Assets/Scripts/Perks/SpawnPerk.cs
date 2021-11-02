@@ -11,6 +11,7 @@ public class SpawnPerk : MonoBehaviour
     int health;
     int choosePerk;
     bool spawn;
+    public static int enemiesKilled;
 
 
     // Start is called before the first frame update
@@ -34,8 +35,9 @@ public class SpawnPerk : MonoBehaviour
                 // Spawns a random perk at the position of the zombie, then destroys the zombie
                 Instantiate(perks[choosePerk], transform.position + Vector3.up, perks[choosePerk].transform.rotation); // this line can be copy/paste into whatever function destroys the zombie
             }
-         
+            // destroys the zombie
             Destroy(gameObject);
+            ++enemiesKilled;
         }
     }
 
@@ -74,5 +76,10 @@ public class SpawnPerk : MonoBehaviour
             spawn = false;
         }
 
+    }
+
+    public int getEnemiesKilled()
+    {
+        return enemiesKilled;
     }
 }

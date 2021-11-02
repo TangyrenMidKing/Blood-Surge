@@ -231,6 +231,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8768099426558305762}
     m_Modifications:
+    - target: {fileID: 1539116566, guid: 52b00e477c3465b4f92465e60de1413c, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539116568, guid: 52b00e477c3465b4f92465e60de1413c, type: 3}
+      propertyPath: m_Text
+      value: '
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127504718, guid: 52b00e477c3465b4f92465e60de1413c, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 391640368191942481, guid: 52b00e477c3465b4f92465e60de1413c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -319,9 +333,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZombieButtonCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 391640368611440232, guid: 52b00e477c3465b4f92465e60de1413c, type: 3}
+      propertyPath: m_Name
+      value: PressEWave
+      objectReference: {fileID: 0}
     - target: {fileID: 391640368611440234, guid: 52b00e477c3465b4f92465e60de1413c, type: 3}
       propertyPath: m_Text
       value: "Press E on the button \nin the safe zone \nto start new wave"
+      objectReference: {fileID: 0}
+    - target: {fileID: 391640368611440234, guid: 52b00e477c3465b4f92465e60de1413c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.050980397
+      objectReference: {fileID: 0}
+    - target: {fileID: 391640368611440234, guid: 52b00e477c3465b4f92465e60de1413c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.04705883
+      objectReference: {fileID: 0}
+    - target: {fileID: 391640368611440234, guid: 52b00e477c3465b4f92465e60de1413c, type: 3}
+      propertyPath: m_Color.r
+      value: 0.7607844
       objectReference: {fileID: 0}
     - target: {fileID: 391640368611440235, guid: 52b00e477c3465b4f92465e60de1413c, type: 3}
       propertyPath: m_AnchorMax.x
