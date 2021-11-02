@@ -32,10 +32,10 @@ public class ZombieSpawner : MonoBehaviour
         chooseRandomSpawnPosition();
 
         // starts new wave when enemy count reaches 1 because this also counts the zombie in the "jail", who is unreachable
-        if (enemyCount == 1) 
+        if (enemyCount == 1)
         {
-             waveNumber += 10;
-             spawnZombies(waveNumber);
+            waveNumber += 10;
+            spawnZombies(waveNumber);
         }
 
     }
@@ -44,17 +44,17 @@ public class ZombieSpawner : MonoBehaviour
     // spawns half the zombies at a random position on one part of the map and the other half on another part of the map
     void spawnZombies(int numEnemies)
     {
-            for (int i = 0; i < numEnemies/2; i++)
-            {
-                Instantiate(zombie, new Vector3(randx, 0, randz), zombie.transform.rotation);
-                ++enemyCount;
-            }
+        for (int i = 0; i < numEnemies / 2; i++)
+        {
+            Instantiate(zombie, new Vector3(randx, 0, randz), zombie.transform.rotation);
+            ++enemyCount;
+        }
 
-            for (int i = 0; i < numEnemies/2; i++)
-            {
-                Instantiate(zombie, new Vector3(elrandx, 2.08f, elrandz), zombie.transform.rotation);
-                ++enemyCount;
-            }
+        for (int i = 0; i < numEnemies / 2; i++)
+        {
+            Instantiate(zombie, new Vector3(elrandx, 2.08f, elrandz), zombie.transform.rotation);
+            ++enemyCount;
+        }
     }
 
 
@@ -72,5 +72,5 @@ public class ZombieSpawner : MonoBehaviour
         elrandz = Random.Range(-4f, 4f);
     }
 
-    
+
 }

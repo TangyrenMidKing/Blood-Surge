@@ -1,16 +1,17 @@
-using System.Diagnostics;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class ZombieAttack : MonoBehaviour
+public class EliteAttack : MonoBehaviour
 {
     public PlayerHealth playerHealth;
     public Transform player;
     public NavMeshAgent agent;
     public AudioClip attack;
     public int zombieDamage;
+    public int shootDamage;
+    public float shootRange;
     public float attackRange;
     public float visualRange;
     AudioSource attackAudio;
@@ -33,7 +34,7 @@ public class ZombieAttack : MonoBehaviour
     void Update()
     {
         // basic zombie
-        if (player)
+        if (player && shootRange <= 0)
         {
             playersCurrentHealth = playerHealth.GetComponent<PlayerHealth>().getHealth();
 
@@ -44,6 +45,50 @@ public class ZombieAttack : MonoBehaviour
                 setAnimationStates("running");
             }
             else if (Vector3.Distance(player.position, this.transform.position) <= attackRange)
+            {
+                // Stop running and attacking
+                agent.isStopped = true;
+
+                // if the time since the zombie last attacked is greater than the attack cooldown then it can attack again
+                if (Time.time - lastAttack > attackCooldown)
+                {
+                    lastAttack = Time.time;
+                    setAnimationStates("attacking");
+                    attacks(zombieDamage);
+                }
+            }
+            else
+            {
+                setAnimationStates("walking");
+                agent.isStopped = false;
+            }
+        }
+        // Elite Zombie
+        else if (player)
+        {
+            playersCurrentHealth = playerHealth.GetComponent<PlayerHealth>().getHealth();
+
+            if (Vector3.Distance(player.position, this.transform.position) > shootRange
+                && Vector3.Distance(player.position, this.transform.position) <= visualRange)
+            {
+                // Running
+                setAnimationStates("running");
+            }
+            else if (Vector3.Distance(player.position, this.transform.position) > attackRange
+                    && Vector3.Distance(player.position, this.transform.position) <= shootRange)
+            {
+                // Stop running and attacking
+                agent.isStopped = true;
+
+                // if the time since the zombie last attacked is greater than the attack cooldown then it can attack again
+                if (Time.time - lastAttack > attackCooldown)
+                {
+                    lastAttack = Time.time;
+                    setAnimationStates("shooting");
+                    attacks(shootDamage);
+                }
+            }
+            else if (Vector3.Distance(player.position, this.transform.position) < attackRange)
             {
                 // Stop running and attacking
                 agent.isStopped = true;
@@ -79,21 +124,25 @@ public class ZombieAttack : MonoBehaviour
             animator.SetBool("isRunning", false);
             animator.SetBool("isAttacking", false);
             animator.SetBool("isWalking", true);
-            animator.SetBool("isDead", false);
         }
         else if (state.Equals("running"))
         {
             animator.SetBool("isRunning", true);
             animator.SetBool("isAttacking", false);
-            animator.SetBool("isWalking", true);
-            animator.SetBool("isDead", false);
+            animator.SetBool("isWalking", false);
         }
         else if (state.Equals("attacking"))
         {
             animator.SetBool("isRunning", false);
-            animator.SetBool("isAttacking", true);
             animator.SetBool("isWalking", false);
-            animator.SetBool("isDead", false);
+            animator.SetBool("isAttacking", true);
+        }
+        else if (state.Equals("shooting"))
+        {
+            animator.SetBool("isRunning", false);
+            animator.SetBool("isAttacking", false);
+            animator.SetBool("isWalking", false);
+            animator.SetBool("isShooting", true);
         }
         else if (state.Equals("dead"))
         {
