@@ -5,12 +5,14 @@ using UnityEngine;
 public class ZombieSpawner : MonoBehaviour
 {
     public GameObject zombie;
+    public GameObject boss;
     float randx, randz, elrandx, elrandz;
     int chooseSpawnPos;
     [SerializeField]
-    public int enemyCount;
+    int enemyCount;
     int waveNumber;
     bool spawn;
+    int num_zombie;
 
 
 
@@ -19,6 +21,7 @@ public class ZombieSpawner : MonoBehaviour
     {
         waveNumber = 1;
         enemyCount = 0;
+        num_zombie = 0;
 
         chooseRandomSpawnPosition();
         // spawns 10 zombies at start of game
@@ -32,12 +35,17 @@ public class ZombieSpawner : MonoBehaviour
         chooseRandomSpawnPosition();
 
         // starts new wave when enemy count reaches 1 because this also counts the zombie in the "jail", who is unreachable
-        if (enemyCount == 1)
+        if (enemyCount == 1 && waveNumber % 5 != 0)
         {
-            waveNumber += 10;
-            spawnZombies(waveNumber);
+            num_zombie += 10;
+            spawnZombies(num_zombie);
+            waveNumber++;
         }
-
+        else if (enemyCount == 1)
+        {
+            spawnEliteZombies(waveNumber / 5);
+            waveNumber++;
+        }
     }
 
 
@@ -57,6 +65,22 @@ public class ZombieSpawner : MonoBehaviour
         }
     }
 
+    void spawnEliteZombies(int numEnemies)
+    {
+        numEnemies++;
+
+        for (int i = 0; i < numEnemies / 2; i++)
+        {
+            Instantiate(boss, new Vector3(randx, 0, randz), zombie.transform.rotation);
+            ++enemyCount;
+        }
+
+        for (int i = 0; i < numEnemies / 2; i++)
+        {
+            Instantiate(boss, new Vector3(elrandx, 2.08f, elrandz), zombie.transform.rotation);
+            ++enemyCount;
+        }
+    }
 
     // choose between two areas of the map to spawn zombies on
     void chooseRandomSpawnPosition()

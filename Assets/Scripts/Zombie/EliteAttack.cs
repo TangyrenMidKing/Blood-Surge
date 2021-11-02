@@ -112,6 +112,7 @@ public class EliteAttack : MonoBehaviour
                     animator.SetBool("isAttacking", true);
                     animator.SetBool("isShooting", false);
                     state = 3;
+                    attackAudio.PlayOneShot(attack, 1.0f);
                     attacks(zombieDamage);
                 }
             }
@@ -132,7 +133,6 @@ public class EliteAttack : MonoBehaviour
     // updates player health depending on what kind of zombie attacks
     private void attacks(int damage)
     {
-        attackAudio.PlayOneShot(attack, 1.0f);
         playersCurrentHealth -= damage;
         playerHealth.GetComponent<PlayerHealth>().setHealth(playersCurrentHealth);
     }
