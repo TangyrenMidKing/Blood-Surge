@@ -25,6 +25,15 @@ public class EliteAttack : MonoBehaviour
     float shootCooldown = 4f;
     float lastAttack = 0f;
 
+    /*  states:
+            0 -> walking
+            1 -> running
+            2 -> shooting
+            3 -> attacking
+            4 -> dead
+    */
+    int state;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,33 +42,58 @@ public class EliteAttack : MonoBehaviour
         player = GameObject.Find("PlayerCharacter").transform;
         animator = GetComponent<Animator>();
         animator.SetBool("isWalking", true);
+        state = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+
         // Elite Zombie
         if (player)
         {
             playersCurrentHealth = playerHealth.GetComponent<PlayerHealth>().getHealth();
 
             // visual range >= current position > shoot range
+            // Running 
             if (Vector3.Distance(player.position, this.transform.position) > shootRange
                 && Vector3.Distance(player.position, this.transform.position) <= visualRange)
             {
-                // Running
+                // walking -> running
+                if (state == 0)
+                    ;
+                // shoot -> running
+                else if (state == 2)
+                {
+                    animator.SetBool("isWalking", true);
+                    animator.SetBool("isShooting", false);
+                }
+                // attack -> running
+                else if (state == 3)
+                {
+                    animator.SetBool("isWalking", true);
+                    animator.SetBool("isAttacking", false);
+                }
+
                 animator.SetBool("isRunning", true);
+                state = 1;
             }
 
             // shoot range >= current position > attack range
+            // Shooting and Running
             else if (Vector3.Distance(player.position, this.transform.position) > attackRange
                     && Vector3.Distance(player.position, this.transform.position) <= shootRange)
             {
                 // if the time since the zombie last attacked is greater than the attack cooldown then it can attack again
-                if (Time.time - lastAttack > attackCooldown)
+                if (Time.time - lastAttack > shootCooldown)
                 {
+                    // Stop running and attacking
+                    agent.isStopped = false;
+
                     lastAttack = Time.time;
                     animator.SetBool("isShooting", true);
+                    animator.SetBool("isAttacking", false);
+                    state = 2;
                     attacks(shootDamage);
                 }
             }
@@ -77,6 +111,7 @@ public class EliteAttack : MonoBehaviour
                     lastAttack = Time.time;
                     animator.SetBool("isAttacking", true);
                     animator.SetBool("isShooting", false);
+                    state = 3;
                     attacks(zombieDamage);
                 }
             }
@@ -88,6 +123,7 @@ public class EliteAttack : MonoBehaviour
                 animator.SetBool("isRunning", false);
                 animator.SetBool("isShooting", false);
                 animator.SetBool("isAttacking", false);
+                state = 0;
                 agent.isStopped = false;
             }
         }
