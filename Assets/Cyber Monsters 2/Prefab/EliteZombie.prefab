@@ -6059,7 +6059,6 @@ GameObject:
   - component: {fileID: 1955644785854122313}
   - component: {fileID: 1955644785854122312}
   - component: {fileID: 1955644785854122319}
-  - component: {fileID: 1955644785854122318}
   - component: {fileID: 1955644785854122317}
   - component: {fileID: 5167921891470431614}
   m_Layer: 0
@@ -6226,27 +6225,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 1955644785854122313}
   player: {fileID: 0}
---- !u!114 &1955644785854122318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1956644934399991975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88580835e5c622c408e0bcf9b34209a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerHealth: {fileID: 0}
-  player: {fileID: 0}
-  agent: {fileID: 1955644785854122313}
-  attack: {fileID: 8300000, guid: dff9d8d1dead397469508e0d9187f735, type: 3}
-  zombieDamage: 20
-  shootDamage: 15
-  shootRange: 5
-  attackRange: 2
-  visualRange: 10
 --- !u!114 &1955644785854122317
 MonoBehaviour:
   m_ObjectHideFlags: 0
