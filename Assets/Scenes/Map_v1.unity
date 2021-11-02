@@ -8555,6 +8555,10 @@ PrefabInstance:
       propertyPath: zombieDamage
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1608347313770729424, guid: d3c7e68dfb6aceb47a0977c4d8bd35d9, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 867875054}
     - target: {fileID: 2186270075580525180, guid: d3c7e68dfb6aceb47a0977c4d8bd35d9, type: 3}
       propertyPath: m_RootOrder
       value: 14

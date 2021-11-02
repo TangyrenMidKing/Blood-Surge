@@ -26,7 +26,7 @@ public class ZombieAttack : MonoBehaviour
         attackAudio.playOnAwake = false;
         player = GameObject.Find("PlayerCharacter").transform;
         animator = GetComponent<Animator>();
-        setAnimationStates("walking");
+        animator.SetBool("isWalking", true);
     }
 
     // Update is called once per frame
@@ -41,7 +41,7 @@ public class ZombieAttack : MonoBehaviour
                 && Vector3.Distance(player.position, this.transform.position) <= visualRange)
             {
                 // Running
-                setAnimationStates("running");
+                animator.SetBool("isRunning", true);
             }
             else if (Vector3.Distance(player.position, this.transform.position) <= attackRange)
             {
@@ -52,13 +52,14 @@ public class ZombieAttack : MonoBehaviour
                 if (Time.time - lastAttack > attackCooldown)
                 {
                     lastAttack = Time.time;
-                    setAnimationStates("attacking");
+                    animator.SetBool("isAttacking", true);
                     attacks(zombieDamage);
                 }
             }
             else
             {
-                setAnimationStates("walking");
+                animator.SetBool("isRunning", false);
+                animator.SetBool("isAttacking", false);
                 agent.isStopped = false;
             }
         }
@@ -70,34 +71,5 @@ public class ZombieAttack : MonoBehaviour
         attackAudio.PlayOneShot(attack, 1.0f);
         playersCurrentHealth -= damage;
         playerHealth.GetComponent<PlayerHealth>().setHealth(playersCurrentHealth);
-    }
-
-    private void setAnimationStates(string state)
-    {
-        if (state.Equals("walking"))
-        {
-            animator.SetBool("isRunning", false);
-            animator.SetBool("isAttacking", false);
-            animator.SetBool("isWalking", true);
-            animator.SetBool("isDead", false);
-        }
-        else if (state.Equals("running"))
-        {
-            animator.SetBool("isRunning", true);
-            animator.SetBool("isAttacking", false);
-            animator.SetBool("isWalking", true);
-            animator.SetBool("isDead", false);
-        }
-        else if (state.Equals("attacking"))
-        {
-            animator.SetBool("isRunning", false);
-            animator.SetBool("isAttacking", true);
-            animator.SetBool("isWalking", false);
-            animator.SetBool("isDead", false);
-        }
-        else if (state.Equals("dead"))
-        {
-            animator.SetBool("isDead", true);
-        }
     }
 }
