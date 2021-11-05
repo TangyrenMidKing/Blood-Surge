@@ -5,9 +5,9 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
     //  ?????????????
-    public int health;
+    int health;
     public ZombieHealth zombieHealth;
-    float currentHealth;
+    int currentHealth;
 
     void Update()
     {
@@ -17,6 +17,7 @@ public class Target : MonoBehaviour
     /// 'Hits' the target for a certain amount of damage
     public void Hit(int damage)
     {
+        health = currentHealth;
         health -= damage;
         zombieHealth.GetComponent<ZombieHealth>().setHealth(health);
     }
