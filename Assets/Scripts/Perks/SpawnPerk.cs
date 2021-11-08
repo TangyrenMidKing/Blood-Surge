@@ -7,16 +7,21 @@ public class SpawnPerk : MonoBehaviour
     // an array of perk prefabs
     public ZombieHealth zombieHealth;
     public GameObject[] perks = new GameObject[3];
+    public PlayerHealth playerHealth;
     //public GameObject zombie;
     int health;
     int choosePerk;
     bool spawn;
     public static int enemiesKilled;
+    int playerCurrentHealth;
+    float despawnTime = 20.0f;
+    GameObject obj;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        
         spawn = false;
         RandomlyChoosePerk();
         DiceRoll();
@@ -25,15 +30,18 @@ public class SpawnPerk : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        playerCurrentHealth = playerHealth.GetComponent<PlayerHealth>().getHealth();
+
         health = zombieHealth.GetComponent<ZombieHealth>().getHealth();
         if (health <= 0)
         {
             // if dice roll was successful then a random perk will spawn
             if (spawn)
             {
+              
                 // Spawns a random perk at the position of the zombie, then destroys the zombie
-                Instantiate(perks[choosePerk], transform.position + Vector3.up, perks[choosePerk].transform.rotation); // this line can be copy/paste into whatever function destroys the zombie
+                obj = Instantiate(perks[choosePerk], transform.position + Vector3.up, perks[choosePerk].transform.rotation); // this line can be copy/paste into whatever function destroys the zombie
+                Destroy(obj, despawnTime); // despawns the perk after a time, despawnTime
             }
             // destroys the zombie
             Destroy(gameObject);
@@ -41,26 +49,28 @@ public class SpawnPerk : MonoBehaviour
         }
     }
 
-    // check if zombie collides into player then spawn a perk and destroy the zombie
-    private void OnCollisionEnter(Collision collision)
-    {
-        // if (health <= 0)
-        // {
-        //     // if dice roll was successful then a random perk will spawn
-        //     if (spawn)
-        //     {
-        //         // Spawns a random perk at the position of the zombie, then destroys the zombie
-        //         Instantiate(perks[choosePerk], transform.position + Vector3.up, perks[choosePerk].transform.rotation); // this line can be copy/paste into whatever function destroys the zombie
-        //     }
-        //     //Destroy(zombie.gameObject);
-        // }
-    }
 
 
     // randomly choose a perk
     void RandomlyChoosePerk()
     {
-        choosePerk = Random.Range(0, 3);
+        if (playerCurrentHealth >= 100)
+        {
+            // change this when we add in more perks
+            // right now it "rolls" a dice between 1-6 and if the roll is greater than or equal to 3 then spawn the speedboost perk
+            choosePerk = Random.Range(0, 6);
+            if (choosePerk >= 3)
+            {
+                choosePerk = 3;
+            }
+        }  
+        else
+        {
+            choosePerk = Random.Range(0, 3);
+
+        }
+            
+
     }
 
     // "rolls" a dice between 0 and 6 and if the roll was 3 then it will spawn a perk
