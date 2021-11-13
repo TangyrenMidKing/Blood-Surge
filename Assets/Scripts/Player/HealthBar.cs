@@ -32,7 +32,13 @@ public class HealthBar : MonoBehaviour
         {
             healthBar.color = new Color(.41f,.04f,.96f);
         }
-        // Access players current health from PlayerHealth class, then converts it to a string in order to display on UI
-        healthBar.text = "Health: " + playerHealth.GetComponent<PlayerHealth>().getHealth().ToString();
+        
+
+        // When the players health reaches zero there is a small delay before switching to the main menu scene.
+        // Because of that the players health can go into the negatives, so to stop that we can hardcode the health display to zero
+        if(playerHealth.GetComponent<PlayerHealth>().getHealth() <= 0)
+            healthBar.text = "Health: " + 0;
+        else
+            healthBar.text = "Health: " + playerHealth.GetComponent<PlayerHealth>().getHealth().ToString(); // Access players current health from PlayerHealth class, then converts it to a string in order to display on UI
     }
 }
