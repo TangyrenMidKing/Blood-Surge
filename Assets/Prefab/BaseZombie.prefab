@@ -1196,10 +1196,10 @@ GameObject:
   - component: {fileID: 1608347313770729424}
   - component: {fileID: 1608347313770729452}
   - component: {fileID: 1608347313770729451}
-  - component: {fileID: 1608347313770729450}
   - component: {fileID: 1608347313889904750}
   - component: {fileID: 3193669746427246673}
   - component: {fileID: 1479672553656755996}
+  - component: {fileID: 474384016}
   m_Layer: 0
   m_Name: BaseZombie
   m_TagString: BasicZombie
@@ -1389,23 +1389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseHealth: 100
---- !u!114 &1608347313770729450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2885796721141340271}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2eb0d82ecd755024f99ddad19d587817, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  zombieHealth: {fileID: 1608347313770729451}
-  perks:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  currentHealth: 0
 --- !u!114 &1608347313889904750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1418,7 +1402,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36892f4fb44746441a96a3ad3535ca46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
   zombieHealth: {fileID: 1608347313770729451}
 --- !u!82 &3193669746427246673
 AudioSource:
@@ -1530,13 +1513,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 0}
   player: {fileID: 0}
-  agent: {fileID: 0}
-  attack: {fileID: 0}
-  zombieDamage: 0
-  shootDamage: 0
-  shootRange: 0
-  attackRange: 0
-  visualRange: 0
+  agent: {fileID: 1608347313770729452}
+  attack: {fileID: 8300000, guid: 3fdee60ee07b6c24dace813e4709f046, type: 3}
+  zombieDamage: 10
+  attackRange: 2
+  visualRange: 5
+--- !u!114 &474384016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2885796721141340271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0d82ecd755024f99ddad19d587817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zombieHealth: {fileID: 0}
+  perks:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &3040052236853941629
 GameObject:
   m_ObjectHideFlags: 0

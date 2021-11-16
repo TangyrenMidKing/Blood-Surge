@@ -12,7 +12,6 @@ public class ZombieSpawner : MonoBehaviour
     int enemyCount;
     int waveNumber;
     bool spawn;
-    int num_zombie;
 
 
 
@@ -21,7 +20,6 @@ public class ZombieSpawner : MonoBehaviour
     {
         waveNumber = 1;
         enemyCount = 0;
-        num_zombie = 0;
 
         chooseRandomSpawnPosition();
         // spawns 10 zombies at start of game
@@ -31,17 +29,17 @@ public class ZombieSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        enemyCount = GameObject.FindGameObjectsWithTag("BasicZombie").Length;
+        enemyCount = GameObject.FindGameObjectsWithTag("BasicZombie").Length
+                    + GameObject.FindGameObjectsWithTag("EliteZombie").Length;
         chooseRandomSpawnPosition();
 
         // starts new wave when enemy count reaches 1 because this also counts the zombie in the "jail", who is unreachable
-        if (enemyCount == 1 && waveNumber % 5 != 0)
+        if (enemyCount == 2 && waveNumber % 5 != 0)
         {
-            num_zombie += 10;
-            spawnZombies(num_zombie);
+            spawnZombies(waveNumber * 3 + 10);
             waveNumber++;
         }
-        else if (enemyCount == 1)
+        else if (enemyCount == 2)
         {
             spawnEliteZombies(waveNumber / 5);
             waveNumber++;
@@ -69,15 +67,9 @@ public class ZombieSpawner : MonoBehaviour
     {
         numEnemies++;
 
-        for (int i = 0; i < numEnemies / 2; i++)
+        for (int i = 0; i < numEnemies; i++)
         {
-            Instantiate(boss, new Vector3(randx, 0, randz), zombie.transform.rotation);
-            ++enemyCount;
-        }
-
-        for (int i = 0; i < numEnemies / 2; i++)
-        {
-            Instantiate(boss, new Vector3(elrandx, 2.08f, elrandz), zombie.transform.rotation);
+            Instantiate(boss, new Vector3(randx, 0, randz), boss.transform.rotation);
             ++enemyCount;
         }
     }
