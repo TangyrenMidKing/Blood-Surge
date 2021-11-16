@@ -9835,34 +9835,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5102720106950561625, guid: ee025064f956d874da514996e35ba12c, type: 3}
   m_PrefabInstance: {fileID: 1905587137}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &769170296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 769170295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2eb0d82ecd755024f99ddad19d587817, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  zombieHealth: {fileID: 769170302}
-  perks:
-  - {fileID: 1384030154}
-  - {fileID: 1647100934}
-  - {fileID: 192777049}
---- !u!114 &769170302 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5103772755180693174, guid: ee025064f956d874da514996e35ba12c, type: 3}
-  m_PrefabInstance: {fileID: 1905587137}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 769170295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc9e322da34e76f45aa954b3eec94b31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &784332286
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24477,27 +24449,23 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 867875054}
     - target: {fileID: 828220617, guid: ee025064f956d874da514996e35ba12c, type: 3}
-      propertyPath: shootRange
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 828220617, guid: ee025064f956d874da514996e35ba12c, type: 3}
-      propertyPath: visualRange
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 828220617, guid: ee025064f956d874da514996e35ba12c, type: 3}
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 867875048}
-    - target: {fileID: 828220628, guid: ee025064f956d874da514996e35ba12c, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 828220629, guid: ee025064f956d874da514996e35ba12c, type: 3}
+      propertyPath: perks.Array.data[0]
+      value: 
+      objectReference: {fileID: 1384030154}
+    - target: {fileID: 828220629, guid: ee025064f956d874da514996e35ba12c, type: 3}
+      propertyPath: perks.Array.data[1]
+      value: 
+      objectReference: {fileID: 1647100934}
+    - target: {fileID: 828220629, guid: ee025064f956d874da514996e35ba12c, type: 3}
+      propertyPath: perks.Array.data[2]
+      value: 
+      objectReference: {fileID: 192777049}
     - target: {fileID: 5102720106950561625, guid: ee025064f956d874da514996e35ba12c, type: 3}
       propertyPath: m_Name
-      value: EliteZombie
-      objectReference: {fileID: 0}
-    - target: {fileID: 5102720106950561625, guid: ee025064f956d874da514996e35ba12c, type: 3}
-      propertyPath: m_TagString
       value: EliteZombie
       objectReference: {fileID: 0}
     - target: {fileID: 5105521693164960341, guid: ee025064f956d874da514996e35ba12c, type: 3}
@@ -24544,8 +24512,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 828220629, guid: ee025064f956d874da514996e35ba12c, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee025064f956d874da514996e35ba12c, type: 3}
 --- !u!1001 &1906637070
 PrefabInstance:
