@@ -6,14 +6,14 @@ public class SpawnPerk : MonoBehaviour
 {
     // an array of perk prefabs
     public ZombieHealth zombieHealth;
-    public GameObject[] perks = new GameObject[3];
+    public GameObject[] perks = new GameObject[4];
     public PlayerHealth playerHealth;
     //public GameObject zombie;
     int health;
     int choosePerk;
     bool spawn;
     public static int enemiesKilled;
-    int playerCurrentHealth;
+    int playerCurrentHealth = 100;
     float despawnTime = 20.0f;
     GameObject obj;
 
@@ -58,15 +58,11 @@ public class SpawnPerk : MonoBehaviour
         {
             // change this when we add in more perks
             // right now it "rolls" a dice between 1-6 and if the roll is greater than or equal to 3 then spawn the speedboost perk
-            choosePerk = Random.Range(0, 6);
-            if (choosePerk >= 3)
-            {
-                choosePerk = 3;
-            }
+            choosePerk = Random.Range(2, 4);
         }  
         else
         {
-            choosePerk = Random.Range(0, 3);
+            choosePerk = Random.Range(0, 4);
 
         }
             
