@@ -63,15 +63,24 @@ public class ShootGun : MonoBehaviour
         }
     }
 
-
+    void OnEnable()
+        {
+            isReloading = false;
+            animator.SetBool("Reloading", false);
+        }
+    
     IEnumerator Reload ()
     {
         isReloading = true;
         Debug.Log("Reloading...");
-
+        // sets animation conditions to true and false
+        
         animator.SetBool("Reloading", true);
-        yield return new WaitForSeconds(reloadTime);
+        //countdown timer for animation
+        yield return new WaitForSeconds(reloadTime -.25f);
+        
         animator.SetBool("Reloading", false);
+        yield return new WaitForSeconds(.25f);
 
         currentAmmo = maxAmmo;
         isReloading = false;
