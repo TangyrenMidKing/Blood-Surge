@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
- 
+    bool hasResistancePerk = false;
     int baseHealth = 100;
     int currentHealth;
 
@@ -39,5 +39,32 @@ public class PlayerHealth : MonoBehaviour
     public int getBaseHealth()
     {
         return baseHealth;
+    }
+
+    public bool getHasResistancePerk()
+    {
+        if (hasResistancePerk)
+            return true;
+        else
+            return false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Resistance") && !hasResistancePerk)
+        {
+            hasResistancePerk = true;
+            Destroy(other.gameObject);
+            StartCoroutine(ResistanceCountdownRoutine());
+        }
+    }
+
+    // Coroutine used as a countdown timer. Applies speed boost to character for 7 seconds
+    IEnumerator ResistanceCountdownRoutine()
+    {
+        yield return new WaitForSeconds(20f);
+
+        hasResistancePerk = false;
+
     }
 }

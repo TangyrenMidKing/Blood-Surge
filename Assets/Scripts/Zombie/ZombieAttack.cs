@@ -12,10 +12,12 @@ public class ZombieAttack : MonoBehaviour
     public AudioClip attack;
     AudioSource attackAudio;
     public int playersCurrentHealth;
+    public bool hasResistance;
     public int zombieDamage = 10;
     public float attackRange;
     float attackCooldown = 3f;
     float lastAttack = 0f;
+    public int resistance = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +31,7 @@ public class ZombieAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        hasResistance = playerHealth.GetComponent<PlayerHealth>().getHasResistancePerk();   
         if (player)
         {
             playersCurrentHealth = playerHealth.GetComponent<PlayerHealth>().getHealth();
@@ -55,7 +58,13 @@ public class ZombieAttack : MonoBehaviour
     private void attacks(int damage)
     {
         attackAudio.PlayOneShot(attack, 1.0f);
-        playersCurrentHealth -= damage;
+        if (hasResistance)
+        {
+            damage -= 5;
+            playersCurrentHealth -= damage;
+        }
+        else
+            playersCurrentHealth -= damage;
         playerHealth.GetComponent<PlayerHealth>().setHealth(playersCurrentHealth);
     }
 }
