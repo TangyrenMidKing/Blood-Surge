@@ -15,6 +15,12 @@ public class ShootGun : MonoBehaviour
     int currentWeapon;
     float audioClipLength;
 
+    public int maxAmmo = 10;
+    private int currentAmmo = -1;
+    public float reloadTime = 1f;
+    private bool isReloading = false;
+    public Animator animator;
+
 
   
     enum Weapons
@@ -30,6 +36,7 @@ public class ShootGun : MonoBehaviour
         gunAudio = GetComponent<AudioSource>();
         gunAudio.playOnAwake = false;
         audioClipLength = gunfire.length;
+        currentAmmo = maxAmmo;
     }
 
 
@@ -39,6 +46,15 @@ public class ShootGun : MonoBehaviour
     {
         checkCurrentWeapon();
 
+        if (isReloading){
+            return;
+        }
+        if (currentAmmo <=0)
+        {
+            StartCoroutine(Reload());
+            return;
+        }
+
 
         // If player presses left mouse button fire a bullet
         if (Input.GetKey(KeyCode.Mouse0))
@@ -47,6 +63,19 @@ public class ShootGun : MonoBehaviour
         }
     }
 
+
+    IEnumerator Reload ()
+    {
+        isReloading = true;
+        Debug.Log("Reloading...");
+
+        animator.SetBool("Reloading", true);
+        yield return new WaitForSeconds(reloadTime);
+        animator.SetBool("Reloading", false);
+
+        currentAmmo = maxAmmo;
+        isReloading = false;
+    }
     // after checking the weapon then assign bulletSpeed
     void checkCurrentWeapon()
     {
@@ -84,6 +113,8 @@ public class ShootGun : MonoBehaviour
             gunAudio.PlayOneShot(gunfire, 0.2f);
 
             StartCoroutine(ShootCooldownRoutine());
+
+            currentAmmo--;
 
             //Destroy(projectilePrefab, audioClipLength);
 
