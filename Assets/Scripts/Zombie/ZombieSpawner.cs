@@ -23,7 +23,7 @@ public class ZombieSpawner : MonoBehaviour
 
         chooseRandomSpawnPosition();
         // spawns 10 zombies at start of game
-        spawnZombies(10);
+        spawnEliteZombies(10);
     }
 
     // Update is called once per frame
@@ -50,15 +50,9 @@ public class ZombieSpawner : MonoBehaviour
     // spawns half the zombies at a random position on one part of the map and the other half on another part of the map
     void spawnZombies(int numEnemies)
     {
-        for (int i = 0; i < numEnemies / 2; i++)
+        for (int i = 0; i < numEnemies; i++)
         {
-            Instantiate(zombie, new Vector3(randx, 0, randz), zombie.transform.rotation);
-            ++enemyCount;
-        }
-
-        for (int i = 0; i < numEnemies / 2; i++)
-        {
-            Instantiate(zombie, new Vector3(elrandx, 2.08f, elrandz), zombie.transform.rotation);
+            Instantiate(zombie, GetRandomLocation(), zombie.transform.rotation);
             ++enemyCount;
         }
     }
@@ -69,7 +63,7 @@ public class ZombieSpawner : MonoBehaviour
 
         for (int i = 0; i < numEnemies; i++)
         {
-            Instantiate(boss, new Vector3(randx, 0, randz), boss.transform.rotation);
+            Instantiate(boss, GetRandomLocation(), boss.transform.rotation);
             ++enemyCount;
         }
     }
@@ -88,5 +82,17 @@ public class ZombieSpawner : MonoBehaviour
         elrandz = Random.Range(-4f, 4f);
     }
 
+    Vector3 GetRandomLocation()
+    {
+        UnityEngine.AI.NavMeshTriangulation navMeshData = UnityEngine.AI.NavMesh.CalculateTriangulation();
 
+        // Pick the first indice of a random triangle in the nav mesh
+        int t = Random.Range(0, navMeshData.indices.Length - 3);
+
+        // Select a random point on it
+        Vector3 point = Vector3.Lerp(navMeshData.vertices[navMeshData.indices[t]], navMeshData.vertices[navMeshData.indices[t + 1]], Random.value);
+        Vector3.Lerp(point, navMeshData.vertices[navMeshData.indices[t + 2]], Random.value);
+
+        return point;
+    }
 }
