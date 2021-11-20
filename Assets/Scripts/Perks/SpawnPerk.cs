@@ -56,17 +56,17 @@ public class SpawnPerk : MonoBehaviour
     // TODO: so try changing this so that the zombies spawn at intervals instead of all at once or change how this method works
     void RandomlyChoosePerk()
     {
-        if (playerCurrentHealth >= 100)
+        /*if (playerCurrentHealth >= 100)
         {
             // change this when we add in more perks
             // right now it "rolls" a dice between 1-6 and if the roll is greater than or equal to 3 then spawn the speedboost perk
             choosePerk = Random.Range(2, 4);
         }  
         else
-        {
+        {*/
             choosePerk = Random.Range(0, 4);
 
-        }
+       // }
             
 
     }
