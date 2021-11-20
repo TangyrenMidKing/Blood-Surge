@@ -3049,11 +3049,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 65000013549923008, guid: 7664aa771caa1ce42965283fa24dbbd2, type: 3}
       propertyPath: m_Size.x
-      value: 3.2452176
+      value: 3.598459
       objectReference: {fileID: 0}
     - target: {fileID: 65000013549923008, guid: 7664aa771caa1ce42965283fa24dbbd2, type: 3}
       propertyPath: m_Center.x
-      value: 0.07761016
+      value: -0.09901102
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7664aa771caa1ce42965283fa24dbbd2, type: 3}
