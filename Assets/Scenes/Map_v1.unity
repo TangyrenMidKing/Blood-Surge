@@ -3047,6 +3047,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 65000013549923008, guid: 7664aa771caa1ce42965283fa24dbbd2, type: 3}
+      propertyPath: m_Size.x
+      value: 3.2452176
+      objectReference: {fileID: 0}
+    - target: {fileID: 65000013549923008, guid: 7664aa771caa1ce42965283fa24dbbd2, type: 3}
+      propertyPath: m_Center.x
+      value: 0.07761016
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7664aa771caa1ce42965283fa24dbbd2, type: 3}
 --- !u!4 &268248748 stripped
@@ -4314,8 +4322,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10.6473465, y: 6.417799, z: 9.800755}
-  m_Center: {x: 0, y: 0, z: 0.42329216}
+  m_Size: {x: 10.6473465, y: 6.417799, z: 19.403044}
+  m_Center: {x: 0, y: 0, z: -1.1015272}
 --- !u!1001 &353624014
 PrefabInstance:
   m_ObjectHideFlags: 0
