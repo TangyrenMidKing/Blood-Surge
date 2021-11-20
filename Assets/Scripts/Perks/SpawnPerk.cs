@@ -50,8 +50,10 @@ public class SpawnPerk : MonoBehaviour
     }
 
 
-
     // randomly choose a perk
+    // this is called in Start, and because all zombies spawn at once then when the players health is at or above 100
+    // all these zombies will only spawn the speedbost or shield
+    // TODO: so try changing this so that the zombies spawn at intervals instead of all at once or change how this method works
     void RandomlyChoosePerk()
     {
         if (playerCurrentHealth >= 100)
