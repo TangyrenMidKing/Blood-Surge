@@ -2624,7 +2624,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9036204326960492372, guid: 721105026b78a60459da0374e761aa9f, type: 3}
   m_PrefabInstance: {fileID: 460970532}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1641074537}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a56bca50c74b3c34a947df7d48a7b215, type: 3}
@@ -6048,14 +6048,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1000010840487054}
     - target: {fileID: 855223271, guid: 721105026b78a60459da0374e761aa9f, type: 3}
-      propertyPath: zombieSpawner
-      value: 
-      objectReference: {fileID: 1949882699}
-    - target: {fileID: 855223271, guid: 721105026b78a60459da0374e761aa9f, type: 3}
-      propertyPath: infiniteAmmoPerk
-      value: 
-      objectReference: {fileID: 1641074543}
-    - target: {fileID: 855223271, guid: 721105026b78a60459da0374e761aa9f, type: 3}
       propertyPath: projectilePrefab
       value: 
       objectReference: {fileID: 1000010840487055}
@@ -6072,14 +6064,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1000010840487054}
     - target: {fileID: 1961304430, guid: 721105026b78a60459da0374e761aa9f, type: 3}
-      propertyPath: zombieSpawner
-      value: 
-      objectReference: {fileID: 1949882699}
-    - target: {fileID: 1961304430, guid: 721105026b78a60459da0374e761aa9f, type: 3}
-      propertyPath: infiniteAmmoPerk
-      value: 
-      objectReference: {fileID: 1641074543}
-    - target: {fileID: 1961304430, guid: 721105026b78a60459da0374e761aa9f, type: 3}
       propertyPath: projectilePrefab
       value: 
       objectReference: {fileID: 1000010840487055}
@@ -6095,14 +6079,6 @@ PrefabInstance:
       propertyPath: projectile
       value: 
       objectReference: {fileID: 1000010840487054}
-    - target: {fileID: 1980037553, guid: 721105026b78a60459da0374e761aa9f, type: 3}
-      propertyPath: zombieSpawner
-      value: 
-      objectReference: {fileID: 1949882699}
-    - target: {fileID: 1980037553, guid: 721105026b78a60459da0374e761aa9f, type: 3}
-      propertyPath: infiniteAmmoPerk
-      value: 
-      objectReference: {fileID: 1641074543}
     - target: {fileID: 1980037553, guid: 721105026b78a60459da0374e761aa9f, type: 3}
       propertyPath: projectilePrefab
       value: 
@@ -11583,7 +11559,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 203685862, guid: 721105026b78a60459da0374e761aa9f, type: 3}
   m_PrefabInstance: {fileID: 460970532}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1641074537}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07ad48685e4a06a489ec4d693ea3baff, type: 3}
@@ -21994,24 +21970,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000013617410114, guid: 8ec728fea85097b43ad9358333759bfa, type: 3}
   m_PrefabInstance: {fileID: 1634648797}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1641074537 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9036204326960492369, guid: 721105026b78a60459da0374e761aa9f, type: 3}
-  m_PrefabInstance: {fileID: 460970532}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1641074543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1641074537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c646d584142f6847af5089d42050506, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasInfiniteAmmo: 0
 --- !u!1001 &1641830539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26826,17 +26784,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000010482669984, guid: 761e577b5d2438945bdea48c763b901d, type: 3}
   m_PrefabInstance: {fileID: 1942603513}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1949882699 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8768099426558305763, guid: 78b4417c82abeb943bf92fbf337c3003, type: 3}
-  m_PrefabInstance: {fileID: 8768099426181683254}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 010e2835f346fd142ad15697cddcfda5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1954387268
 PrefabInstance:
   m_ObjectHideFlags: 0
