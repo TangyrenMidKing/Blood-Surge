@@ -15,6 +15,7 @@ TagManager:
   - Ump
   - bullet
   - Resistance
+  - InfiniteAmmo
   layers:
   - Default
   - TransparentFX
