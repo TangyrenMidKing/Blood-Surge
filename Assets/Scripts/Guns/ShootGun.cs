@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class ShootGun : MonoBehaviour
 {
-    public ZombieSpawner zombieSpawner;
     public InfiniteAmmoPerk infiniteAmmoPerk;
     public Transform firePoint;
     public GameObject projectile;
@@ -19,12 +18,7 @@ public class ShootGun : MonoBehaviour
     int currentWeapon;
     float audioClipLength;
     public int ammo = 300;
-    int waveNum;
     bool hasInfiniteAmmo;
-    
-
-
-
 
     enum Weapons
     {
@@ -36,6 +30,7 @@ public class ShootGun : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // initialize
         hasInfiniteAmmo = false;
         gunAudio = GetComponent<AudioSource>();
         gunAudio.playOnAwake = false;
@@ -47,8 +42,8 @@ public class ShootGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hasInfiniteAmmo = infiniteAmmoPerk.hasInfiniteAmmo;
-        waveNum = zombieSpawner.waveNumber;
+        CheckForInfiniteAmmoPerk();
+        
         checkCurrentWeapon();
 
 
@@ -58,16 +53,12 @@ public class ShootGun : MonoBehaviour
             LaunchProjectile();
         }
 
-        // Ammo UI text
-        if(ammo <= 0)
-        {
-            ammoUI.text = "Bullets: " + 0;
-        }
-        else
-        {
-            ammoUI.text = "Bullets: " + ammo;
-        }
-        
+        DisplayAmmoUI();
+    }
+
+    void CheckForInfiniteAmmoPerk()
+    {
+        hasInfiniteAmmo = infiniteAmmoPerk.hasInfiniteAmmo;
     }
 
     // after checking the weapon then assign bulletSpeed
@@ -77,61 +68,75 @@ public class ShootGun : MonoBehaviour
         switch (currentWeapon)
         {
             case (int)Weapons.M4:
-                bulletSpeed = 1500f;
-                
+                bulletSpeed = 1500f;              
                 break;
+
             case (int)Weapons.Skorpion:
-                bulletSpeed = 2000f;
-                
+                bulletSpeed = 2000f;               
                 break;
+
             case (int)Weapons.Ump:
-                bulletSpeed = 500f;
-                
+                bulletSpeed = 500f;              
                 break;
+
             default:
-                bulletSpeed = 1000f;
-                
+                bulletSpeed = 1000f;               
                 break;
         }
     }
 
-    // Spawns a bullet at the tip of the gun and adds a force to it 
-    // Calls a coroutine to delay between shots
     void LaunchProjectile()
     {
-        if (shoot)
+        if (shoot && ammo != 0)
         {
-            if(!hasInfiniteAmmo)
-                ammo--;
+            DecrementBulletCount();
 
-            var projectileInstance = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-            //Physics.IgnoreCollision(projectileInstance.GetComponent<Collider>(), firePoint.parent.GetComponent<Collider>());
-
-            //projectileInstance.AddForce(firePoint.forward * .5f, ForceMode.Impulse);
-
-            projectileInstance.AddForce(firePoint.forward * bulletSpeed);
-            
-            gunAudio.PlayOneShot(gunfire, 0.2f);
-
-            StartCoroutine(ShootCooldownRoutine());
-
-            //Destroy(projectilePrefab, audioClipLength);
-
+            FireBullet();
         }
+    }
+    void DecrementBulletCount()
+    {
+        // decrement bullet count
+        if (!hasInfiniteAmmo)
+            ammo--;
+    }
 
+    // Spawns a bullet at the tip of the gun and adds a force to it 
+    // Calls a coroutine to delay between shots
+    void FireBullet()
+    {
+        var projectileInstance = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        //Physics.IgnoreCollision(projectileInstance.GetComponent<Collider>(), firePoint.parent.GetComponent<Collider>());
+
+        //projectileInstance.AddForce(firePoint.forward * .5f, ForceMode.Impulse);
+
+        projectileInstance.AddForce(firePoint.forward * bulletSpeed);
+
+        gunAudio.PlayOneShot(gunfire, 0.2f);
+
+        StartCoroutine(ShootCooldownRoutine());
+
+        //Destroy(projectilePrefab, audioClipLength);
     }
 
     // delays time between shots to not have a continous barrage of bullets
     IEnumerator ShootCooldownRoutine()
     {
         shoot = false;
-        
         yield return new WaitForSeconds(.5f);
         shoot = true;
-
-
     }
 
-
-
+    void DisplayAmmoUI()
+    {
+        // Ammo UI text
+        if (ammo <= 0)
+        {
+            ammoUI.text = "Bullets: " + 0;
+        }
+        else
+        {
+            ammoUI.text = "Bullets: " + ammo;
+        }
+    }
 }
