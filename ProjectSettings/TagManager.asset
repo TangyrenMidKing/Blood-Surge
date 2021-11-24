@@ -16,6 +16,7 @@ TagManager:
   - bullet
   - Resistance
   - InfiniteAmmo
+  - ammo
   layers:
   - Default
   - TransparentFX

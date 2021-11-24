@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ShootGun : MonoBehaviour
 {
     public InfiniteAmmoPerk infiniteAmmoPerk;
+    public AmmoRefillPerk ammoRefillPerk;
     public Transform firePoint;
     public GameObject projectile;
     public Rigidbody projectilePrefab;
@@ -19,6 +20,7 @@ public class ShootGun : MonoBehaviour
     float audioClipLength;
     public int ammo = 300;
     bool hasInfiniteAmmo;
+    bool hasAmmoRefill;
 
     enum Weapons
     {
@@ -42,6 +44,8 @@ public class ShootGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CheckForAmmoRefill();
+
         CheckForInfiniteAmmoPerk();
         
         checkCurrentWeapon();
@@ -54,6 +58,14 @@ public class ShootGun : MonoBehaviour
         }
 
         DisplayAmmoUI();
+    }
+
+    void CheckForAmmoRefill()
+    {
+        hasAmmoRefill = ammoRefillPerk.refillAmmo;
+
+        if (hasAmmoRefill)
+            ammo = 300;
     }
 
     void CheckForInfiniteAmmoPerk()
@@ -134,9 +146,16 @@ public class ShootGun : MonoBehaviour
         {
             ammoUI.text = "Bullets: " + 0;
         }
+        else if(hasInfiniteAmmo)
+        {
+            ammoUI.text = "Bullets: \u221E";
+        }
         else
         {
             ammoUI.text = "Bullets: " + ammo;
         }
     }
+
+
+    
 }
