@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 8472351547866216596}
   - component: {fileID: 18900842666001679}
   - component: {fileID: 475941277729933515}
+  - component: {fileID: 965239662363722873}
   m_Layer: 0
   m_Name: AmmoBox
   m_TagString: InfiniteAmmo
@@ -106,7 +107,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4884311029424392839}
-  m_LocalRotation: {x: 0.7062214, y: -0, z: -0, w: 0.70799106}
+  m_LocalRotation: {x: 0.7062238, y: 0, z: 0, w: 0.7079887}
   m_LocalPosition: {x: 7.6405563, y: 0.746, z: 2.6344318}
   m_LocalScale: {x: 0.001, y: 0.001, z: 0.001}
   m_Children:
@@ -143,6 +144,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1294.7986, y: 409.51294, z: 822.95435}
   m_Center: {x: 3.0778644, y: 1.962438, z: -1.760885}
+--- !u!114 &965239662363722873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4884311029424392839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82951546996144e488276bad2ffe9059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  perk: {fileID: 4884311029424392839}
+  player: {fileID: 0}
 --- !u!1 &7245161939610814826
 GameObject:
   m_ObjectHideFlags: 0

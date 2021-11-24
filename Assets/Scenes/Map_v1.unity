@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: d31c39a02635df440a5fc4a31d963725, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 51b74d7bad397457d883c5940f7664d8, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -2624,7 +2624,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9036204326960492372, guid: 721105026b78a60459da0374e761aa9f, type: 3}
   m_PrefabInstance: {fileID: 460970532}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2058988826}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a56bca50c74b3c34a947df7d48a7b215, type: 3}
@@ -6048,10 +6048,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1000010840487054}
     - target: {fileID: 855223271, guid: 721105026b78a60459da0374e761aa9f, type: 3}
-      propertyPath: ammoRefillPerk
-      value: 
-      objectReference: {fileID: 2058988827}
-    - target: {fileID: 855223271, guid: 721105026b78a60459da0374e761aa9f, type: 3}
       propertyPath: projectilePrefab
       value: 
       objectReference: {fileID: 1000010840487055}
@@ -6068,10 +6064,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1000010840487054}
     - target: {fileID: 1961304430, guid: 721105026b78a60459da0374e761aa9f, type: 3}
-      propertyPath: ammoRefillPerk
-      value: 
-      objectReference: {fileID: 2058988827}
-    - target: {fileID: 1961304430, guid: 721105026b78a60459da0374e761aa9f, type: 3}
       propertyPath: projectilePrefab
       value: 
       objectReference: {fileID: 1000010840487055}
@@ -6087,10 +6079,6 @@ PrefabInstance:
       propertyPath: projectile
       value: 
       objectReference: {fileID: 1000010840487054}
-    - target: {fileID: 1980037553, guid: 721105026b78a60459da0374e761aa9f, type: 3}
-      propertyPath: ammoRefillPerk
-      value: 
-      objectReference: {fileID: 2058988827}
     - target: {fileID: 1980037553, guid: 721105026b78a60459da0374e761aa9f, type: 3}
       propertyPath: projectilePrefab
       value: 
@@ -11571,7 +11559,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 203685862, guid: 721105026b78a60459da0374e761aa9f, type: 3}
   m_PrefabInstance: {fileID: 460970532}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2058988826}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07ad48685e4a06a489ec4d693ea3baff, type: 3}
@@ -26167,25 +26155,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: AmmoRefill
       objectReference: {fileID: 0}
-    - target: {fileID: 101352, guid: 1135fa7f3918d584ca35b7d960c4748f, type: 3}
-      propertyPath: m_TagString
-      value: ammo
-      objectReference: {fileID: 0}
     - target: {fileID: 428250, guid: 1135fa7f3918d584ca35b7d960c4748f, type: 3}
       propertyPath: m_RootOrder
       value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 428250, guid: 1135fa7f3918d584ca35b7d960c4748f, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 8.8727
-      objectReference: {fileID: 0}
-    - target: {fileID: 428250, guid: 1135fa7f3918d584ca35b7d960c4748f, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 8.8727
-      objectReference: {fileID: 0}
-    - target: {fileID: 428250, guid: 1135fa7f3918d584ca35b7d960c4748f, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 8.8727
       objectReference: {fileID: 0}
     - target: {fileID: 428250, guid: 1135fa7f3918d584ca35b7d960c4748f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26227,6 +26199,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1922535462, guid: 1135fa7f3918d584ca35b7d960c4748f, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 867875054}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1135fa7f3918d584ca35b7d960c4748f, type: 3}
 --- !u!1 &1922535460 stripped
@@ -26234,33 +26210,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 101352, guid: 1135fa7f3918d584ca35b7d960c4748f, type: 3}
   m_PrefabInstance: {fileID: 1922535459}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &1922535461
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1922535460}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.08985755, y: 0.04485746, z: 0.076449364}
-  m_Center: {x: -0.001999423, y: 0.00786851, z: 0.012625458}
---- !u!114 &1922535462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1922535460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82951546996144e488276bad2ffe9059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  perk: {fileID: 1922535460}
-  player: {fileID: 867875054}
 --- !u!1001 &1924744326
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28092,24 +28041,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000013041734426, guid: d803e729730d97a4e89edf13b602b3f4, type: 3}
   m_PrefabInstance: {fileID: 2049012702}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2058988826 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9036204326960492369, guid: 721105026b78a60459da0374e761aa9f, type: 3}
-  m_PrefabInstance: {fileID: 460970532}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2058988827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2058988826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a82b57805334654b87d51f6b20c0d02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  refillAmmo: 0
 --- !u!1001 &2061022140
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29650,20 +29581,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4884311029424392839, guid: dc475ecbde602274193e01635d08f449, type: 3}
   m_PrefabInstance: {fileID: 5669389107786403583}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &965239662363722873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 965239662363722872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82951546996144e488276bad2ffe9059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  perk: {fileID: 965239662363722872}
-  player: {fileID: 867875054}
 --- !u!1001 &1190268863820636829
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29850,10 +29767,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 867875048}
     - target: {fileID: 1376942565, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
-      propertyPath: perks.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1376942565, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
       propertyPath: perks.Array.data[0]
       value: 
       objectReference: {fileID: 707464226}
@@ -29942,6 +29855,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 965239662363722873, guid: dc475ecbde602274193e01635d08f449, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 867875054}
     - target: {fileID: 4884311029424392839, guid: dc475ecbde602274193e01635d08f449, type: 3}
       propertyPath: m_Name
       value: AmmoBox
