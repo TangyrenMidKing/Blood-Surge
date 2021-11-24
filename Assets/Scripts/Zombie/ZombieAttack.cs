@@ -25,13 +25,13 @@ public class ZombieAttack : MonoBehaviour
         attackAudio = GetComponent<AudioSource>();
         attackAudio.playOnAwake = false;
         player = GameObject.Find("PlayerCharacter").transform;
-        //zombie = GameObject.Find("ZombieObj").transform;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        hasResistance = playerHealth.GetComponent<PlayerHealth>().getHasResistancePerk();   
+        hasResistance = playerHealth.GetComponent<PlayerHealth>().getHasResistancePerk();
         if (player)
         {
             playersCurrentHealth = playerHealth.GetComponent<PlayerHealth>().getHealth();
@@ -39,11 +39,11 @@ public class ZombieAttack : MonoBehaviour
             if (Vector3.Distance(player.position, zombie.position) <= attackRange)
             {
                 agent.isStopped = true;
-                
+
                 // if the time since the zombie last attacked is greater than the attack cooldown then it can attack again
-                if(Time.time - lastAttack > attackCooldown)
+                if (Time.time - lastAttack > attackCooldown)
                 {
-                    lastAttack = Time.time; 
+                    lastAttack = Time.time;
                     attacks(zombieDamage);
                 }
             }
