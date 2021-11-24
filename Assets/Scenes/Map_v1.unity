@@ -3208,7 +3208,7 @@ PrefabInstance:
     - target: {fileID: 1418177508164551888, guid: f38116eddf0cc2d46809f61de9931900, type: 3}
       propertyPath: spawnPerk
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5583472457079078996}
     - target: {fileID: 1418177508164551888, guid: f38116eddf0cc2d46809f61de9931900, type: 3}
       propertyPath: weaponList
       value: 
@@ -5587,7 +5587,7 @@ PrefabInstance:
     - target: {fileID: 3083632642286965941, guid: 3e4d7a0b0169ce54cbeeb457dc4b6882, type: 3}
       propertyPath: spawnPerk
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5583472457079078996}
     - target: {fileID: 3083632642286965941, guid: 3e4d7a0b0169ce54cbeeb457dc4b6882, type: 3}
       propertyPath: weaponList
       value: 
@@ -5952,7 +5952,7 @@ PrefabInstance:
     - target: {fileID: 696248778655474329, guid: 8d4edeb589c14bc4a80100ef448e548f, type: 3}
       propertyPath: spawnPerk
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5583472457079078996}
     - target: {fileID: 696248778655474329, guid: 8d4edeb589c14bc4a80100ef448e548f, type: 3}
       propertyPath: weaponList
       value: 
@@ -13590,7 +13590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4022741551580116, guid: e10e470cb8ac58346ab2adcf73cc6e93, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 9.11
       objectReference: {fileID: 0}
     - target: {fileID: 4022741551580116, guid: e10e470cb8ac58346ab2adcf73cc6e93, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13744,7 +13744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  zombieHealth: {fileID: 1426914913}
+  zombieHealth: {fileID: 1025257255}
 --- !u!114 &1025257254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13757,7 +13757,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eb0d82ecd755024f99ddad19d587817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zombieHealth: {fileID: 1426914913}
+  zombieHealth: {fileID: 1025257255}
   perks:
   - {fileID: 707464226}
   - {fileID: 1448133949}
@@ -13897,6 +13897,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1025257262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025257251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20d58840232b43743b0a27b209937978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 867875048}
+  player: {fileID: 867875054}
+  agent: {fileID: 1025257256}
+  attack: {fileID: 0}
+  zombieDamage: 15
+  shootDamage: 10
+  shootRange: 10
+  attackRange: 2
 --- !u!1001 &1048918924
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19061,17 +19081,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
   m_PrefabInstance: {fileID: 5583472457079078995}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1426914913 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1376942564, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
-  m_PrefabInstance: {fileID: 5583472457079078995}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1426914912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc9e322da34e76f45aa954b3eec94b31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!195 &1426914918 stripped
 NavMeshAgent:
   m_CorrespondingSourceObject: {fileID: 1376942563, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
@@ -29793,7 +29802,7 @@ PrefabInstance:
     - target: {fileID: 598343492296493681, guid: af3361527ae3d6b4580424903edd4397, type: 3}
       propertyPath: spawnPerk
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5583472457079078996}
     - target: {fileID: 598343492296493681, guid: af3361527ae3d6b4580424903edd4397, type: 3}
       propertyPath: weaponList
       value: 
@@ -29995,7 +30004,7 @@ PrefabInstance:
       objectReference: {fileID: 867875054}
     - target: {fileID: 1376942565, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1376942565, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
       propertyPath: playerHealth
@@ -30073,9 +30082,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZombieObj
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1376942565, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+--- !u!114 &5583472457079078996 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1376942565, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+  m_PrefabInstance: {fileID: 5583472457079078995}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426914912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb0d82ecd755024f99ddad19d587817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5794251064452777383
 PrefabInstance:
   m_ObjectHideFlags: 0
