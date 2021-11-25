@@ -56,8 +56,8 @@ public class EliteAttack : MonoBehaviour
                     agent.isStopped = false;
 
                     lastAttack = Time.time;
-                    animator.SetBool("isShoot", true);
-                    animator.SetBool("isAttack", false);
+                    animator.SetBool("isShooting", true);
+                    animator.SetBool("isAttacking", false);
                     attacks(shootDamage);
                 }
             }
@@ -73,8 +73,8 @@ public class EliteAttack : MonoBehaviour
                 if (Time.time - lastAttack > attackCooldown)
                 {
                     lastAttack = Time.time;
-                    animator.SetBool("isAttack", true);
-                    animator.SetBool("isShoot", false);
+                    animator.SetBool("isAttacking", true);
+                    animator.SetBool("isShooting", false);
                     attackAudio.PlayOneShot(attack, 1.0f);
                     attacks(zombieDamage);
                 }
@@ -84,8 +84,8 @@ public class EliteAttack : MonoBehaviour
             // only walk
             else
             {
-                animator.SetBool("isShoot", false);
-                animator.SetBool("isAttack", false);
+                animator.SetBool("isShooting", false);
+                animator.SetBool("isAttacking", false);
                 agent.isStopped = false;
             }
         }
