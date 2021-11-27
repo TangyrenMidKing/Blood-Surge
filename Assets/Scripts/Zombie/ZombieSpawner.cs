@@ -10,7 +10,7 @@ public class ZombieSpawner : MonoBehaviour
 
     public Text instructions;
     public Text waveNumberUI;
-    float randx, randz, elrandx, elrandz;
+    float randx, randz, elrandx, elrandz, lcrandx, lcrandz, warandx, warandz, rcrandx, rcrandz, werandx, werandz;
     int chooseSpawnPos;
     public int enemyCount;
     public int waveNumber;
@@ -40,7 +40,7 @@ public class ZombieSpawner : MonoBehaviour
                     + GameObject.FindGameObjectsWithTag("EliteZombie").Length;
         chooseRandomSpawnPosition();
 
-        // starts new wave when enemy count reaches 1 because this also counts the zombie in the "jail", who is unreachable
+        // starts new wave when enemy count reaches 2 because this also counts the zombie and elite in the "jail", who is unreachable
         if (enemyCount == 2)
         {
             instructions.GetComponent<Text>().enabled = true;
@@ -62,15 +62,46 @@ public class ZombieSpawner : MonoBehaviour
     // spawns half the zombies at a random position on one part of the map and the other half on another part of the map
     void spawnZombies(int numEnemies)
     {
-        for (int i = 0; i < numEnemies / 2; i++)
+        
+        for (int i = 0; i < numEnemies / 6; i++)
         {
             Instantiate(zombie, new Vector3(randx, 0, randz), zombie.transform.rotation);
+            //StartCoroutine(SpawnRoutine());
             ++enemyCount;
         }
 
-        for (int i = 0; i < numEnemies / 2; i++)
+        for (int i = 0; i < numEnemies / 6; i++)
         {
             Instantiate(zombie, new Vector3(elrandx, 2.08f, elrandz), zombie.transform.rotation);
+            //StartCoroutine(SpawnRoutine());
+            ++enemyCount;
+        }
+
+        for (int i = 0; i < numEnemies / 6; i++)
+        {
+            Instantiate(zombie, new Vector3(lcrandx, 2.08f, lcrandz), zombie.transform.rotation);
+            //StartCoroutine(SpawnRoutine());
+            ++enemyCount;
+        }
+
+        for (int i = 0; i < numEnemies / 6; i++)
+        {
+            Instantiate(zombie, new Vector3(warandx, 2.08f, warandz), zombie.transform.rotation);
+            //StartCoroutine(SpawnRoutine());
+            ++enemyCount;
+        }
+
+        for (int i = 0; i < numEnemies / 6; i++)
+        {
+            Instantiate(zombie, new Vector3(rcrandx, 2.08f, rcrandz), zombie.transform.rotation);
+            //StartCoroutine(SpawnRoutine());
+            ++enemyCount;
+        }
+
+        for (int i = 0; i < numEnemies / 6; i++)
+        {
+            Instantiate(zombie, new Vector3(werandx, 2.08f, werandz), zombie.transform.rotation);
+            //StartCoroutine(SpawnRoutine());
             ++enemyCount;
         }
 
@@ -87,6 +118,15 @@ public class ZombieSpawner : MonoBehaviour
         }
     }
 
+    IEnumerator SpawnRoutine()
+    {
+        
+        yield return new WaitForSeconds(5f);
+        Instantiate(zombie, new Vector3(randx, 0, randz), zombie.transform.rotation);
+
+
+    }
+
     // choose between two areas of the map to spawn zombies on
     void chooseRandomSpawnPosition()
     {
@@ -99,6 +139,18 @@ public class ZombieSpawner : MonoBehaviour
         // upper ramp deadend area
         elrandx = Random.Range(62f, 70f);
         elrandz = Random.Range(-4f, 4f);
+
+        lcrandx = Random.Range(64f, 66f);
+        lcrandz = Random.Range(-35f, -50f);
+
+        warandx = Random.Range(13f, 16f);
+        warandz = Random.Range(-37f, -47f);
+
+        rcrandx = Random.Range(-5f, -8f);
+        rcrandz = Random.Range(-18f, -14f);
+
+        werandx = Random.Range(54f, 61f);
+        werandz = Random.Range(11f, 16f);
     }
 
     private void OnTriggerEnter(Collider other)
