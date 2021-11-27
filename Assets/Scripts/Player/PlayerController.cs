@@ -52,11 +52,18 @@ public class PlayerController : MonoBehaviour
     {
         // Lets the character body move left and right
         horizontalInput = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * currentSpeed);
+        //transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * currentSpeed);
 
         // Lets the character body move forward and back
         verticalInput = Input.GetAxis("Vertical");
-        transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * currentSpeed);
+        //transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * currentSpeed);
+
+
+        Vector3 movementVector = new Vector3(horizontalInput, 0, verticalInput);
+        movementVector.Normalize();
+
+        transform.Translate(movementVector * Time.deltaTime * currentSpeed);
+
 
         // check if character is moving
         if(horizontalInput!=0 || verticalInput!=0)
