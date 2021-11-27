@@ -440,11 +440,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f14ea01f05b7c8744b9b2e3257a70c5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  infiniteAmmoPerk: {fileID: 1641074543}
+  ammoRefillPerk: {fileID: 2058988827}
   firePoint: {fileID: 1751208572}
   projectile: {fileID: 0}
   projectilePrefab: {fileID: 0}
   grabWeapon: {fileID: 0}
   gunfire: {fileID: 8300000, guid: f19e3fdb9c8082647a2c32beca28ba84, type: 3}
+  ammoUI: {fileID: 0}
+  ammo: 300
 --- !u!1 &9036204326960492369
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,6 +465,8 @@ GameObject:
   - component: {fileID: 375325952}
   - component: {fileID: 203685862}
   - component: {fileID: 750424312}
+  - component: {fileID: 1641074543}
+  - component: {fileID: 2058988827}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Player
@@ -684,6 +690,32 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1641074543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9036204326960492369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c646d584142f6847af5089d42050506, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasInfiniteAmmo: 0
+--- !u!114 &2058988827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9036204326960492369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a82b57805334654b87d51f6b20c0d02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  refillAmmo: 0
 --- !u!82 &1093659962
 AudioSource:
   m_ObjectHideFlags: 0
@@ -792,11 +824,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f14ea01f05b7c8744b9b2e3257a70c5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  infiniteAmmoPerk: {fileID: 1641074543}
+  ammoRefillPerk: {fileID: 2058988827}
   firePoint: {fileID: 962137063}
   projectile: {fileID: 0}
   projectilePrefab: {fileID: 0}
   grabWeapon: {fileID: 0}
   gunfire: {fileID: 8300000, guid: 8581f806dddef8046b4942de05b897be, type: 3}
+  ammoUI: {fileID: 0}
+  ammo: 300
 --- !u!82 &1019901101
 AudioSource:
   m_ObjectHideFlags: 0
@@ -905,11 +941,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f14ea01f05b7c8744b9b2e3257a70c5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  infiniteAmmoPerk: {fileID: 1641074543}
+  ammoRefillPerk: {fileID: 2058988827}
   firePoint: {fileID: 4827740711780013605}
   projectile: {fileID: 0}
   projectilePrefab: {fileID: 0}
   grabWeapon: {fileID: 0}
   gunfire: {fileID: 8300000, guid: 1b145bcffd767854fb0c71c37678ebaa, type: 3}
+  ammoUI: {fileID: 0}
+  ammo: 300
 --- !u!1 &9036204327839815669
 GameObject:
   m_ObjectHideFlags: 0

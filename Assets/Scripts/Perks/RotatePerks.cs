@@ -23,9 +23,13 @@ public class RotatePerks : MonoBehaviour
     {
         transform.LookAt(player);
 
-        // This is because the forward vector of the model for "health boost" is different than other models...
+        // This is because the forward vector of the model for "health boost" nad ammo box is different than other models...
         // So it needs it's rotation corrected
         if (perk.CompareTag("HealthBoost"))
+        {
+            transform.Rotate(new Vector3(1, 0, 0), 90);
+        }
+        if (perk.CompareTag("InfiniteAmmo"))
         {
             transform.Rotate(new Vector3(1, 0, 0), 90);
         }

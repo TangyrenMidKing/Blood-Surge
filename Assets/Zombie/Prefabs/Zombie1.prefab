@@ -1891,6 +1891,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   playerHealth: {fileID: 0}
 --- !u!114 &1376942567
 MonoBehaviour:
