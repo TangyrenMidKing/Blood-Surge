@@ -6,10 +6,10 @@ public class PlayerController : MonoBehaviour
 {
     float horizontalInput;
     float verticalInput;
-    float walkSpeed = 2f;
-    float runSpeed = 4f;
-    float boostWalkSpeed = 4f;
-    float boostRunSpeed = 6f;
+    float walkSpeed = 3f;
+    float runSpeed = 5f;
+    float boostWalkSpeed = 5f;
+    float boostRunSpeed = 8f;
     public bool hasBoostSpeed;
     float runAudio = 2.0f;
     float walkAudio = 1.5f;
@@ -51,11 +51,11 @@ public class PlayerController : MonoBehaviour
     void MoveCharacter(float currentSpeed)
     {
         // Lets the character body move left and right
-        horizontalInput = Input.GetAxis("Horizontal");
+        horizontalInput = Input.GetAxisRaw("Horizontal");
         //transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * currentSpeed);
 
         // Lets the character body move forward and back
-        verticalInput = Input.GetAxis("Vertical");
+        verticalInput = Input.GetAxisRaw("Vertical");
         //transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * currentSpeed);
 
 

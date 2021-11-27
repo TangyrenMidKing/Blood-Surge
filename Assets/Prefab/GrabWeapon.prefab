@@ -45,3 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponList: {fileID: 0}
   instructions: {fileID: 0}
+  spawnPerk: {fileID: 0}
+  enemiesKilled: 0
+  enemiesKilledUI: {fileID: 0}

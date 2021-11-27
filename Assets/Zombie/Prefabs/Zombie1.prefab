@@ -1908,14 +1908,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 0}
   player: {fileID: 0}
-  zombie: {fileID: 578376449398627443}
   agent: {fileID: 1376942563}
-  attack: {fileID: 8300000, guid: d0c1f246cbe504a41b248d27f762dde6, type: 3}
-  playersCurrentHealth: 100
-  hasResistance: 0
+  attack: {fileID: 8300000, guid: 3fdee60ee07b6c24dace813e4709f046, type: 3}
   zombieDamage: 10
+  hasResistance: 0
   attackRange: 2
-  resistance: 5
 --- !u!114 &1426914913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1940,7 +1937,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d0c1f246cbe504a41b248d27f762dde6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3fdee60ee07b6c24dace813e4709f046, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.708
   m_Pitch: 1
