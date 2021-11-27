@@ -4534,6 +4534,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000012564366324, guid: 36667f34d4b750c4695e409fb89b51f8, type: 3}
   m_PrefabInstance: {fileID: 369688595}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &369692700 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 855223271, guid: 721105026b78a60459da0374e761aa9f, type: 3}
+  m_PrefabInstance: {fileID: 460970532}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f14ea01f05b7c8744b9b2e3257a70c5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &373949461
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30575,6 +30586,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bullet
       objectReference: {fileID: 0}
+    - target: {fileID: 7554596542280921742, guid: 14532574504a07b418541fadf3cedd62, type: 3}
+      propertyPath: shootGun
+      value: 
+      objectReference: {fileID: 369692700}
+    - target: {fileID: 7554596542280921742, guid: 14532574504a07b418541fadf3cedd62, type: 3}
+      propertyPath: grabWeapon
+      value: 
+      objectReference: {fileID: 2086576790}
     - target: {fileID: 7555180328967570246, guid: 14532574504a07b418541fadf3cedd62, type: 3}
       propertyPath: m_RootOrder
       value: 8
