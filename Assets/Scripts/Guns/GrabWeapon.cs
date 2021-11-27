@@ -68,7 +68,7 @@ public class GrabWeapon : MonoBehaviour
                 if(enemiesKilled >= 50)
                 {
                     weaponList.weaponArray[currentWeapon].SetActive(false);
-                    currentWeapon = 4; // The position of the Ump weapon in the WeaponList Array
+                    currentWeapon = 3; // The position of the Ump weapon in the WeaponList Array
                 }
                 break;
 
