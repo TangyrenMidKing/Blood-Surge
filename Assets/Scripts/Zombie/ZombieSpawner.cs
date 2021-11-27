@@ -66,42 +66,37 @@ public class ZombieSpawner : MonoBehaviour
         for (int i = 0; i < numEnemies / 6; i++)
         {
             Instantiate(zombie, new Vector3(randx, 0, randz), zombie.transform.rotation);
-            //StartCoroutine(SpawnRoutine());
             ++enemyCount;
         }
+
 
         for (int i = 0; i < numEnemies / 6; i++)
         {
             Instantiate(zombie, new Vector3(elrandx, 2.08f, elrandz), zombie.transform.rotation);
-            //StartCoroutine(SpawnRoutine());
             ++enemyCount;
         }
 
         for (int i = 0; i < numEnemies / 6; i++)
         {
             Instantiate(zombie, new Vector3(lcrandx, 2.08f, lcrandz), zombie.transform.rotation);
-            //StartCoroutine(SpawnRoutine());
             ++enemyCount;
         }
 
         for (int i = 0; i < numEnemies / 6; i++)
         {
             Instantiate(zombie, new Vector3(warandx, 2.08f, warandz), zombie.transform.rotation);
-            //StartCoroutine(SpawnRoutine());
             ++enemyCount;
         }
 
         for (int i = 0; i < numEnemies / 6; i++)
         {
             Instantiate(zombie, new Vector3(rcrandx, 2.08f, rcrandz), zombie.transform.rotation);
-            //StartCoroutine(SpawnRoutine());
             ++enemyCount;
         }
 
         for (int i = 0; i < numEnemies / 6; i++)
         {
             Instantiate(zombie, new Vector3(werandx, 2.08f, werandz), zombie.transform.rotation);
-            //StartCoroutine(SpawnRoutine());
             ++enemyCount;
         }
 
@@ -118,14 +113,6 @@ public class ZombieSpawner : MonoBehaviour
         }
     }
 
-    IEnumerator SpawnRoutine()
-    {
-        
-        yield return new WaitForSeconds(5f);
-        Instantiate(zombie, new Vector3(randx, 0, randz), zombie.transform.rotation);
-
-
-    }
 
     // choose between two areas of the map to spawn zombies on
     void chooseRandomSpawnPosition()
