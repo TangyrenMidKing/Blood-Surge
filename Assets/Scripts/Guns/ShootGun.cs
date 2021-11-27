@@ -21,6 +21,7 @@ public class ShootGun : MonoBehaviour
     public int ammo = 300;
     bool hasInfiniteAmmo;
     bool hasAmmoRefill;
+    float fireRate;
 
     enum Weapons
     {
@@ -80,19 +81,22 @@ public class ShootGun : MonoBehaviour
         switch (currentWeapon)
         {
             case (int)Weapons.M4:
-                bulletSpeed = 1500f;              
+                bulletSpeed = 2000f;
+                fireRate = .5f;
                 break;
 
             case (int)Weapons.Skorpion:
-                bulletSpeed = 2000f;               
+                bulletSpeed = 2500f;
+                fireRate = .3f;
                 break;
 
             case (int)Weapons.Ump:
-                bulletSpeed = 500f;              
+                bulletSpeed = 1500f;
+                fireRate = .7f;
                 break;
 
             default:
-                bulletSpeed = 1000f;               
+                bulletSpeed = 1000f;
                 break;
         }
     }
@@ -126,16 +130,16 @@ public class ShootGun : MonoBehaviour
 
         gunAudio.PlayOneShot(gunfire, 0.2f);
 
-        StartCoroutine(ShootCooldownRoutine());
+        StartCoroutine(ShootCooldownRoutine(fireRate));
 
         //Destroy(projectilePrefab, audioClipLength);
     }
 
     // delays time between shots to not have a continous barrage of bullets
-    IEnumerator ShootCooldownRoutine()
+    IEnumerator ShootCooldownRoutine(float delay)
     {
         shoot = false;
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(delay);
         shoot = true;
     }
 
