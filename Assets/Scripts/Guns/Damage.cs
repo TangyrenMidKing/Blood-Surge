@@ -15,6 +15,7 @@ public class Damage : MonoBehaviour
 
     enum Weapons
     {
+        Handgun,
         M4,
         Skorpion,
         Ump,
@@ -63,6 +64,10 @@ public class Damage : MonoBehaviour
 
         switch (currentWeapon)
         {
+            case (int)Weapons.Handgun:
+                damage = 30;
+                break;
+
             case (int)Weapons.M4:
                 damage = 30;
                 break;

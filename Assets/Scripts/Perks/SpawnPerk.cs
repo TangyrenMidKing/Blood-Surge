@@ -13,7 +13,7 @@ public class SpawnPerk : MonoBehaviour
     int choosePerk;
     bool spawn;
     public static int enemiesKilled;
-    int playerCurrentHealth = 100;
+    int playerCurrentHealth;
     float despawnTime = 20.0f;
     GameObject obj;
 
@@ -56,26 +56,29 @@ public class SpawnPerk : MonoBehaviour
     // TODO: so try changing this so that the zombies spawn at intervals instead of all at once or change how this method works
     void RandomlyChoosePerk()
     {
-        /*if (playerCurrentHealth >= 100)
+        // doesn't spawn the health heal perk if players health is above 100
+        if (playerCurrentHealth > 100)
         {
+            Debug.Log("No heals");
             // change this when we add in more perks
             // right now it "rolls" a dice between 1-6 and if the roll is greater than or equal to 3 then spawn the speedboost perk
-            choosePerk = Random.Range(2, 6);
-        }  
+            choosePerk = Random.Range(1, 6);
+        }
+        // else anything can spawn
         else
-        {*/
+        {
             choosePerk = Random.Range(0, 6);
 
-        //}
+        }
             
 
     }
 
     // "rolls" a dice between 0 and 6 and if the roll was 3 then it will spawn a perk
-    // So there is a 1/6 chance of a perk spawning per zombie
+    // So there is a 1/10 chance of a perk spawning per zombie
     void DiceRoll()
     {
-        if(Random.Range(0, 7) == 3)
+        if(Random.Range(0, 10) == 3)
         {
             spawn = true;
         }

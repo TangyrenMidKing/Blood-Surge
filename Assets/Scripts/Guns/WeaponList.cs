@@ -5,7 +5,7 @@ using UnityEngine;
 public class WeaponList : MonoBehaviour
 {
 
-    public GameObject[] weaponArray = new GameObject[3];
+    public GameObject[] weaponArray = new GameObject[4];
     // Start is called before the first frame update
     void Start()
     {

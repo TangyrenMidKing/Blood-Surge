@@ -25,6 +25,7 @@ public class ShootGun : MonoBehaviour
 
     enum Weapons
     {
+        Handgun,
         M4,
         Skorpion,
         Ump,
@@ -80,6 +81,11 @@ public class ShootGun : MonoBehaviour
         currentWeapon = grabWeapon.GetComponent<GrabWeapon>().getCurrentWeapon(); // gets the index of the weapon in the weaponList array
         switch (currentWeapon)
         {
+            case (int)Weapons.Handgun:
+                bulletSpeed = 1500f;
+                fireRate = 1f;
+                break;
+
             case (int)Weapons.M4:
                 bulletSpeed = 2000f;
                 fireRate = .5f;

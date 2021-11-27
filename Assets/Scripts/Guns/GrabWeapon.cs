@@ -42,9 +42,17 @@ public class GrabWeapon : MonoBehaviour
     {
         switch (gameObject.tag)
         {
-            case "M4":
+            case "Handgun":
                 weaponList.weaponArray[currentWeapon].SetActive(false);
-                currentWeapon = 0; // The position of the M4 weapon in the WeaponList Array
+                currentWeapon = 0;
+                break;
+
+            case "M4":
+                if(enemiesKilled >= 10)
+                {
+                    weaponList.weaponArray[currentWeapon].SetActive(false);
+                    currentWeapon = 1; // The position of the M4 weapon in the WeaponList Array
+                }
                 break;
 
             case "Skorpion":
@@ -52,7 +60,7 @@ public class GrabWeapon : MonoBehaviour
                 if(enemiesKilled >= 30)
                 {
                     weaponList.weaponArray[currentWeapon].SetActive(false);
-                    currentWeapon = 1; // The position of the Skorpion weapon in the WeaponList Array
+                    currentWeapon = 2; // The position of the Skorpion weapon in the WeaponList Array
                 }
                 break;
 
@@ -60,7 +68,7 @@ public class GrabWeapon : MonoBehaviour
                 if(enemiesKilled >= 50)
                 {
                     weaponList.weaponArray[currentWeapon].SetActive(false);
-                    currentWeapon = 2; // The position of the Ump weapon in the WeaponList Array
+                    currentWeapon = 4; // The position of the Ump weapon in the WeaponList Array
                 }
                 break;
 
@@ -85,9 +93,24 @@ public class GrabWeapon : MonoBehaviour
 
         switch (gameObject.tag)
         {
-            case "M4":
+            case "Handgun":
                 instructions.GetComponent<Text>().enabled = true;
                 enemiesKilledUI.GetComponent<Text>().enabled = false;
+                break;
+
+            case "M4":
+                if(enemiesKilled < 10)
+                {
+                    instructions.GetComponent<Text>().enabled = false;
+                    enemiesKilledUI.text = "Kill " + (10 - enemiesKilled) + " enemies to unlock";
+                }
+                else
+                {
+                    // if the player has killed 30 enemies then tell the player how to grab the weapon
+                    instructions.GetComponent<Text>().enabled = true;
+                    enemiesKilledUI.GetComponent<Text>().enabled = false;
+                }
+
                 break;
 
             case "Skorpion":
