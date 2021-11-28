@@ -11723,6 +11723,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9036204326734358948, guid: 721105026b78a60459da0374e761aa9f, type: 3}
   m_PrefabInstance: {fileID: 460970532}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &861757836 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1980037553, guid: 721105026b78a60459da0374e761aa9f, type: 3}
+  m_PrefabInstance: {fileID: 460970532}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861757835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f14ea01f05b7c8744b9b2e3257a70c5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &863830411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13858,9 +13869,29 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1025257254, guid: e10e470cb8ac58346ab2adcf73cc6e93, type: 3}
+      propertyPath: M4ShootGun
+      value: 
+      objectReference: {fileID: 861757836}
+    - target: {fileID: 1025257254, guid: e10e470cb8ac58346ab2adcf73cc6e93, type: 3}
+      propertyPath: UmpShootGun
+      value: 
+      objectReference: {fileID: 369692700}
+    - target: {fileID: 1025257254, guid: e10e470cb8ac58346ab2adcf73cc6e93, type: 3}
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 867875048}
+    - target: {fileID: 1025257254, guid: e10e470cb8ac58346ab2adcf73cc6e93, type: 3}
+      propertyPath: currentWeapon
+      value: 
+      objectReference: {fileID: 2086576790}
+    - target: {fileID: 1025257254, guid: e10e470cb8ac58346ab2adcf73cc6e93, type: 3}
+      propertyPath: HandgunShootGun
+      value: 
+      objectReference: {fileID: 750519574}
+    - target: {fileID: 1025257254, guid: e10e470cb8ac58346ab2adcf73cc6e93, type: 3}
+      propertyPath: SkorpionShootGun
+      value: 
+      objectReference: {fileID: 1468601582}
     - target: {fileID: 1025257254, guid: e10e470cb8ac58346ab2adcf73cc6e93, type: 3}
       propertyPath: perks.Array.data[0]
       value: 
@@ -19816,6 +19847,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9036204327286791766, guid: 721105026b78a60459da0374e761aa9f, type: 3}
   m_PrefabInstance: {fileID: 460970532}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1468601582 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1961304430, guid: 721105026b78a60459da0374e761aa9f, type: 3}
+  m_PrefabInstance: {fileID: 460970532}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468601581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f14ea01f05b7c8744b9b2e3257a70c5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1470761995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30520,9 +30562,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 867875054}
     - target: {fileID: 1376942565, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+      propertyPath: M4ShootGun
+      value: 
+      objectReference: {fileID: 861757836}
+    - target: {fileID: 1376942565, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+      propertyPath: UmpShootGun
+      value: 
+      objectReference: {fileID: 369692700}
+    - target: {fileID: 1376942565, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 867875048}
+    - target: {fileID: 1376942565, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+      propertyPath: currentWeapon
+      value: 
+      objectReference: {fileID: 2086576790}
+    - target: {fileID: 1376942565, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+      propertyPath: HandgunShootGun
+      value: 
+      objectReference: {fileID: 750519574}
+    - target: {fileID: 1376942565, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+      propertyPath: SkorpionShootGun
+      value: 
+      objectReference: {fileID: 1468601582}
     - target: {fileID: 1376942565, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
       propertyPath: perks.Array.data[0]
       value: 
