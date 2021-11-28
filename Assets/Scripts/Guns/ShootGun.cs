@@ -109,7 +109,7 @@ public class ShootGun : MonoBehaviour
 
     void LaunchProjectile()
     {
-        if (shoot && ammo != 0)
+        if (shoot && (ammo != 0 || hasInfiniteAmmo))
         {
             DecrementBulletCount();
 
@@ -152,7 +152,7 @@ public class ShootGun : MonoBehaviour
     void DisplayAmmoUI()
     {
         // Ammo UI text
-        if (ammo <= 0)
+        if (ammo <= 0 && !hasInfiniteAmmo)
         {
             ammoUI.text = "Bullets: " + 0;
         }
