@@ -95,10 +95,10 @@ public class ShootGun : MonoBehaviour
                 bulletSpeed = 1500f;
                 break;
             case (int)Weapons.Skorpion:
-                bulletSpeed = 2000f;
+                bulletSpeed = 3000f;
                 break;
             case (int)Weapons.Ump:
-                bulletSpeed = 500f;
+                bulletSpeed = 2000f;
                 break;
             default:
                 bulletSpeed = 1000f;

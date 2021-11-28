@@ -2936,6 +2936,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UMP-45_Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 1418177509260836145, guid: f38116eddf0cc2d46809f61de9931900, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1418177509261254929, guid: f38116eddf0cc2d46809f61de9931900, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -5387,8 +5391,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1961304430, guid: 721105026b78a60459da0374e761aa9f, type: 3}
       propertyPath: maxAmmo
-      value: 25
+      value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1961304430, guid: 721105026b78a60459da0374e761aa9f, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1286778265}
     - target: {fileID: 1961304430, guid: 721105026b78a60459da0374e761aa9f, type: 3}
       propertyPath: grabWeapon
       value: 
@@ -5403,12 +5411,12 @@ PrefabInstance:
       objectReference: {fileID: 523836786}
     - target: {fileID: 1980037553, guid: 721105026b78a60459da0374e761aa9f, type: 3}
       propertyPath: maxAmmo
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1980037553, guid: 721105026b78a60459da0374e761aa9f, type: 3}
       propertyPath: animator
       value: 
-      objectReference: {fileID: 1460481956}
+      objectReference: {fileID: 1286778265}
     - target: {fileID: 1980037553, guid: 721105026b78a60459da0374e761aa9f, type: 3}
       propertyPath: grabWeapon
       value: 
@@ -5427,7 +5435,7 @@ PrefabInstance:
       objectReference: {fileID: 523836786}
     - target: {fileID: 9036204326734358948, guid: 721105026b78a60459da0374e761aa9f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9036204326734722436, guid: 721105026b78a60459da0374e761aa9f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5523,7 +5531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9036204327286791766, guid: 721105026b78a60459da0374e761aa9f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 721105026b78a60459da0374e761aa9f, type: 3}
@@ -12389,6 +12397,30 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000012097295612, guid: 4944c29dadd7e02468c053eafe48e485, type: 3}
   m_PrefabInstance: {fileID: 937894023}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &941299426 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1418177509260836145, guid: f38116eddf0cc2d46809f61de9931900, type: 3}
+  m_PrefabInstance: {fileID: 284286009}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &941299427
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941299426}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e88e31155a199a245bb3d8f8179131f1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &942061056
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12533,6 +12565,30 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000013978381734, guid: fe9a19d4f0d796c40bf4fc6b69dd7b81, type: 3}
   m_PrefabInstance: {fileID: 945208917}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &960471437 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 696248779565078709, guid: 8d4edeb589c14bc4a80100ef448e548f, type: 3}
+  m_PrefabInstance: {fileID: 455966709}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &960471438
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960471437}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e88e31155a199a245bb3d8f8179131f1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &961332317
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17820,26 +17876,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3083632642505979995, guid: 3e4d7a0b0169ce54cbeeb457dc4b6882, type: 3}
   m_PrefabInstance: {fileID: 440735656}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1460481953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1460481952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f14ea01f05b7c8744b9b2e3257a70c5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 1933103808}
-  projectile: {fileID: 523836785}
-  projectilePrefab: {fileID: 523836786}
-  grabWeapon: {fileID: 2086576790}
-  gunfire: {fileID: 8300000, guid: 1b145bcffd767854fb0c71c37678ebaa, type: 3}
-  maxAmmo: 10
-  reloadTime: 1
-  animator: {fileID: 1286778265}
 --- !u!95 &1460481956
 Animator:
   serializedVersion: 3
@@ -24816,11 +24852,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!4 &1933103808 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1751208572, guid: 721105026b78a60459da0374e761aa9f, type: 3}
-  m_PrefabInstance: {fileID: 460970532}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1935366398
 PrefabInstance:
   m_ObjectHideFlags: 0
