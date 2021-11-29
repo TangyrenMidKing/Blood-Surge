@@ -194,6 +194,8 @@ public class ShootGun : MonoBehaviour
 
         gunAudio.PlayOneShot(gunfire, 0.2f);
 
+        Destroy(projectileInstance.gameObject, 1.045f);
+
         StartCoroutine(ShootCooldownRoutine(fireRate));
 
         //Destroy(projectilePrefab, audioClipLength);
