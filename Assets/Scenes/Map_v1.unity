@@ -23966,6 +23966,10 @@ PrefabInstance:
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 867875048}
+    - target: {fileID: 1872985647, guid: 0f0316ed50afdd346ac24d4a118ecfab, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 141911802600982712, guid: 0f0316ed50afdd346ac24d4a118ecfab, type: 3}
       propertyPath: m_IsActive
       value: 1
