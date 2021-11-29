@@ -22,6 +22,15 @@ public class ShootGun : MonoBehaviour
     bool hasInfiniteAmmo;
     bool hasAmmoRefill;
     float fireRate;
+    
+    public int maxAmmo = 30;
+    private int currentAmmo;
+    public float reloadTime = 1f;
+    public bool isReloading = false;
+    
+    public Animator animator;
+
+
 
     enum Weapons
     {
@@ -39,6 +48,8 @@ public class ShootGun : MonoBehaviour
         gunAudio = GetComponent<AudioSource>();
         gunAudio.playOnAwake = false;
         audioClipLength = gunfire.length;
+
+        currentAmmo = maxAmmo;
     }
 
 
@@ -46,6 +57,17 @@ public class ShootGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(currentAmmo <= 0)
+        {
+            StartCoroutine(Reload());
+            return;
+        }
+
+        if(isReloading)
+        {
+            return;
+        }
+
         CheckForAmmoRefill();
 
         CheckForInfiniteAmmoPerk();
@@ -61,6 +83,29 @@ public class ShootGun : MonoBehaviour
 
         DisplayAmmoUI();
     }
+
+    IEnumerator Reload()
+    {
+        isReloading = true;
+        Debug.Log("Reloading....");
+
+        animator.SetBool("reloading", true);
+
+        yield return new WaitForSeconds(reloadTime);
+
+        animator.SetBool("reloading", false);
+
+        currentAmmo = maxAmmo;
+        isReloading = false;
+    }
+
+    void OnEnable ()
+    {
+        isReloading = false;
+        animator.SetBool("reloading", false);
+    }
+
+
 
     void CheckForAmmoRefill()
     {
@@ -92,12 +137,12 @@ public class ShootGun : MonoBehaviour
                 break;
 
             case (int)Weapons.Skorpion:
-                bulletSpeed = 2500f;
+                bulletSpeed = 3500f;
                 fireRate = .3f;
                 break;
 
             case (int)Weapons.Ump:
-                bulletSpeed = 1500f;
+                bulletSpeed = 3000f;
                 fireRate = .7f;
                 break;
 
@@ -139,6 +184,7 @@ public class ShootGun : MonoBehaviour
         StartCoroutine(ShootCooldownRoutine(fireRate));
 
         //Destroy(projectilePrefab, audioClipLength);
+        currentAmmo --;
     }
 
     // delays time between shots to not have a continous barrage of bullets
@@ -163,6 +209,10 @@ public class ShootGun : MonoBehaviour
         else
         {
             ammoUI.text = "Bullets: " + ammo;
+        }
+        if (isReloading == true)
+        {
+            ammoUI.text = "Reloading!";
         }
     }
 

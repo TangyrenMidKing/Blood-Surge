@@ -69,11 +69,11 @@ public class Damage : MonoBehaviour
                 break;
 
             case (int)Weapons.M4:
-                damage = 30;
+                damage = 50;
                 break;
 
             case (int)Weapons.Skorpion:
-                damage = 20;
+                damage = 50;
                 break;
 
             case (int)Weapons.Ump:
