@@ -6347,7 +6347,7 @@ PrefabInstance:
       objectReference: {fileID: 1873080099}
     - target: {fileID: 855223271, guid: 721105026b78a60459da0374e761aa9f, type: 3}
       propertyPath: maxAmmo
-      value: 5
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 855223271, guid: 721105026b78a60459da0374e761aa9f, type: 3}
       propertyPath: animator
@@ -6407,7 +6407,7 @@ PrefabInstance:
       objectReference: {fileID: 1000010840487054}
     - target: {fileID: 1961304430, guid: 721105026b78a60459da0374e761aa9f, type: 3}
       propertyPath: reloadTime
-      value: 0.5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1961304430, guid: 721105026b78a60459da0374e761aa9f, type: 3}
       propertyPath: projectilePrefab
@@ -6419,7 +6419,7 @@ PrefabInstance:
       objectReference: {fileID: 1873080099}
     - target: {fileID: 1980037553, guid: 721105026b78a60459da0374e761aa9f, type: 3}
       propertyPath: maxAmmo
-      value: 5
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1980037553, guid: 721105026b78a60459da0374e761aa9f, type: 3}
       propertyPath: animator

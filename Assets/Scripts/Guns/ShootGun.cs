@@ -26,7 +26,7 @@ public class ShootGun : MonoBehaviour
     public int maxAmmo = 30;
     private int currentAmmo;
     public float reloadTime = 1f;
-    public bool isReloading = false;
+    public bool isReloading;
 
     public Animator animator;
 
