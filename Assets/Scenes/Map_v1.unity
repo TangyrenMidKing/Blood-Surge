@@ -6423,7 +6423,7 @@ PrefabInstance:
       objectReference: {fileID: 1873080099}
     - target: {fileID: 1980037553, guid: 721105026b78a60459da0374e761aa9f, type: 3}
       propertyPath: maxAmmo
-      value: 5
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1980037553, guid: 721105026b78a60459da0374e761aa9f, type: 3}
       propertyPath: animator
@@ -27698,9 +27698,6 @@ GameObject:
   - component: {fileID: 1872985649}
   - component: {fileID: 1872985648}
   - component: {fileID: 1872985650}
-  - component: {fileID: 1872985653}
-  - component: {fileID: 1872985652}
-  - component: {fileID: 1872985651}
   m_Layer: 5
   m_Name: Reloading
   m_TagString: Untagged
@@ -27782,48 +27779,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShootGun: {fileID: 750519574}
-  ReloadingTimer: {fileID: 1872985648}
---- !u!114 &1872985651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1872985646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4838df7964e98343b70945177e4c9dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShootGun: {fileID: 369692700}
-  ReloadingTimer: {fileID: 1872985648}
---- !u!114 &1872985652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1872985646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4838df7964e98343b70945177e4c9dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShootGun: {fileID: 1468601582}
-  ReloadingTimer: {fileID: 1872985648}
---- !u!114 &1872985653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1872985646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4838df7964e98343b70945177e4c9dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShootGun: {fileID: 861757836}
   ReloadingTimer: {fileID: 1872985648}
 --- !u!114 &1873080099 stripped
 MonoBehaviour:
