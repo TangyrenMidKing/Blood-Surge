@@ -62,46 +62,47 @@ public class ZombieSpawner : MonoBehaviour
     // spawns half the zombies at a random position on one part of the map and the other half on another part of the map
     void spawnZombies(int numEnemies)
     {
-        
-        for (int i = 0; i < numEnemies / 6; i++)
-        {
-            Instantiate(zombie, new Vector3(randx, 0, randz), zombie.transform.rotation);
-            ++enemyCount;
-        }
+
+        // for (int i = 0; i < numEnemies / 6; i++)
+        // {
+        //     Instantiate(zombie, new Vector3(randx, 0, randz), zombie.transform.rotation);
+        //     ++enemyCount;
+        // }
 
 
-        for (int i = 0; i < numEnemies / 6; i++)
-        {
-            Instantiate(zombie, new Vector3(elrandx, 2.08f, elrandz), zombie.transform.rotation);
-            ++enemyCount;
-        }
+        // for (int i = 0; i < numEnemies / 6; i++)
+        // {
+        //     Instantiate(zombie, new Vector3(elrandx, 2.08f, elrandz), zombie.transform.rotation);
+        //     ++enemyCount;
+        // }
 
-        for (int i = 0; i < numEnemies / 6; i++)
-        {
-            Instantiate(zombie, new Vector3(lcrandx, 2.08f, lcrandz), zombie.transform.rotation);
-            ++enemyCount;
-        }
+        // for (int i = 0; i < numEnemies / 6; i++)
+        // {
+        //     Instantiate(zombie, new Vector3(lcrandx, 2.08f, lcrandz), zombie.transform.rotation);
+        //     ++enemyCount;
+        // }
 
-        for (int i = 0; i < numEnemies / 6; i++)
-        {
-            Instantiate(zombie, new Vector3(warandx, 2.08f, warandz), zombie.transform.rotation);
-            ++enemyCount;
-        }
+        // for (int i = 0; i < numEnemies / 6; i++)
+        // {
+        //     Instantiate(zombie, new Vector3(warandx, 2.08f, warandz), zombie.transform.rotation);
+        //     ++enemyCount;
+        // }
 
-        for (int i = 0; i < numEnemies / 6; i++)
-        {
-            Instantiate(zombie, new Vector3(rcrandx, 2.08f, rcrandz), zombie.transform.rotation);
-            ++enemyCount;
-        }
+        // for (int i = 0; i < numEnemies / 6; i++)
+        // {
+        //     Instantiate(zombie, new Vector3(rcrandx, 2.08f, rcrandz), zombie.transform.rotation);
+        //     ++enemyCount;
+        // }
 
-        for (int i = 0; i < numEnemies / 6; i++)
-        {
-            Instantiate(zombie, new Vector3(werandx, 2.08f, werandz), zombie.transform.rotation);
-            ++enemyCount;
-        }
+        // for (int i = 0; i < numEnemies / 6; i++)
+        // {
+        //     Instantiate(zombie, new Vector3(werandx, 2.08f, werandz), zombie.transform.rotation);
+        //     ++enemyCount;
+        // }
 
-        if (waveNumber % 5 == 0)
-            spawnEliteZombies(waveNumber / 5);
+        // if (waveNumber % 2 == 0)
+        // spawnEliteZombies(waveNumber / 2);
+        spawnEliteZombies(waveNumber);
     }
 
     void spawnEliteZombies(int numEnemies)

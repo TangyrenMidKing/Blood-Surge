@@ -84,6 +84,7 @@ public class EliteAttack : MonoBehaviour
             // only walk
             else
             {
+                animator.SetBool("isRunning", true);
                 animator.SetBool("isShooting", false);
                 animator.SetBool("isAttacking", false);
                 agent.isStopped = false;

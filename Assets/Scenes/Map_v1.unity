@@ -31776,6 +31776,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 867875054}
     - target: {fileID: 5235855250641892872, guid: 600ae51c13af21846be9c97731b9bfe2, type: 3}
+      propertyPath: shootRange
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235855250641892872, guid: 600ae51c13af21846be9c97731b9bfe2, type: 3}
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 867875048}
