@@ -65,19 +65,19 @@ public class Damage : MonoBehaviour
         switch (currentWeapon)
         {
             case (int)Weapons.Handgun:
-                damage = 30;
-                break;
-
-            case (int)Weapons.M4:
-                damage = 30;
-                break;
-
-            case (int)Weapons.Skorpion:
                 damage = 20;
                 break;
 
+            case (int)Weapons.M4:
+                damage = 35;
+                break;
+
+            case (int)Weapons.Skorpion:
+                damage = 50;
+                break;
+
             case (int)Weapons.Ump:
-                damage = 70;
+                damage = 55;
                 break;
 
             default:
