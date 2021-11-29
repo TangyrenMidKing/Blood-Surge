@@ -6406,6 +6406,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 396916485}
     - target: {fileID: 1961304430, guid: 721105026b78a60459da0374e761aa9f, type: 3}
+      propertyPath: ammo
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1961304430, guid: 721105026b78a60459da0374e761aa9f, type: 3}
       propertyPath: ammoUI
       value: 
       objectReference: {fileID: 1873080099}

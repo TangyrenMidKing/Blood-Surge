@@ -22,7 +22,6 @@ public class ShootGun : MonoBehaviour
     bool hasInfiniteAmmo;
     bool hasAmmoRefill;
     float fireRate;
-
     public int maxAmmo = 30;
     private int currentAmmo;
     public float reloadTime = 1f;
@@ -57,7 +56,7 @@ public class ShootGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentAmmo <= 0)
+        if((currentAmmo <= 0 || (Input.GetKeyDown(KeyCode.R) && currentAmmo != maxAmmo)) && !hasInfiniteAmmo && ammo != 0)
         {
             StartCoroutine(Reload());
             return;
@@ -95,7 +94,19 @@ public class ShootGun : MonoBehaviour
 
         animator.SetBool("reloading", false);
 
-        currentAmmo = maxAmmo;
+        if (isReloading)
+        {
+            if (ammo - (maxAmmo - currentAmmo) <= 0)
+                ammo = 0;
+            else
+                ammo -= (maxAmmo - currentAmmo);
+
+
+            if (ammo < maxAmmo)
+                currentAmmo = ammo;
+            else
+                currentAmmo = maxAmmo;
+        }
         isReloading = false;
     }
 
@@ -118,6 +129,8 @@ public class ShootGun : MonoBehaviour
     void CheckForInfiniteAmmoPerk()
     {
         hasInfiniteAmmo = infiniteAmmoPerk.hasInfiniteAmmo;
+        if (hasInfiniteAmmo)
+            currentAmmo = maxAmmo;
     }
 
     // after checking the weapon then assign bulletSpeed
@@ -164,8 +177,8 @@ public class ShootGun : MonoBehaviour
     void DecrementBulletCount()
     {
         // decrement bullet count
-        if (!hasInfiniteAmmo)
-            ammo--;
+        if (!hasInfiniteAmmo)   
+            currentAmmo--;
     }
 
     // Spawns a bullet at the tip of the gun and adds a force to it
@@ -184,7 +197,7 @@ public class ShootGun : MonoBehaviour
         StartCoroutine(ShootCooldownRoutine(fireRate));
 
         //Destroy(projectilePrefab, audioClipLength);
-        currentAmmo --;
+        //currentAmmo --;
     }
 
     // delays time between shots to not have a continous barrage of bullets
@@ -200,7 +213,10 @@ public class ShootGun : MonoBehaviour
         // Ammo UI text
         if (ammo <= 0 && !hasInfiniteAmmo)
         {
-            ammoUI.text = "Bullets: " + 0;
+            if(currentAmmo <= 0)
+                ammoUI.text = "Bullets: " + 0 + "/" + 0;
+            else
+                ammoUI.text = "Bullets: " + currentAmmo + "/" + 0;
         }
         else if(hasInfiniteAmmo)
         {
@@ -208,7 +224,7 @@ public class ShootGun : MonoBehaviour
         }
         else
         {
-            ammoUI.text = "Bullets: " + ammo;
+            ammoUI.text = "Bullets: " + currentAmmo + "/"+ ammo;
         }
         if (isReloading == true)
         {
