@@ -72,6 +72,14 @@ public class GrabWeapon : MonoBehaviour
                 }
                 break;
 
+            case "Minigun":
+                if (enemiesKilled >= 100)
+                {
+                    weaponList.weaponArray[currentWeapon].SetActive(false);
+                    currentWeapon = 4; // The position of the Ump weapon in the WeaponList Array
+                }
+                break;
+
             default:
                 break;
         }
@@ -134,6 +142,19 @@ public class GrabWeapon : MonoBehaviour
                 {
                     instructions.GetComponent<Text>().enabled = false;
                     enemiesKilledUI.text = "Kill " + (50 - enemiesKilled) + " enemies to unlock";
+                }
+                else
+                {
+                    instructions.GetComponent<Text>().enabled = true;
+                    enemiesKilledUI.GetComponent<Text>().enabled = false;
+                }
+                break;
+
+            case "Minigun":
+                if (enemiesKilled < 100)
+                {
+                    instructions.GetComponent<Text>().enabled = false;
+                    enemiesKilledUI.text = "Kill " + (100 - enemiesKilled) + " enemies to unlock";
                 }
                 else
                 {
