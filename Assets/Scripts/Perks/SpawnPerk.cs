@@ -10,6 +10,7 @@ public class SpawnPerk : MonoBehaviour
     public ShootGun SkorpionShootGun;
     public ShootGun UmpShootGun;
     public ShootGun HandgunShootGun;
+    public ShootGun MinigunShootGun;
     public ZombieHealth zombieHealth;
     // an array of perk prefabs
     public GameObject[] perks = new GameObject[6];
@@ -30,6 +31,7 @@ public class SpawnPerk : MonoBehaviour
         M4,
         Skorpion,
         Ump,
+        Minigun
     }
 
     // Start is called before the first frame update
@@ -57,6 +59,9 @@ public class SpawnPerk : MonoBehaviour
                 break;
             case (int)Weapons.Ump:
                 _ammo = UmpShootGun.ammo;
+                break;
+            case (int)Weapons.Minigun:
+                _ammo = MinigunShootGun.ammo;
                 break;
         }
 

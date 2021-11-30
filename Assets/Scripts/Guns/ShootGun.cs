@@ -37,6 +37,7 @@ public class ShootGun : MonoBehaviour
         M4,
         Skorpion,
         Ump,
+        Minigun
     }
 
     // Start is called before the first frame update
@@ -55,8 +56,8 @@ public class ShootGun : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        if((currentAmmo <= 0 || (Input.GetKeyDown(KeyCode.R) && currentAmmo != maxAmmo)) && !hasInfiniteAmmo && ammo != 0)
+    {   // if((while the player has ammo left or (the player presses R and the ammo isn't full)) and the player doesn't have infinite ammo and there is still total ammo left and the player doesn't have the minigun)
+        if((currentAmmo <= 0 || (Input.GetKeyDown(KeyCode.R) && currentAmmo != maxAmmo)) && !hasInfiniteAmmo && ammo != 0 && !gameObject.CompareTag("Minigun")) // this line is pretty crazy lol
         {
             StartCoroutine(Reload());
             return;
@@ -67,11 +68,11 @@ public class ShootGun : MonoBehaviour
             return;
         }
 
+        checkCurrentWeapon();
+
         CheckForAmmoRefill();
 
         CheckForInfiniteAmmoPerk();
-
-        checkCurrentWeapon();
 
 
         // If player presses left mouse button fire a bullet
@@ -123,7 +124,13 @@ public class ShootGun : MonoBehaviour
         hasAmmoRefill = ammoRefillPerk.refillAmmo;
 
         if (hasAmmoRefill)
-            ammo = 300;
+        {
+            if (currentWeapon == (int)Weapons.Minigun)
+                currentAmmo = maxAmmo;
+            else
+                ammo = 300;
+        }
+            
     }
 
     void CheckForInfiniteAmmoPerk()
@@ -159,6 +166,11 @@ public class ShootGun : MonoBehaviour
                 fireRate = .7f;
                 break;
 
+            case (int)Weapons.Minigun:
+                bulletSpeed = 3000f;
+                fireRate = .1f;
+                break;
+
             default:
                 bulletSpeed = 1000f;
                 break;
@@ -167,7 +179,7 @@ public class ShootGun : MonoBehaviour
 
     void LaunchProjectile()
     {
-        if (shoot && (ammo != 0 || hasInfiniteAmmo))
+        if (shoot && (ammo != 0 || hasInfiniteAmmo) && currentAmmo !=0)
         {
             DecrementBulletCount();
 
@@ -231,6 +243,16 @@ public class ShootGun : MonoBehaviour
         if (isReloading == true)
         {
             ammoUI.text = "Reloading!";
+        }
+
+        if (gameObject.CompareTag("Minigun"))
+        {
+            if(currentAmmo == 0)
+                ammoUI.text = "Bullets: " + 0;
+            else if(hasInfiniteAmmo)
+                ammoUI.text = "Bullets: \u221E";
+            else
+                ammoUI.text = "Bullets: " + currentAmmo;
         }
     }
 

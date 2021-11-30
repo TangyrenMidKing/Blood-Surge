@@ -19,6 +19,7 @@ public class Damage : MonoBehaviour
         M4,
         Skorpion,
         Ump,
+        Minigun
     }
 
     // Start is called before the first frame update
@@ -78,6 +79,10 @@ public class Damage : MonoBehaviour
 
             case (int)Weapons.Ump:
                 damage = 55;
+                break;
+
+            case (int)Weapons.Minigun:
+                damage = 30;
                 break;
 
             default:

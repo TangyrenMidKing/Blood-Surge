@@ -19,6 +19,7 @@ TagManager:
   - ammo
   - Handgun
   - Block
+  - Minigun
   layers:
   - Default
   - TransparentFX
