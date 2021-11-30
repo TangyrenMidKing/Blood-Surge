@@ -18,6 +18,7 @@ TagManager:
   - InfiniteAmmo
   - ammo
   - Handgun
+  - Block
   layers:
   - Default
   - TransparentFX

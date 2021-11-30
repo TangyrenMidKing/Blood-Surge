@@ -7,7 +7,7 @@ public class ZombieSpawner : MonoBehaviour
 {
     public GameObject zombie;
     public GameObject boss;
-
+    public GameObject block;
     public Text instructions;
     public Text waveNumberUI;
     float randx, randz, elrandx, elrandz, lcrandx, lcrandz, warandx, warandz, rcrandx, rcrandz, werandx, werandz;
@@ -27,9 +27,14 @@ public class ZombieSpawner : MonoBehaviour
         //waveNumberUI.text = "Wave: 1";
         chooseRandomSpawnPosition();
 
+        /*
         // spawns 10 zombies at start of game
         if (Input.GetKeyDown(KeyCode.E) && inRangeOfButton)
+        {
             spawnZombies(10);
+        }*/
+
+        
     }
 
     // Update is called once per frame
@@ -46,6 +51,8 @@ public class ZombieSpawner : MonoBehaviour
             instructions.GetComponent<Text>().enabled = true;
             if (Input.GetKeyDown(KeyCode.E) && inRangeOfButton)
             {
+                Destroy(block.gameObject);
+ 
                 waveNumber++;
                 spawnZombies(waveNumber * 3 + 10);
             }
