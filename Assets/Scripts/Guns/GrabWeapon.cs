@@ -14,6 +14,13 @@ public class GrabWeapon : MonoBehaviour
     public int enemiesKilled;
     public Text enemiesKilledUI;
 
+
+    public int enemiesToKillM4 = 24;
+    public int enemiesToKillUmp = 150;
+    public int enemiesToKillSkorpion = 90;
+    public int enemiesToKillMinigun = 200;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,7 +55,7 @@ public class GrabWeapon : MonoBehaviour
                 break;
 
             case "M4":
-                if(enemiesKilled >= 10)
+                if(enemiesKilled >= 24)
                 {
                     weaponList.weaponArray[currentWeapon].SetActive(false);
                     currentWeapon = 1; // The position of the M4 weapon in the WeaponList Array
@@ -57,7 +64,7 @@ public class GrabWeapon : MonoBehaviour
 
             case "Skorpion":
                 // if the player killed 30 or more enemies then allow the player to grab this weapon
-                if(enemiesKilled >= 30)
+                if(enemiesKilled >= 90)
                 {
                     weaponList.weaponArray[currentWeapon].SetActive(false);
                     currentWeapon = 2; // The position of the Skorpion weapon in the WeaponList Array
@@ -65,7 +72,7 @@ public class GrabWeapon : MonoBehaviour
                 break;
 
             case "Ump":
-                if(enemiesKilled >= 50)
+                if(enemiesKilled >= 150)
                 {
                     weaponList.weaponArray[currentWeapon].SetActive(false);
                     currentWeapon = 3; // The position of the Ump weapon in the WeaponList Array
@@ -73,7 +80,7 @@ public class GrabWeapon : MonoBehaviour
                 break;
 
             case "Minigun":
-                if (enemiesKilled >= 100)
+                if (enemiesKilled >= 200)
                 {
                     weaponList.weaponArray[currentWeapon].SetActive(false);
                     currentWeapon = 4; // The position of the Ump weapon in the WeaponList Array
@@ -107,10 +114,10 @@ public class GrabWeapon : MonoBehaviour
                 break;
 
             case "M4":
-                if(enemiesKilled < 10)
+                if(enemiesKilled < 24)
                 {
                     instructions.GetComponent<Text>().enabled = false;
-                    enemiesKilledUI.text = "Kill " + (10 - enemiesKilled) + " enemies to unlock";
+                    enemiesKilledUI.text = "Kill " + (24 - enemiesKilled) + " enemies to unlock";
                 }
                 else
                 {
@@ -124,10 +131,10 @@ public class GrabWeapon : MonoBehaviour
             case "Skorpion":
                 // if the player has not yet killed 30 enemies then display how many more enemies the player
                 // needs to kill to unlock the weapon
-                if(enemiesKilled < 30)
+                if(enemiesKilled < 90)
                 {
                     instructions.GetComponent<Text>().enabled = false;
-                    enemiesKilledUI.text = "Kill " + (30 - enemiesKilled) + " enemies to unlock";
+                    enemiesKilledUI.text = "Kill " + (90 - enemiesKilled) + " enemies to unlock";
                 }
                 else
                 {
@@ -138,10 +145,10 @@ public class GrabWeapon : MonoBehaviour
                 break;
 
             case "Ump":
-                if (enemiesKilled < 50)
+                if (enemiesKilled < 150)
                 {
                     instructions.GetComponent<Text>().enabled = false;
-                    enemiesKilledUI.text = "Kill " + (50 - enemiesKilled) + " enemies to unlock";
+                    enemiesKilledUI.text = "Kill " + (150 - enemiesKilled) + " enemies to unlock";
                 }
                 else
                 {
@@ -151,10 +158,10 @@ public class GrabWeapon : MonoBehaviour
                 break;
 
             case "Minigun":
-                if (enemiesKilled < 100)
+                if (enemiesKilled < 200)
                 {
                     instructions.GetComponent<Text>().enabled = false;
-                    enemiesKilledUI.text = "Kill " + (100 - enemiesKilled) + " enemies to unlock";
+                    enemiesKilledUI.text = "Kill " + (200 - enemiesKilled) + " enemies to unlock";
                 }
                 else
                 {
