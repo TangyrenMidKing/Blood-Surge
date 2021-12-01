@@ -20,6 +20,7 @@ public class SpawnPerk : MonoBehaviour
     int choosePerk;
     bool spawn;
     public static int enemiesKilled;
+    public static int specialEnemiesKilled;
     int playerCurrentHealth;
     float despawnTime = 20.0f;
     GameObject obj;
@@ -82,8 +83,13 @@ public class SpawnPerk : MonoBehaviour
                 Destroy(obj, despawnTime); // despawns the perk after a time, despawnTime
             }
             // destroys the zombie
+            if (gameObject.CompareTag("EliteZombie"))
+                ++specialEnemiesKilled;
+            else
+                ++enemiesKilled;
+
             Destroy(gameObject);
-            ++enemiesKilled;
+            
         }
     }
 
@@ -153,5 +159,10 @@ public class SpawnPerk : MonoBehaviour
     public int getEnemiesKilled()
     {
         return enemiesKilled;
+    }
+
+    public int getSpecialEnemiesKilled()
+    {
+        return specialEnemiesKilled;
     }
 }
