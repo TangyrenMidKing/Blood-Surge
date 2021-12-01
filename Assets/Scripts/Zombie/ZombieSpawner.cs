@@ -14,6 +14,7 @@ public class ZombieSpawner : MonoBehaviour
     int chooseSpawnPos;
     public int enemyCount;
     public int waveNumber;
+    int divider;
     bool spawn;
     bool inRangeOfButton;
 
@@ -69,39 +70,46 @@ public class ZombieSpawner : MonoBehaviour
     // spawns half the zombies at a random position on one part of the map and the other half on another part of the map
     void spawnZombies(int numEnemies)
     {
-        
-        for (int i = 0; i < numEnemies / 6; i++)
+        if (waveNumber < 5)
+            divider = 6;
+        else if (waveNumber >= 5 && waveNumber < 10)
+            divider = 3;
+        else if (waveNumber >= 10 && waveNumber < 15)
+            divider = 2;
+        else divider = 1;
+
+        for (int i = 0; i < numEnemies / divider; i++)
         {
             Instantiate(zombie, new Vector3(randx, 0, randz), zombie.transform.rotation);
             ++enemyCount;
         }
 
 
-        for (int i = 0; i < numEnemies / 6; i++)
+        for (int i = 0; i < numEnemies / divider; i++)
         {
             Instantiate(zombie, new Vector3(elrandx, 2.08f, elrandz), zombie.transform.rotation);
             ++enemyCount;
         }
 
-        for (int i = 0; i < numEnemies / 6; i++)
+        for (int i = 0; i < numEnemies / divider; i++)
         {
             Instantiate(zombie, new Vector3(lcrandx, 2.08f, lcrandz), zombie.transform.rotation);
             ++enemyCount;
         }
 
-        for (int i = 0; i < numEnemies / 6; i++)
+        for (int i = 0; i < numEnemies / divider; i++)
         {
             Instantiate(zombie, new Vector3(warandx, 2.08f, warandz), zombie.transform.rotation);
             ++enemyCount;
         }
 
-        for (int i = 0; i < numEnemies / 6; i++)
+        for (int i = 0; i < numEnemies / divider; i++)
         {
             Instantiate(zombie, new Vector3(rcrandx, 2.08f, rcrandz), zombie.transform.rotation);
             ++enemyCount;
         }
 
-        for (int i = 0; i < numEnemies / 6; i++)
+        for (int i = 0; i < numEnemies / divider; i++)
         {
             Instantiate(zombie, new Vector3(werandx, 2.08f, werandz), zombie.transform.rotation);
             ++enemyCount;

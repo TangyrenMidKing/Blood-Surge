@@ -7,8 +7,8 @@ public class PlayerController : MonoBehaviour
     float horizontalInput;
     float verticalInput;
     float walkSpeed = 3f;
-    float runSpeed = 5f;
-    float boostWalkSpeed = 5f;
+    float runSpeed = 6f;
+    float boostWalkSpeed = 6f;
     float boostRunSpeed = 8f;
     public bool hasBoostSpeed;
     float runAudio = 2.0f;
@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     void LateUpdate()
     {
         // Applies appropiate speed to movement depending if character is holding left shift and if character has the boost perk
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.Mouse0))
         {
             MoveCharacter(hasBoostSpeed ? boostRunSpeed : runSpeed);
         }
