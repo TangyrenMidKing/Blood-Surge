@@ -157,7 +157,7 @@ public class ShootGun : MonoBehaviour
         {
             case (int)Weapons.Handgun:
                 bulletSpeed = 1500f;
-                fireRate = 1f;
+                fireRate = .8f;
                 break;
 
             case (int)Weapons.M4:
