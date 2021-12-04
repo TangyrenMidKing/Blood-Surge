@@ -48,3 +48,7 @@ MonoBehaviour:
   spawnPerk: {fileID: 0}
   enemiesKilled: 0
   enemiesKilledUI: {fileID: 0}
+  enemiesToKillM4: 24
+  enemiesToKillUmp: 150
+  enemiesToKillSkorpion: 90
+  enemiesToKillMinigun: 200

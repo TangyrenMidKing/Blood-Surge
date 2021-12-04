@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1760705137040954817
+--- !u!1 &5299107152342428592
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1763527005777007849}
-  - component: {fileID: 1737943204508120061}
-  - component: {fileID: 1746380879970233373}
-  - component: {fileID: 1817867446157084969}
-  - component: {fileID: 1758735020212210404}
-  - component: {fileID: 1758735020212210403}
-  - component: {fileID: 576281096}
+  - component: {fileID: 9210261709272177059}
+  - component: {fileID: 183075862567183253}
+  - component: {fileID: 5888144172690972524}
+  - component: {fileID: 206586421085676661}
+  - component: {fileID: 4053896608651251228}
+  - component: {fileID: 7423083809127828511}
   m_Layer: 0
-  m_Name: HealthBoost 1
-  m_TagString: HealthBoost
+  m_Name: HealthHeal 1Wall
+  m_TagString: HealthHealWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1763527005777007849
+--- !u!4 &9210261709272177059
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1760705137040954817}
-  m_LocalRotation: {x: 0, y: -0.698434, z: 0.71567446, w: 0}
-  m_LocalPosition: {x: 17.392, y: 0.672, z: -10.011}
-  m_LocalScale: {x: 0.60841084, y: 0.81162864, z: 0.5948601}
+  m_GameObject: {fileID: 5299107152342428592}
+  m_LocalRotation: {x: -0, y: -0.998965, z: 0, w: -0.04548503}
+  m_LocalPosition: {x: -15.511, y: -1.907, z: 39.743}
+  m_LocalScale: {x: 0.20077883, y: 0.24858512, z: 0.23638184}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 91.397, y: -180, z: 0}
---- !u!33 &1737943204508120061
+  m_LocalEulerAnglesHint: {x: 0, y: -185.214, z: 0}
+--- !u!33 &183075862567183253
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1760705137040954817}
-  m_Mesh: {fileID: 4300000, guid: 334a15b23e6d31f44bef4858676d704a, type: 3}
---- !u!23 &1746380879970233373
+  m_GameObject: {fileID: 5299107152342428592}
+  m_Mesh: {fileID: 7323452761639777922, guid: 4e3859e7d4623f64ca345e315aebd6e6, type: 3}
+--- !u!23 &5888144172690972524
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1760705137040954817}
+  m_GameObject: {fileID: 5299107152342428592}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -63,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7825501409e770149836d764a6df318d, type: 2}
+  - {fileID: 2100000, guid: e076833fec2df4e468280e3a779a4a1c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -75,7 +74,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
+  m_StitchLightmapSeams: 1
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -85,45 +84,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &1817867446157084969
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1760705137040954817}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 334a15b23e6d31f44bef4858676d704a, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!65 &1758735020212210404
+--- !u!65 &206586421085676661
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1760705137040954817}
+  m_GameObject: {fileID: 5299107152342428592}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8154837, y: 0.3475598, z: 0.62949556}
-  m_Center: {x: -0.006825986, y: 0.16003165, z: 0.0025843019}
---- !u!114 &1758735020212210403
+  m_Size: {x: 10.2540245, y: 8.345518, z: 3.3646276}
+  m_Center: {x: 0.7563564, y: -0.23835325, z: 1.68234}
+--- !u!114 &4053896608651251228
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1760705137040954817}
+  m_GameObject: {fileID: 5299107152342428592}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b449224af70cffb40b79772de78b14b7, type: 3}
@@ -131,18 +111,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 0}
   playerBaseHealth: {fileID: 0}
-  healthPickup: {fileID: 1760705137040954817}
---- !u!114 &576281096
+  healthPickup: {fileID: 5299107152342428592}
+--- !u!114 &7423083809127828511
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1760705137040954817}
+  m_GameObject: {fileID: 5299107152342428592}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82951546996144e488276bad2ffe9059, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b052fd176332ce4ba62405c5f7e7a07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perk: {fileID: 1760705137040954817}
-  player: {fileID: 0}
+  playerHealth: {fileID: 0}
+  playerBaseHealth: {fileID: 0}
+  gameOver: {fileID: 0}
+  zombieSpawner: {fileID: 0}
+  waveNum: 0
+  scoreNum: 0
+  inRangeOfPerks: 0
+  BuyPerkUI: {fileID: 0}
+  healScore: 0
+  ammoScore: 0
+  refillAmmo: 0

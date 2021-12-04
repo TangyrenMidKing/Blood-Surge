@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class ShootGun : MonoBehaviour
 {
+    public BuyPerks buyPerks;
+    public GameObject ammoRefillObject;
+    public ZombieSpawner zombieSpawner;
     public InfiniteAmmoPerk infiniteAmmoPerk;
     public AmmoRefillPerk ammoRefillPerk;
     public Transform firePoint;
@@ -21,13 +24,16 @@ public class ShootGun : MonoBehaviour
     public int ammo = 300;
     bool hasInfiniteAmmo;
     bool hasAmmoRefill;
+    bool hasAmmoRefill2;
     float fireRate;
     public int maxAmmo = 30;
     private int currentAmmo;
     public float reloadTime = 1f;
     public bool isReloading;
-
+    int waveNum;
+    int _enemyCount;
     public Animator animator;
+    bool hasSpawned = false;
 
 
 
@@ -81,8 +87,13 @@ public class ShootGun : MonoBehaviour
             LaunchProjectile();
         }
 
+        // At end of round, this checks if an ammo refill perk will spawn in the safe zone
+        //SpawnAmmoRefillInSafeZone();
+
+
         DisplayAmmoUI();
     }
+
 
     IEnumerator Reload()
     {
@@ -122,8 +133,9 @@ public class ShootGun : MonoBehaviour
     void CheckForAmmoRefill()
     {
         hasAmmoRefill = ammoRefillPerk.refillAmmo;
+        hasAmmoRefill2 = buyPerks.refillAmmo;
 
-        if (hasAmmoRefill)
+        if (hasAmmoRefill || hasAmmoRefill2)
         {
             if (currentWeapon == (int)Weapons.Minigun)
                 currentAmmo = maxAmmo;
@@ -148,7 +160,7 @@ public class ShootGun : MonoBehaviour
         {
             case (int)Weapons.Handgun:
                 bulletSpeed = 1500f;
-                fireRate = 1f;
+                fireRate = .8f;
                 break;
 
             case (int)Weapons.M4:
@@ -221,6 +233,31 @@ public class ShootGun : MonoBehaviour
         yield return new WaitForSeconds(delay);
         shoot = true;
     }
+
+    void SpawnAmmoRefillInSafeZone()
+    {
+        waveNum = zombieSpawner.waveNumber;
+        _enemyCount = zombieSpawner.enemyCount;
+        if (ammo <= 50 && waveNum > 0 && _enemyCount == 2)
+        {
+            if (!hasSpawned)
+            {
+                StartCoroutine(SpawnAmmoRefillRoutine());
+            }
+        }
+    }
+
+    IEnumerator SpawnAmmoRefillRoutine()
+    {
+        GameObject ammoRefillInstance;
+        hasSpawned = true;
+        ammoRefillInstance = Instantiate(ammoRefillObject, new Vector3(17f, 1f, 15f), ammoRefillObject.transform.rotation);
+        yield return new WaitForSeconds(60f);
+
+        Destroy(ammoRefillInstance);
+        hasSpawned = false;
+    }
+
 
     void DisplayAmmoUI()
     {

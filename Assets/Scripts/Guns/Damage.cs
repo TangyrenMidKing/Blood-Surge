@@ -66,7 +66,7 @@ public class Damage : MonoBehaviour
         switch (currentWeapon)
         {
             case (int)Weapons.Handgun:
-                damage = 20;
+                damage = 30;
                 break;
 
             case (int)Weapons.M4:

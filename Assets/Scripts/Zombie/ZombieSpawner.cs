@@ -11,11 +11,14 @@ public class ZombieSpawner : MonoBehaviour
     public Text instructions;
     public Text waveNumberUI;
     float randx, randz, elrandx, elrandz, lcrandx, lcrandz, warandx, warandz, rcrandx, rcrandz, werandx, werandz;
+    float mirandx, mirandz;
     int chooseSpawnPos;
     public int enemyCount;
     public int waveNumber;
+    int divider;
     bool spawn;
     bool inRangeOfButton;
+    public float timeBetweenSpawn = 3f;
 
 
 
@@ -54,7 +57,7 @@ public class ZombieSpawner : MonoBehaviour
                 Destroy(block.gameObject);
  
                 waveNumber++;
-                spawnZombies(waveNumber * 3 + 10);
+                spawnZombies((waveNumber*2) +10);
             }
 
         }
@@ -65,47 +68,150 @@ public class ZombieSpawner : MonoBehaviour
 
     }
 
+    IEnumerator SpawnRoutine(int numEnemies)
+    {
+        int i = 0;
+ 
+        while (i < numEnemies)
+        {
+            if (enemyCount < (numEnemies/2))
+            {
+                switch (Random.Range(0, 7))
+                {
+                    case 0:
+                        Instantiate(zombie, new Vector3(randx, 0, randz), zombie.transform.rotation);
+                        if(waveNumber>=5 && waveNumber < 10)
+                            Instantiate(zombie, new Vector3(randx, 0, randz), zombie.transform.rotation);
+                        else if(waveNumber>=10 && waveNumber < 15)
+                        {
+                            Instantiate(zombie, new Vector3(randx, 0, randz), zombie.transform.rotation);
+                            Instantiate(zombie, new Vector3(randx, 0, randz), zombie.transform.rotation);
+                        }
+                        else if (waveNumber>= 15)
+                        {
+                            Instantiate(zombie, new Vector3(randx, 0, randz), zombie.transform.rotation);
+                            Instantiate(zombie, new Vector3(randx, 0, randz), zombie.transform.rotation);
+                            Instantiate(zombie, new Vector3(randx, 0, randz), zombie.transform.rotation);
+                            Instantiate(zombie, new Vector3(randx, 0, randz), zombie.transform.rotation);
+                        }
+
+                        break;
+                    case 1:
+                        Instantiate(zombie, new Vector3(elrandx, 2.08f, elrandz), zombie.transform.rotation);
+                        if (waveNumber >= 5 && waveNumber < 10)
+                            Instantiate(zombie, new Vector3(elrandx, 2.08f, elrandz), zombie.transform.rotation);
+                        else if(waveNumber>=10 && waveNumber < 15)
+                        {
+                            Instantiate(zombie, new Vector3(elrandx, 2.08f, elrandz), zombie.transform.rotation);
+                            Instantiate(zombie, new Vector3(elrandx, 2.08f, elrandz), zombie.transform.rotation);
+                        }
+                        else if (waveNumber >= 15)
+                        {
+                            Instantiate(zombie, new Vector3(elrandx, 2.08f, elrandz), zombie.transform.rotation);
+                            Instantiate(zombie, new Vector3(elrandx, 2.08f, elrandz), zombie.transform.rotation);
+                            Instantiate(zombie, new Vector3(elrandx, 2.08f, elrandz), zombie.transform.rotation);
+                            Instantiate(zombie, new Vector3(elrandx, 2.08f, elrandz), zombie.transform.rotation);
+                        }
+                        break;
+                    case 2:
+                        Instantiate(zombie, new Vector3(lcrandx, 2.08f, lcrandz), zombie.transform.rotation);
+                        if (waveNumber >= 5 && waveNumber < 10)
+                            Instantiate(zombie, new Vector3(lcrandx, 2.08f, lcrandz), zombie.transform.rotation);
+                        else if(waveNumber>=10 && waveNumber < 15)
+                        {
+                            Instantiate(zombie, new Vector3(lcrandx, 2.08f, lcrandz), zombie.transform.rotation);
+                            Instantiate(zombie, new Vector3(lcrandx, 2.08f, lcrandz), zombie.transform.rotation);
+                        }
+                        else if (waveNumber >= 15)
+                        {
+                            Instantiate(zombie, new Vector3(lcrandx, 2.08f, lcrandz), zombie.transform.rotation);
+                            Instantiate(zombie, new Vector3(lcrandx, 2.08f, lcrandz), zombie.transform.rotation);
+                            Instantiate(zombie, new Vector3(lcrandx, 2.08f, lcrandz), zombie.transform.rotation);
+                            Instantiate(zombie, new Vector3(lcrandx, 2.08f, lcrandz), zombie.transform.rotation);
+                        }
+                        break;
+                    case 3:
+                        Instantiate(zombie, new Vector3(warandx, 2.08f, warandz), zombie.transform.rotation);
+                        if (waveNumber >= 5 && waveNumber < 10)
+                            Instantiate(zombie, new Vector3(warandx, 2.08f, warandz), zombie.transform.rotation);
+                        else if(waveNumber>=10 && waveNumber < 15)
+                        {
+                            Instantiate(zombie, new Vector3(warandx, 2.08f, warandz), zombie.transform.rotation);
+                            Instantiate(zombie, new Vector3(warandx, 2.08f, warandz), zombie.transform.rotation);
+                        }
+                        else if (waveNumber >= 15)
+                        {
+                            Instantiate(zombie, new Vector3(warandx, 2.08f, warandz), zombie.transform.rotation);
+                            Instantiate(zombie, new Vector3(warandx, 2.08f, warandz), zombie.transform.rotation);
+                            Instantiate(zombie, new Vector3(warandx, 2.08f, warandz), zombie.transform.rotation);
+                            Instantiate(zombie, new Vector3(warandx, 2.08f, warandz), zombie.transform.rotation);
+                        }
+                        break;
+                    case 4:
+                        Instantiate(zombie, new Vector3(rcrandx, 2.08f, rcrandz), zombie.transform.rotation);
+                        if (waveNumber >= 5 && waveNumber < 10)
+                            Instantiate(zombie, new Vector3(rcrandx, 2.08f, rcrandz), zombie.transform.rotation);
+                        else if(waveNumber>=10 && waveNumber < 15)
+                        {
+                            Instantiate(zombie, new Vector3(rcrandx, 2.08f, rcrandz), zombie.transform.rotation);
+                            Instantiate(zombie, new Vector3(rcrandx, 2.08f, rcrandz), zombie.transform.rotation);
+                        }
+                        else if (waveNumber >= 15)
+                        {
+                            Instantiate(zombie, new Vector3(rcrandx, 2.08f, rcrandz), zombie.transform.rotation);
+                            Instantiate(zombie, new Vector3(rcrandx, 2.08f, rcrandz), zombie.transform.rotation);
+                            Instantiate(zombie, new Vector3(rcrandx, 2.08f, rcrandz), zombie.transform.rotation);
+                            Instantiate(zombie, new Vector3(rcrandx, 2.08f, rcrandz), zombie.transform.rotation);
+                        }
+                        break;
+                    case 5:
+                        Instantiate(zombie, new Vector3(werandx, 2.08f, werandz), zombie.transform.rotation);
+                        if (waveNumber >= 5 && waveNumber < 10)
+                            Instantiate(zombie, new Vector3(werandx, 2.08f, werandz), zombie.transform.rotation);
+                        else if(waveNumber>=10 && waveNumber < 15)
+                        {
+                            Instantiate(zombie, new Vector3(werandx, 2.08f, werandz), zombie.transform.rotation);
+                            Instantiate(zombie, new Vector3(werandx, 2.08f, werandz), zombie.transform.rotation);
+                        }
+                        else if (waveNumber >= 15)
+                        {
+                            Instantiate(zombie, new Vector3(werandx, 2.08f, werandz), zombie.transform.rotation);
+                            Instantiate(zombie, new Vector3(werandx, 2.08f, werandz), zombie.transform.rotation);
+                            Instantiate(zombie, new Vector3(werandx, 2.08f, werandz), zombie.transform.rotation);
+                            Instantiate(zombie, new Vector3(werandx, 2.08f, werandz), zombie.transform.rotation);
+                        }
+                        break;
+                    case 6:
+                        Instantiate(zombie, new Vector3(mirandx, 2.08f, mirandz), zombie.transform.rotation);
+                        if (waveNumber >= 5 && waveNumber < 10)
+                            Instantiate(zombie, new Vector3(mirandx, 2.08f, mirandz), zombie.transform.rotation);
+                        else if(waveNumber>=10 && waveNumber < 15)
+                        {
+                            Instantiate(zombie, new Vector3(mirandx, 2.08f, mirandz), zombie.transform.rotation);
+                            Instantiate(zombie, new Vector3(mirandx, 2.08f, mirandz), zombie.transform.rotation);
+                        }
+                        else if (waveNumber >= 15)
+                        {
+                            Instantiate(zombie, new Vector3(mirandx, 2.08f, mirandz), zombie.transform.rotation);
+                            Instantiate(zombie, new Vector3(mirandx, 2.08f, mirandz), zombie.transform.rotation);
+                            Instantiate(zombie, new Vector3(mirandx, 2.08f, mirandz), zombie.transform.rotation);
+                            Instantiate(zombie, new Vector3(mirandx, 2.08f, mirandz), zombie.transform.rotation);
+                        }
+                        break;
+                }
+
+                ++i;
+                yield return new WaitForSeconds(timeBetweenSpawn);
+            }
+            yield return null;
+        }
+    }
 
     // spawns half the zombies at a random position on one part of the map and the other half on another part of the map
     void spawnZombies(int numEnemies)
     {
-        
-        for (int i = 0; i < numEnemies / 6; i++)
-        {
-            Instantiate(zombie, new Vector3(randx, 0, randz), zombie.transform.rotation);
-            ++enemyCount;
-        }
 
-
-        for (int i = 0; i < numEnemies / 6; i++)
-        {
-            Instantiate(zombie, new Vector3(elrandx, 2.08f, elrandz), zombie.transform.rotation);
-            ++enemyCount;
-        }
-
-        for (int i = 0; i < numEnemies / 6; i++)
-        {
-            Instantiate(zombie, new Vector3(lcrandx, 2.08f, lcrandz), zombie.transform.rotation);
-            ++enemyCount;
-        }
-
-        for (int i = 0; i < numEnemies / 6; i++)
-        {
-            Instantiate(zombie, new Vector3(warandx, 2.08f, warandz), zombie.transform.rotation);
-            ++enemyCount;
-        }
-
-        for (int i = 0; i < numEnemies / 6; i++)
-        {
-            Instantiate(zombie, new Vector3(rcrandx, 2.08f, rcrandz), zombie.transform.rotation);
-            ++enemyCount;
-        }
-
-        for (int i = 0; i < numEnemies / 6; i++)
-        {
-            Instantiate(zombie, new Vector3(werandx, 2.08f, werandz), zombie.transform.rotation);
-            ++enemyCount;
-        }
+        StartCoroutine(SpawnRoutine(numEnemies));
 
         if (waveNumber % 5 == 0)
             spawnEliteZombies(waveNumber / 5);
@@ -145,6 +251,9 @@ public class ZombieSpawner : MonoBehaviour
 
         werandx = Random.Range(54f, 61f);
         werandz = Random.Range(11f, 16f);
+
+        mirandx = Random.Range(37f, 43f);
+        mirandz = Random.Range(-11f, -17f);
     }
 
     private void OnTriggerEnter(Collider other)

@@ -8,6 +8,8 @@ public class Pause : MonoBehaviour
     public static bool paused = false;
     public Canvas pauseUI;
     public GameObject crosshair;
+    public GameOver gameOver;
+    int scoreNum;
 
 
     /*private void Start()
@@ -18,6 +20,7 @@ public class Pause : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        scoreNum = gameOver.scoreNum;
 
         EnablePauseMenu();
 
@@ -76,6 +79,10 @@ public class Pause : MonoBehaviour
     {
         paused = false;
         Time.timeScale = 1f;
+
+        if (scoreNum > PlayerPrefs.GetInt("HighScore", 0))
+            PlayerPrefs.SetInt("HighScore", scoreNum);
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }
