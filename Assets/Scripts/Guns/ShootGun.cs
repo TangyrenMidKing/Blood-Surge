@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ShootGun : MonoBehaviour
 {
+    public BuyPerks buyPerks;
     public GameObject ammoRefillObject;
     public ZombieSpawner zombieSpawner;
     public InfiniteAmmoPerk infiniteAmmoPerk;
@@ -23,6 +24,7 @@ public class ShootGun : MonoBehaviour
     public int ammo = 300;
     bool hasInfiniteAmmo;
     bool hasAmmoRefill;
+    bool hasAmmoRefill2;
     float fireRate;
     public int maxAmmo = 30;
     private int currentAmmo;
@@ -131,8 +133,9 @@ public class ShootGun : MonoBehaviour
     void CheckForAmmoRefill()
     {
         hasAmmoRefill = ammoRefillPerk.refillAmmo;
+        hasAmmoRefill2 = buyPerks.refillAmmo;
 
-        if (hasAmmoRefill)
+        if (hasAmmoRefill || hasAmmoRefill2)
         {
             if (currentWeapon == (int)Weapons.Minigun)
                 currentAmmo = maxAmmo;

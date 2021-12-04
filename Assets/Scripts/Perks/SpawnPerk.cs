@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class SpawnPerk : MonoBehaviour
 {
+    public ZombieSpawner zombieSpawner;
     public GrabWeapon currentWeapon;
-
+    public GameOver gameOver;
     public ShootGun M4ShootGun;
     public ShootGun SkorpionShootGun;
     public ShootGun UmpShootGun;
@@ -16,6 +17,7 @@ public class SpawnPerk : MonoBehaviour
     public GameObject[] perks = new GameObject[6];
     public PlayerHealth playerHealth;
     //public GameObject zombie;
+    int waveNum;
     int health;
     int choosePerk;
     bool spawn;
@@ -47,6 +49,7 @@ public class SpawnPerk : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        waveNum = zombieSpawner.waveNumber;
         switch (currentWeapon.getCurrentWeapon())
         {
             case (int)Weapons.Handgun:
@@ -84,14 +87,25 @@ public class SpawnPerk : MonoBehaviour
             }
             // destroys the zombie
             if (gameObject.CompareTag("EliteZombie"))
+            {
                 ++specialEnemiesKilled;
-            else
-                ++enemiesKilled;
+                gameOver.setScoreNum(waveNum*2);
+            }
 
+            else
+            {
+                ++enemiesKilled;
+                gameOver.setScoreNum(waveNum * 1);
+            }
+                
+
+            //gameOver.setScoreNum(waveNum * (enemiesKilled + (2*specialEnemiesKilled)));
             Destroy(gameObject);
             
         }
     }
+
+
 
 
     // randomly choose a perk
