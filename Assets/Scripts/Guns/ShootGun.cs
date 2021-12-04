@@ -88,7 +88,7 @@ public class ShootGun : MonoBehaviour
         }
 
         // At end of round, this checks if an ammo refill perk will spawn in the safe zone
-        SpawnAmmoRefillInSafeZone();
+        //SpawnAmmoRefillInSafeZone();
 
 
         DisplayAmmoUI();

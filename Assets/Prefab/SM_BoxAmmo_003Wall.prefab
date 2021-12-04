@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4172658137146735304}
   m_Layer: 0
   m_Name: SM_BoxAmmo_003Wall
-  m_TagString: ammo
+  m_TagString: ammowall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5524936219667319845}
-  m_LocalRotation: {x: -0.0048305714, y: 0.99081117, z: -0.13006037, w: 0.036799714}
+  m_LocalRotation: {x: -0.0048284004, y: 0.99081147, z: -0.13005722, w: 0.03680269}
   m_LocalPosition: {x: -18.913, y: -1.692, z: 39.701}
   m_LocalScale: {x: 11.231072, y: 11.231072, z: 11.231072}
   m_Children:
@@ -65,8 +65,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.21120037, y: 0.16752988, z: 0.18622993}
-  m_Center: {x: 0.014477142, y: 0.053902447, z: 0.07667287}
+  m_Size: {x: 0.18090647, y: 0.16752987, z: 0.24289456}
+  m_Center: {x: 0.029624118, y: 0.053902455, z: 0.10500484}
 --- !u!114 &4172658137146735304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,6 +83,7 @@ MonoBehaviour:
   playerBaseHealth: {fileID: 0}
   gameOver: {fileID: 0}
   zombieSpawner: {fileID: 0}
+  waveNum: 0
   scoreNum: 0
   inRangeOfPerks: 0
   BuyPerkUI: {fileID: 0}

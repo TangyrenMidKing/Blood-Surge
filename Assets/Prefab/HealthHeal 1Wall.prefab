@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7423083809127828511}
   m_Layer: 0
   m_Name: HealthHeal 1Wall
-  m_TagString: HealthHeal
+  m_TagString: HealthHealWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5299107152342428592}
-  m_LocalRotation: {x: -0, y: -0.99896497, z: -0, w: -0.04548757}
+  m_LocalRotation: {x: -0, y: -0.998965, z: 0, w: -0.04548503}
   m_LocalPosition: {x: -15.511, y: -1.907, z: 39.743}
   m_LocalScale: {x: 0.20077883, y: 0.24858512, z: 0.23638184}
   m_Children: []
@@ -95,8 +95,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10.2540245, y: 8.345518, z: 4.0347047}
-  m_Center: {x: 0.7563564, y: -0.23835301, z: 2.0173726}
+  m_Size: {x: 10.2540245, y: 8.345518, z: 3.3646276}
+  m_Center: {x: 0.7563564, y: -0.23835325, z: 1.68234}
 --- !u!114 &4053896608651251228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,9 +128,10 @@ MonoBehaviour:
   playerBaseHealth: {fileID: 0}
   gameOver: {fileID: 0}
   zombieSpawner: {fileID: 0}
+  waveNum: 0
   scoreNum: 0
   inRangeOfPerks: 0
   BuyPerkUI: {fileID: 0}
-  healScore: 50
-  ammoScore: 25
+  healScore: 0
+  ammoScore: 0
   refillAmmo: 0

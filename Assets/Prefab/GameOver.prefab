@@ -44,8 +44,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c87f9edba194f4a8451ebadfa0f2cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnPerk: {fileID: 0}
+  zombieSpawner: {fileID: 0}
   playerHealth: {fileID: 0}
   death: {fileID: 8300000, guid: 5d09dd86efd604b0e9048fd674a6fa27, type: 3}
+  score: {fileID: 0}
+  specialEnemiesKilled: 0
+  enemiesKilled: 0
+  waveNum: 0
+  scoreNum: 0
 --- !u!82 &1120285516
 AudioSource:
   m_ObjectHideFlags: 0

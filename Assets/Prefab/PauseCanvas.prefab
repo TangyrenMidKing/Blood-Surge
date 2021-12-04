@@ -408,6 +408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseUI: {fileID: 1190268863746483345}
   crosshair: {fileID: 0}
+  gameOver: {fileID: 0}
 --- !u!1 &1190268864641560812
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,3 +636,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseUI: {fileID: 1190268863746483345}
   crosshair: {fileID: 0}
+  gameOver: {fileID: 0}

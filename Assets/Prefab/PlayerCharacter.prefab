@@ -333,6 +333,122 @@ MonoBehaviour:
   - {fileID: 9036204326734358948}
   - {fileID: 9036204327286791766}
   - {fileID: 9036204327231087735}
+  - {fileID: 919132149251478995}
+--- !u!82 &919132149401997304
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149251478995}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1b145bcffd767854fb0c71c37678ebaa, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.2
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!95 &919132149401997305
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149251478995}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 322b9dc6bb7e25744b9c505c2bc4f13a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!82 &750519575
 AudioSource:
   m_ObjectHideFlags: 0
@@ -460,6 +576,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f14ea01f05b7c8744b9b2e3257a70c5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buyPerks: {fileID: 0}
+  ammoRefillObject: {fileID: 0}
+  zombieSpawner: {fileID: 0}
   infiniteAmmoPerk: {fileID: 1641074543}
   ammoRefillPerk: {fileID: 2058988827}
   firePoint: {fileID: 1114015992}
@@ -664,6 +783,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1980037553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9036204326734358948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f14ea01f05b7c8744b9b2e3257a70c5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buyPerks: {fileID: 0}
+  ammoRefillObject: {fileID: 0}
+  zombieSpawner: {fileID: 0}
+  infiniteAmmoPerk: {fileID: 1641074543}
+  ammoRefillPerk: {fileID: 2058988827}
+  firePoint: {fileID: 1751208572}
+  projectile: {fileID: 0}
+  projectilePrefab: {fileID: 0}
+  grabWeapon: {fileID: 0}
+  gunfire: {fileID: 8300000, guid: f19e3fdb9c8082647a2c32beca28ba84, type: 3}
+  ammoUI: {fileID: 0}
+  ammo: 300
+  maxAmmo: 30
+  reloadTime: 3
+  isReloading: 0
+  animator: {fileID: 861757837}
 --- !u!95 &861757837
 Animator:
   serializedVersion: 3
@@ -683,31 +830,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1980037553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9036204326734358948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f14ea01f05b7c8744b9b2e3257a70c5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  infiniteAmmoPerk: {fileID: 1641074543}
-  ammoRefillPerk: {fileID: 2058988827}
-  firePoint: {fileID: 1751208572}
-  projectile: {fileID: 0}
-  projectilePrefab: {fileID: 0}
-  grabWeapon: {fileID: 0}
-  gunfire: {fileID: 8300000, guid: f19e3fdb9c8082647a2c32beca28ba84, type: 3}
-  ammoUI: {fileID: 0}
-  ammo: 300
-  maxAmmo: 30
-  reloadTime: 3
-  isReloading: 0
-  animator: {fileID: 861757837}
 --- !u!1 &9036204326960492369
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,6 +1193,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &855223271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9036204327231087735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f14ea01f05b7c8744b9b2e3257a70c5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buyPerks: {fileID: 0}
+  ammoRefillObject: {fileID: 0}
+  zombieSpawner: {fileID: 0}
+  infiniteAmmoPerk: {fileID: 1641074543}
+  ammoRefillPerk: {fileID: 2058988827}
+  firePoint: {fileID: 962137063}
+  projectile: {fileID: 0}
+  projectilePrefab: {fileID: 0}
+  grabWeapon: {fileID: 0}
+  gunfire: {fileID: 8300000, guid: 8581f806dddef8046b4942de05b897be, type: 3}
+  ammoUI: {fileID: 0}
+  ammo: 300
+  maxAmmo: 25
+  reloadTime: 1.5
+  isReloading: 0
+  animator: {fileID: 396916486}
 --- !u!95 &396916486
 Animator:
   serializedVersion: 3
@@ -1090,31 +1240,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &855223271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9036204327231087735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f14ea01f05b7c8744b9b2e3257a70c5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  infiniteAmmoPerk: {fileID: 1641074543}
-  ammoRefillPerk: {fileID: 2058988827}
-  firePoint: {fileID: 962137063}
-  projectile: {fileID: 0}
-  projectilePrefab: {fileID: 0}
-  grabWeapon: {fileID: 0}
-  gunfire: {fileID: 8300000, guid: 8581f806dddef8046b4942de05b897be, type: 3}
-  ammoUI: {fileID: 0}
-  ammo: 300
-  maxAmmo: 30
-  reloadTime: 1.5
-  isReloading: 0
-  animator: {fileID: 396916486}
 --- !u!82 &1019901101
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1211,6 +1336,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1961304430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9036204327286791766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f14ea01f05b7c8744b9b2e3257a70c5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buyPerks: {fileID: 0}
+  ammoRefillObject: {fileID: 0}
+  zombieSpawner: {fileID: 0}
+  infiniteAmmoPerk: {fileID: 1641074543}
+  ammoRefillPerk: {fileID: 2058988827}
+  firePoint: {fileID: 4827740711780013605}
+  projectile: {fileID: 0}
+  projectilePrefab: {fileID: 0}
+  grabWeapon: {fileID: 0}
+  gunfire: {fileID: 8300000, guid: 1b145bcffd767854fb0c71c37678ebaa, type: 3}
+  ammoUI: {fileID: 0}
+  ammo: 300
+  maxAmmo: 20
+  reloadTime: 1.5
+  isReloading: 0
+  animator: {fileID: 1468601583}
 --- !u!95 &1468601583
 Animator:
   serializedVersion: 3
@@ -1230,31 +1383,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1961304430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9036204327286791766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f14ea01f05b7c8744b9b2e3257a70c5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  infiniteAmmoPerk: {fileID: 1641074543}
-  ammoRefillPerk: {fileID: 2058988827}
-  firePoint: {fileID: 4827740711780013605}
-  projectile: {fileID: 0}
-  projectilePrefab: {fileID: 0}
-  grabWeapon: {fileID: 0}
-  gunfire: {fileID: 8300000, guid: 1b145bcffd767854fb0c71c37678ebaa, type: 3}
-  ammoUI: {fileID: 0}
-  ammo: 300
-  maxAmmo: 30
-  reloadTime: 1.5
-  isReloading: 0
-  animator: {fileID: 1468601583}
 --- !u!1 &9036204327839815669
 GameObject:
   m_ObjectHideFlags: 0
@@ -1290,6 +1418,7 @@ Transform:
   - {fileID: 9036204327286424182}
   - {fileID: 9036204327230994519}
   - {fileID: 7763809825833663438}
+  - {fileID: 543450653510782825}
   m_Father: {fileID: 9036204326960492368}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1431,6 +1560,129 @@ GameObject:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7763809825007691001, guid: 5c59210965ffbcc4093fe99a29edb777, type: 3}
   m_PrefabInstance: {fileID: 935714615}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7499533450948068477
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 9036204327839815668}
+    m_Modifications:
+    - target: {fileID: 7265106787650359726, guid: 4a21b747e59e71640b99285f317b0267, type: 3}
+      propertyPath: m_Name
+      value: ChainGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 7265106787650359726, guid: 4a21b747e59e71640b99285f317b0267, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7265106787650359726, guid: 4a21b747e59e71640b99285f317b0267, type: 3}
+      propertyPath: m_TagString
+      value: Minigun
+      objectReference: {fileID: 0}
+    - target: {fileID: 7499533450750258416, guid: 4a21b747e59e71640b99285f317b0267, type: 3}
+      propertyPath: ammo
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7499533450750258416, guid: 4a21b747e59e71640b99285f317b0267, type: 3}
+      propertyPath: ammoUI
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7499533450750258416, guid: 4a21b747e59e71640b99285f317b0267, type: 3}
+      propertyPath: maxAmmo
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7499533450750258416, guid: 4a21b747e59e71640b99285f317b0267, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 919132149401997305}
+    - target: {fileID: 7499533450750258416, guid: 4a21b747e59e71640b99285f317b0267, type: 3}
+      propertyPath: buyPerks
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7499533450750258416, guid: 4a21b747e59e71640b99285f317b0267, type: 3}
+      propertyPath: grabWeapon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7499533450750258416, guid: 4a21b747e59e71640b99285f317b0267, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7499533450750258416, guid: 4a21b747e59e71640b99285f317b0267, type: 3}
+      propertyPath: zombieSpawner
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7499533450750258416, guid: 4a21b747e59e71640b99285f317b0267, type: 3}
+      propertyPath: ammoRefillPerk
+      value: 
+      objectReference: {fileID: 2058988827}
+    - target: {fileID: 7499533450750258416, guid: 4a21b747e59e71640b99285f317b0267, type: 3}
+      propertyPath: ammoRefillObject
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7499533450750258416, guid: 4a21b747e59e71640b99285f317b0267, type: 3}
+      propertyPath: infiniteAmmoPerk
+      value: 
+      objectReference: {fileID: 1641074543}
+    - target: {fileID: 7499533450750258416, guid: 4a21b747e59e71640b99285f317b0267, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041468011592125204, guid: 4a21b747e59e71640b99285f317b0267, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041468011592125204, guid: 4a21b747e59e71640b99285f317b0267, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.7495445
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041468011592125204, guid: 4a21b747e59e71640b99285f317b0267, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.6389111
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041468011592125204, guid: 4a21b747e59e71640b99285f317b0267, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.6380726
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041468011592125204, guid: 4a21b747e59e71640b99285f317b0267, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9996295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041468011592125204, guid: 4a21b747e59e71640b99285f317b0267, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041468011592125204, guid: 4a21b747e59e71640b99285f317b0267, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.027222171
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041468011592125204, guid: 4a21b747e59e71640b99285f317b0267, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041468011592125204, guid: 4a21b747e59e71640b99285f317b0267, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041468011592125204, guid: 4a21b747e59e71640b99285f317b0267, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 187.325
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041468011592125204, guid: 4a21b747e59e71640b99285f317b0267, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4a21b747e59e71640b99285f317b0267, type: 3}
+--- !u!4 &543450653510782825 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8041468011592125204, guid: 4a21b747e59e71640b99285f317b0267, type: 3}
+  m_PrefabInstance: {fileID: 7499533450948068477}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &919132149251478995 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7265106787650359726, guid: 4a21b747e59e71640b99285f317b0267, type: 3}
+  m_PrefabInstance: {fileID: 7499533450948068477}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9036204326734327556
 PrefabInstance:

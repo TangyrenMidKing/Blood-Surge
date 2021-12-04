@@ -33,10 +33,10 @@ RectTransform:
   m_Father: {fileID: 8989722715762313982}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 197.15, y: 72.7}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 301, y: -148}
+  m_SizeDelta: {x: 400, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1369553025
 CanvasRenderer:
@@ -205,10 +205,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zombie: {fileID: 0}
+  boss: {fileID: 0}
+  block: {fileID: 0}
   instructions: {fileID: 8989722715879691205}
   waveNumberUI: {fileID: 1369553024}
   enemyCount: 0
   waveNumber: 0
+  timeBetweenSpawn: 3
 --- !u!114 &1749764302405319712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,7 +378,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 391640368611440235, guid: 52b00e477c3465b4f92465e60de1413c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 228
+      value: 254.3
       objectReference: {fileID: 0}
     - target: {fileID: 391640368611440235, guid: 52b00e477c3465b4f92465e60de1413c, type: 3}
       propertyPath: m_AnchoredPosition.y
