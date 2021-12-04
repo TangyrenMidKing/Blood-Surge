@@ -115,13 +115,13 @@ public class BuyPerks : MonoBehaviour
         switch (gameObject.tag)
         {
             case "HealthHealWall":
-                BuyPerkUI.text = "Spend " + healScore + " score points to heal yourself to full health?";
+                BuyPerkUI.text = "Spend " + healScore + " score to restore your health";
 
 
                 break;
 
             case "ammowall":
-                BuyPerkUI.text = "Spend " + ammoScore + " score points to refill this gun's ammo?";
+                BuyPerkUI.text = "Spend " + ammoScore + " score to refill your ammo";
                 break;
 
             default:

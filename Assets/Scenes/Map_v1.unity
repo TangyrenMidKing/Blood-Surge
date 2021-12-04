@@ -32399,6 +32399,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1281393700}
     m_Modifications:
+    - target: {fileID: 4644028299196144513, guid: 15a713a43253a8d4aacc8808609f3168, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 125
+      objectReference: {fileID: 0}
     - target: {fileID: 4644028299380753076, guid: 15a713a43253a8d4aacc8808609f3168, type: 3}
       propertyPath: m_Name
       value: PerksOnWallCanvas
