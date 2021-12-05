@@ -6699,12 +6699,16 @@ PrefabInstance:
       objectReference: {fileID: 1000010840487055}
     - target: {fileID: 1961304430, guid: 721105026b78a60459da0374e761aa9f, type: 3}
       propertyPath: ammo
-      value: 50
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 1961304430, guid: 721105026b78a60459da0374e761aa9f, type: 3}
       propertyPath: ammoUI
       value: 
       objectReference: {fileID: 1873080099}
+    - target: {fileID: 1961304430, guid: 721105026b78a60459da0374e761aa9f, type: 3}
+      propertyPath: maxAmmo
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 1961304430, guid: 721105026b78a60459da0374e761aa9f, type: 3}
       propertyPath: buyPerks
       value: 
@@ -32560,6 +32564,14 @@ PrefabInstance:
       propertyPath: perks.Array.data[5]
       value: 
       objectReference: {fileID: 1424270033}
+    - target: {fileID: 5229492417284804195, guid: 600ae51c13af21846be9c97731b9bfe2, type: 3}
+      propertyPath: health
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229492417284804206, guid: 600ae51c13af21846be9c97731b9bfe2, type: 3}
+      propertyPath: m_Speed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5229492417284804207, guid: 600ae51c13af21846be9c97731b9bfe2, type: 3}
       propertyPath: agent
       value: 

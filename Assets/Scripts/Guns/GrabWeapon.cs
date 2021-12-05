@@ -55,7 +55,7 @@ public class GrabWeapon : MonoBehaviour
                 break;
 
             case "M4":
-                if(enemiesKilled >= 24)
+                if(enemiesKilled >= 26)
                 {
                     weaponList.weaponArray[currentWeapon].SetActive(false);
                     currentWeapon = 1; // The position of the M4 weapon in the WeaponList Array
@@ -64,7 +64,7 @@ public class GrabWeapon : MonoBehaviour
 
             case "Skorpion":
                 // if the player killed 30 or more enemies then allow the player to grab this weapon
-                if(enemiesKilled >= 90)
+                if(enemiesKilled >= /*100*/0)
                 {
                     weaponList.weaponArray[currentWeapon].SetActive(false);
                     currentWeapon = 2; // The position of the Skorpion weapon in the WeaponList Array
@@ -72,7 +72,7 @@ public class GrabWeapon : MonoBehaviour
                 break;
 
             case "Ump":
-                if(enemiesKilled >= 150)
+                if(enemiesKilled >= 280)
                 {
                     weaponList.weaponArray[currentWeapon].SetActive(false);
                     currentWeapon = 3; // The position of the Ump weapon in the WeaponList Array
@@ -80,7 +80,7 @@ public class GrabWeapon : MonoBehaviour
                 break;
 
             case "Minigun":
-                if (enemiesKilled >= 200)
+                if (enemiesKilled >= 790)
                 {
                     weaponList.weaponArray[currentWeapon].SetActive(false);
                     currentWeapon = 4; // The position of the Ump weapon in the WeaponList Array
@@ -117,7 +117,7 @@ public class GrabWeapon : MonoBehaviour
                 if(enemiesKilled < 24)
                 {
                     instructions.GetComponent<Text>().enabled = false;
-                    enemiesKilledUI.text = "Kill " + (24 - enemiesKilled) + " enemies to unlock";
+                    enemiesKilledUI.text = "Kill " + (26 - enemiesKilled) + " enemies to unlock";
                 }
                 else
                 {
@@ -134,7 +134,7 @@ public class GrabWeapon : MonoBehaviour
                 if(enemiesKilled < 90)
                 {
                     instructions.GetComponent<Text>().enabled = false;
-                    enemiesKilledUI.text = "Kill " + (90 - enemiesKilled) + " enemies to unlock";
+                    enemiesKilledUI.text = "Kill " + (100 - enemiesKilled) + " enemies to unlock";
                 }
                 else
                 {
@@ -148,7 +148,7 @@ public class GrabWeapon : MonoBehaviour
                 if (enemiesKilled < 150)
                 {
                     instructions.GetComponent<Text>().enabled = false;
-                    enemiesKilledUI.text = "Kill " + (150 - enemiesKilled) + " enemies to unlock";
+                    enemiesKilledUI.text = "Kill " + (280 - enemiesKilled) + " enemies to unlock";
                 }
                 else
                 {
@@ -161,7 +161,7 @@ public class GrabWeapon : MonoBehaviour
                 if (enemiesKilled < 200)
                 {
                     instructions.GetComponent<Text>().enabled = false;
-                    enemiesKilledUI.text = "Kill " + (200 - enemiesKilled) + " enemies to unlock";
+                    enemiesKilledUI.text = "Kill " + (790 - enemiesKilled) + " enemies to unlock";
                 }
                 else
                 {
