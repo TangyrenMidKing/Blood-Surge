@@ -64,7 +64,7 @@ public class GrabWeapon : MonoBehaviour
 
             case "Skorpion":
                 // if the player killed 30 or more enemies then allow the player to grab this weapon
-                if(enemiesKilled >= /*100*/0)
+                if(enemiesKilled >= 100)
                 {
                     weaponList.weaponArray[currentWeapon].SetActive(false);
                     currentWeapon = 2; // The position of the Skorpion weapon in the WeaponList Array
