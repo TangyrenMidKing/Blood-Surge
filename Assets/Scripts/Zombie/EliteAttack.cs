@@ -13,6 +13,7 @@ public class EliteAttack : MonoBehaviour
     public Transform player;
     public NavMeshAgent agent;
     public AudioClip attack;
+    public AudioClip shoot_attack;
     public int zombieDamage;
     public int shootDamage;
     public float shootRange;
@@ -58,6 +59,7 @@ public class EliteAttack : MonoBehaviour
                     lastAttack = Time.time;
                     animator.SetBool("isShooting", true);
                     animator.SetBool("isAttacking", false);
+                    attackAudio.PlayOneShot(shoot_attack, 1.0f);
                     attacks(shootDamage);
                 }
             }

@@ -79506,6 +79506,10 @@ PrefabInstance:
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 867875048}
+    - target: {fileID: 5235855250641892872, guid: 600ae51c13af21846be9c97731b9bfe2, type: 3}
+      propertyPath: shoot_attack
+      value: 
+      objectReference: {fileID: 8300000, guid: bd79fdb1a8b4da34896fbae38d05751c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 600ae51c13af21846be9c97731b9bfe2, type: 3}
 --- !u!195 &5583472458455988656 stripped
