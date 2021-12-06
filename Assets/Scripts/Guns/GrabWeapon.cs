@@ -55,7 +55,7 @@ public class GrabWeapon : MonoBehaviour
                 break;
 
             case "M4":
-                if(enemiesKilled >= 26)
+                if(enemiesKilled >= /*26*/0)
                 {
                     weaponList.weaponArray[currentWeapon].SetActive(false);
                     currentWeapon = 1; // The position of the M4 weapon in the WeaponList Array
@@ -64,7 +64,7 @@ public class GrabWeapon : MonoBehaviour
 
             case "Skorpion":
                 // if the player killed 30 or more enemies then allow the player to grab this weapon
-                if(enemiesKilled >= 100)
+                if(enemiesKilled >= /*100*/0)
                 {
                     weaponList.weaponArray[currentWeapon].SetActive(false);
                     currentWeapon = 2; // The position of the Skorpion weapon in the WeaponList Array
@@ -72,7 +72,7 @@ public class GrabWeapon : MonoBehaviour
                 break;
 
             case "Ump":
-                if(enemiesKilled >= 280)
+                if(enemiesKilled >= /*280*/0)
                 {
                     weaponList.weaponArray[currentWeapon].SetActive(false);
                     currentWeapon = 3; // The position of the Ump weapon in the WeaponList Array
@@ -80,7 +80,7 @@ public class GrabWeapon : MonoBehaviour
                 break;
 
             case "Minigun":
-                if (enemiesKilled >= 790)
+                if (enemiesKilled >= /*790*/0)
                 {
                     weaponList.weaponArray[currentWeapon].SetActive(false);
                     currentWeapon = 4; // The position of the Ump weapon in the WeaponList Array

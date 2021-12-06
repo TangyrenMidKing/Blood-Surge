@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class ZombieSpawner : MonoBehaviour
 {
+    AudioSource explosionAudio;
+    public AudioClip explosion;
+    public GameObject bigExplosion;
     public GameObject zombie;
     public GameObject boss;
     public GameObject block;
@@ -25,6 +28,9 @@ public class ZombieSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        explosionAudio = GetComponent<AudioSource>();
+        explosionAudio.playOnAwake = false;
+
         waveNumber = 0;
         enemyCount = 0;
         //waveNumberUI.text = "Wave: 1";
@@ -54,6 +60,15 @@ public class ZombieSpawner : MonoBehaviour
             instructions.GetComponent<Text>().enabled = true;
             if (Input.GetKeyDown(KeyCode.E) && inRangeOfButton)
             {
+                if (waveNumber == 0)
+                {
+                    var explosionInstance = Instantiate(bigExplosion);
+                    explosionInstance.GetComponent<ParticleSystem>().Play();
+                    explosionAudio.PlayOneShot(explosion, 1f);
+                    Destroy(explosionInstance.gameObject, 1.045f);
+                }
+
+
                 Destroy(block.gameObject);
  
                 waveNumber++;
