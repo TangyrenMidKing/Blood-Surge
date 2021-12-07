@@ -48,7 +48,6 @@ public class GameOver : MonoBehaviour
     public void setScoreNum(int _scoreNum)
     {
         scoreNum +=_scoreNum;
-        Debug.Log("Setting Score");
     }
 
     // If players current health is below or equal to zero then reset level

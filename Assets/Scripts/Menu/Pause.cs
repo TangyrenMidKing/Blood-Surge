@@ -7,7 +7,7 @@ public class Pause : MonoBehaviour
 {
     public static bool paused = false;
     public Canvas pauseUI;
-    public GameObject crosshair;
+    //public GameObject crosshair;
     public GameOver gameOver;
     int scoreNum;
 
@@ -47,12 +47,12 @@ public class Pause : MonoBehaviour
         if (paused)
         {
             pauseUI.enabled = true;
-            crosshair.SetActive(false);
+            //crosshair.SetActive(false);
         }
         else
         {
             pauseUI.enabled = false;
-            crosshair.SetActive(true);
+            //crosshair.SetActive(true);
         }
     }
 

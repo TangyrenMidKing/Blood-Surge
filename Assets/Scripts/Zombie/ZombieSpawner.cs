@@ -236,8 +236,38 @@ public class ZombieSpawner : MonoBehaviour
     {
         for (int i = 0; i < numEnemies; i++)
         {
-            Instantiate(boss, new Vector3(randx, 0, randz), boss.transform.rotation);
-            ++enemyCount;
+            switch (Random.Range(0, 7))
+            {
+                case 0:
+                    Instantiate(boss, new Vector3(randx, 0, randz), boss.transform.rotation);
+                    ++enemyCount;
+                    break;
+                case 1:
+                    Instantiate(boss, new Vector3(elrandx, 2.08f, elrandz), boss.transform.rotation);
+                    ++enemyCount;
+                    break;
+                case 2:
+                    Instantiate(boss, new Vector3(lcrandx, 2.08f, lcrandz), boss.transform.rotation);
+                    ++enemyCount;
+                    break;
+                case 3:
+                    Instantiate(boss, new Vector3(warandx, 2.08f, warandz), boss.transform.rotation);
+                    ++enemyCount;
+                    break;
+                case 4:
+                    Instantiate(boss, new Vector3(rcrandx, 2.08f, rcrandz), boss.transform.rotation);
+                    ++enemyCount;
+                    break;
+                case 5:
+                    Instantiate(boss, new Vector3(werandx, 2.08f, werandz), boss.transform.rotation);
+                    ++enemyCount;
+                    break;
+                case 6:
+                    Instantiate(boss, new Vector3(mirandx, 2.08f, mirandz), boss.transform.rotation);
+                    ++enemyCount;
+                    break;
+            }
+
         }
     }
 

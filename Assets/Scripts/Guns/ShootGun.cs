@@ -99,7 +99,6 @@ public class ShootGun : MonoBehaviour
     IEnumerator Reload()
     {
         isReloading = true;
-        Debug.Log("Reloading....");
 
         animator.SetBool("reloading", true);
 
