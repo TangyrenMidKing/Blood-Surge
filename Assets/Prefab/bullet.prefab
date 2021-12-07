@@ -266,6 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968fbe6d40772b24fb7d020166daaf6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 7553904394793076228}
   impact: {fileID: 8300000, guid: 242d944eb661348c7a65969eaf11c8ef, type: 3}
   shootGun: {fileID: 0}
   grabWeapon: {fileID: 0}

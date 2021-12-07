@@ -9,10 +9,13 @@ using UnityEngine.AI;
 
 public class EliteAttack : MonoBehaviour
 {
+    public AudioClip playerHit;
+    public AudioSource playerHitAudio;
     public PlayerHealth playerHealth;
     public Transform player;
     public NavMeshAgent agent;
     public AudioClip attack;
+    public AudioClip shoot_attack;
     public int zombieDamage;
     public int shootDamage;
     public float shootRange;
@@ -21,14 +24,16 @@ public class EliteAttack : MonoBehaviour
     Animator animator;
     int playersCurrentHealth;
     float attackCooldown = 3f;
-    float shootCooldown = 4f;
+    float shootCooldown = 10f;
     float lastAttack = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
+        playerHitAudio= GetComponent<AudioSource>();
         attackAudio = GetComponent<AudioSource>();
         attackAudio.playOnAwake = false;
+        playerHitAudio.playOnAwake = false;
         player = GameObject.Find("PlayerCharacter").transform;
         animator = GetComponent<Animator>();
         animator.SetBool("isRunning", true);
@@ -58,6 +63,8 @@ public class EliteAttack : MonoBehaviour
                     lastAttack = Time.time;
                     animator.SetBool("isShooting", true);
                     animator.SetBool("isAttacking", false);
+                    attackAudio.PlayOneShot(shoot_attack, 1.0f);
+                    playerHitAudio.PlayOneShot(playerHit, 1.0f);
                     attacks(shootDamage);
                 }
             }

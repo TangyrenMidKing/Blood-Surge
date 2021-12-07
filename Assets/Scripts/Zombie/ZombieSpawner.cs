@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class ZombieSpawner : MonoBehaviour
 {
+    AudioSource explosionAudio;
+    public AudioClip explosion;
+    public GameObject bigExplosion;
     public GameObject zombie;
     public GameObject boss;
     public GameObject block;
@@ -25,6 +28,9 @@ public class ZombieSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        explosionAudio = GetComponent<AudioSource>();
+        explosionAudio.playOnAwake = false;
+
         waveNumber = 0;
         enemyCount = 0;
         //waveNumberUI.text = "Wave: 1";
@@ -54,6 +60,15 @@ public class ZombieSpawner : MonoBehaviour
             instructions.GetComponent<Text>().enabled = true;
             if (Input.GetKeyDown(KeyCode.E) && inRangeOfButton)
             {
+                if (waveNumber == 0)
+                {
+                    var explosionInstance = Instantiate(bigExplosion);
+                    explosionInstance.GetComponent<ParticleSystem>().Play();
+                    explosionAudio.PlayOneShot(explosion, 1f);
+                    Destroy(explosionInstance.gameObject, 1.045f);
+                }
+
+
                 Destroy(block.gameObject);
  
                 waveNumber++;
@@ -221,8 +236,38 @@ public class ZombieSpawner : MonoBehaviour
     {
         for (int i = 0; i < numEnemies; i++)
         {
-            Instantiate(boss, new Vector3(randx, 0, randz), boss.transform.rotation);
-            ++enemyCount;
+            switch (Random.Range(0, 7))
+            {
+                case 0:
+                    Instantiate(boss, new Vector3(randx, 0, randz), boss.transform.rotation);
+                    ++enemyCount;
+                    break;
+                case 1:
+                    Instantiate(boss, new Vector3(elrandx, 2.08f, elrandz), boss.transform.rotation);
+                    ++enemyCount;
+                    break;
+                case 2:
+                    Instantiate(boss, new Vector3(lcrandx, 2.08f, lcrandz), boss.transform.rotation);
+                    ++enemyCount;
+                    break;
+                case 3:
+                    Instantiate(boss, new Vector3(warandx, 2.08f, warandz), boss.transform.rotation);
+                    ++enemyCount;
+                    break;
+                case 4:
+                    Instantiate(boss, new Vector3(rcrandx, 2.08f, rcrandz), boss.transform.rotation);
+                    ++enemyCount;
+                    break;
+                case 5:
+                    Instantiate(boss, new Vector3(werandx, 2.08f, werandz), boss.transform.rotation);
+                    ++enemyCount;
+                    break;
+                case 6:
+                    Instantiate(boss, new Vector3(mirandx, 2.08f, mirandz), boss.transform.rotation);
+                    ++enemyCount;
+                    break;
+            }
+
         }
     }
 

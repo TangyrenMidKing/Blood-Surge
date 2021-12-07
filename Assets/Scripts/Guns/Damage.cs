@@ -37,10 +37,13 @@ public class Damage : MonoBehaviour
         if (target != null)
         {
             target.Hit(damage);
+
             playImpactAudio();
             StartCoroutine(DestroyBulletRoutine());
         }
     }
+
+
 
     // to give enough time to play the full length of the audio clip
     // this will delay destroying the bullet object until the audio clip is complete
@@ -74,7 +77,7 @@ public class Damage : MonoBehaviour
                 break;
 
             case (int)Weapons.Skorpion:
-                damage = 50;
+                damage = 25;
                 break;
 
             case (int)Weapons.Ump:

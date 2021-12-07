@@ -114,7 +114,7 @@ public class GrabWeapon : MonoBehaviour
                 break;
 
             case "M4":
-                if(enemiesKilled < 24)
+                if(enemiesKilled < 26)
                 {
                     instructions.GetComponent<Text>().enabled = false;
                     enemiesKilledUI.text = "Kill " + (26 - enemiesKilled) + " enemies to unlock";
@@ -131,7 +131,7 @@ public class GrabWeapon : MonoBehaviour
             case "Skorpion":
                 // if the player has not yet killed 30 enemies then display how many more enemies the player
                 // needs to kill to unlock the weapon
-                if(enemiesKilled < 90)
+                if(enemiesKilled < 100)
                 {
                     instructions.GetComponent<Text>().enabled = false;
                     enemiesKilledUI.text = "Kill " + (100 - enemiesKilled) + " enemies to unlock";
@@ -145,7 +145,7 @@ public class GrabWeapon : MonoBehaviour
                 break;
 
             case "Ump":
-                if (enemiesKilled < 150)
+                if (enemiesKilled < 280)
                 {
                     instructions.GetComponent<Text>().enabled = false;
                     enemiesKilledUI.text = "Kill " + (280 - enemiesKilled) + " enemies to unlock";
@@ -158,7 +158,7 @@ public class GrabWeapon : MonoBehaviour
                 break;
 
             case "Minigun":
-                if (enemiesKilled < 200)
+                if (enemiesKilled < 790)
                 {
                     instructions.GetComponent<Text>().enabled = false;
                     enemiesKilledUI.text = "Kill " + (790 - enemiesKilled) + " enemies to unlock";

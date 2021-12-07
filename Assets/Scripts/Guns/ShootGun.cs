@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ShootGun : MonoBehaviour
 {
+    public GameObject muzzleFlash;
     public BuyPerks buyPerks;
     public GameObject ammoRefillObject;
     public ZombieSpawner zombieSpawner;
@@ -98,7 +99,6 @@ public class ShootGun : MonoBehaviour
     IEnumerator Reload()
     {
         isReloading = true;
-        Debug.Log("Reloading....");
 
         animator.SetBool("reloading", true);
 
@@ -209,6 +209,8 @@ public class ShootGun : MonoBehaviour
     // Calls a coroutine to delay between shots
     void FireBullet()
     {
+        var muzzleFlashInstance = Instantiate(muzzleFlash, firePoint.position, firePoint.rotation);
+
         var projectileInstance = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
         //Physics.IgnoreCollision(projectileInstance.GetComponent<Collider>(), firePoint.parent.GetComponent<Collider>());
 
@@ -218,7 +220,11 @@ public class ShootGun : MonoBehaviour
 
         gunAudio.PlayOneShot(gunfire, 0.2f);
 
+        muzzleFlashInstance.GetComponent<ParticleSystem>().Play();
+
         Destroy(projectileInstance.gameObject, 1.045f);
+
+        Destroy(muzzleFlashInstance.gameObject, 1.045f);
 
         StartCoroutine(ShootCooldownRoutine(fireRate));
 
